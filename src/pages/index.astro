@@ -6,6 +6,8 @@ import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 import "@fontsource/playfair-display";
+import "@fontsource/inter";
+import "@fontsource/baskervville/400-italic.css";
 
 import Icon from "astro-iconify";
 ---
@@ -16,7 +18,7 @@ import Icon from "astro-iconify";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <!-- <Header title={SITE_TITLE} /> -->
+    <Header />
     <main class="w-full h-full flex">
       <div class="container m-auto text-center">
         <h1 class="text-white blur-[0.5px] text-5xl font-display">
@@ -71,6 +73,7 @@ import Icon from "astro-iconify";
 
       &:after {
         @apply absolute scale-95 -bottom-8 opacity-0 text-white left-1/2 -translate-x-1/2 text-sm transition-all duration-150;
+        @apply lowercase italic font-serif;
         content: attr(data-name);
       }
 

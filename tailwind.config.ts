@@ -6,6 +6,7 @@ export default {
     fontFamily: {
       display: ['Playfair Display', 'serif'],
       sans: ['Inter', 'sans-serif'],
+      serif: ['Baskervville', 'serif']
     },
     colors: {
       black: '#1B1D21',
