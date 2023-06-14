@@ -6,6 +6,7 @@ type Props = HTMLAttributes<"a">;
 const { href, class: className, ...props } = Astro.props;
 
 const { pathname } = Astro.url;
+
 const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 ---
 
@@ -22,7 +23,7 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
       @apply opacity-50 scale-[0.99];
     }
 
-    &:hover {
+    &:hover, &.active {
       @apply bg-white bg-opacity-10;
     }
   }

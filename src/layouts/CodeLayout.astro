@@ -1,0 +1,49 @@
+---
+import { TAGS } from "../consts";
+
+import CodeNav from "../components/CodeNav.astro";
+import BaseLayout from "./BaseLayout.astro";
+
+export interface Props {
+  title: string;
+  tagline: string;
+  tags: (keyof typeof TAGS)[];
+}
+
+const { tags, title, tagline } = Astro.props;
+---
+
+<BaseLayout>
+  <div class="container lg:max-w-5xl mx-auto pt-32 gap-16 flex flex-row">
+    <CodeNav />
+
+    <article class="flex-grow leading-loose">
+      <h3 class="font-display text-5xl leading-relaxed">
+        {title}
+      </h3>
+
+      <span class="font-display text-xl block">
+        {tagline}
+      </span>
+
+      <ul class="flex flex-row items-center justify-start gap-4 py-8">
+        {
+          tags.map((tag) => (
+            <li>
+              <a
+                class="border font-serif opacity-75 hover:opacity-100 transition-opacity duration-150 cursor-pointer active:opacity-50 border-white rounded-md text-sm py-1 px-2 inline italic"
+                href={TAGS[tag]}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {tag}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <slot />
+    </article>
+  </div>
+</BaseLayout>

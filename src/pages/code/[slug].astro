@@ -1,0 +1,33 @@
+---
+import Icon from "astro-iconify";
+
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CodeLayout from "../../layouts/CodeLayout.astro";
+
+export async function getStaticPaths() {
+  const docs = await getCollection("code");
+
+  return docs.map((doc, i) => ({
+    params: {
+      slug: doc.slug,
+    },
+    props: {
+      doc,
+    },
+  }));
+}
+
+const {
+  doc: {
+    render,
+    data: { title, tags, tagline },
+  },
+} = Astro.props;
+
+const { Content } = await render();
+---
+
+<CodeLayout tags={tags} title={title} tagline={tagline}>
+  <Content />
+</CodeLayout>

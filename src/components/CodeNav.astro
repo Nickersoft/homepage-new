@@ -1,0 +1,48 @@
+---
+import { Icon } from "astro-iconify";
+import { getCollection } from "astro:content";
+
+const docs = await getCollection("code");
+---
+
+<nav class="w-72 flex-shrink-0">
+  <ul>
+    {
+      docs.map((doc) => (
+        <li>
+          <a
+            href={doc.slug}
+            class:list={[
+              "link",
+              {
+                active: Astro.url.pathname.split("/").slice(-1)[0] === doc.slug,
+              },
+            ]}
+          >
+            <Icon
+              class="w-4 h-4"
+              name={doc.data.icon.name}
+              pack={doc.data.icon.pack}
+            />
+            {doc.data.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style lang="postcss"> 
+  .link {
+    @apply flex flex-row items-center justify-start gap-4 py-4 opacity-50 relative;
+
+    &.active {
+      @apply opacity-100;
+
+      &:after {
+        @apply w-1 bg-white right-2 absolute top-4 bottom-4;
+        content: '';
+      }
+    }
+  }
+</style>

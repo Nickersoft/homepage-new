@@ -1,4 +1,5 @@
 import { defineCollection, z } from 'astro:content';
+import { TAGS } from '../consts';
 
 const blog = defineCollection({
 	// Type-check frontmatter using a schema
@@ -18,4 +19,16 @@ const blog = defineCollection({
 	}),
 });
 
-export const collections = { blog };
+const code = defineCollection({
+	schema: z.object({
+		title: z.string(),
+		tagline: z.string(),
+    tags: z.array(z.enum(Object.keys(TAGS) as [string])),
+    icon: z.object({
+      name: z.string(),
+      pack: z.string(),
+    })
+	}),
+});
+
+export const collections = { blog, code };
