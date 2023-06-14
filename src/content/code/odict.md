@@ -1,6 +1,8 @@
 ---
 title: "The Open Dictionary"
 tagline: "A blazingly-fast, byte-sized dictionary format."
+code: TheOpenDictionary/odict
+site: https://www.odict.org
 tags:
   - "TypeScript"
   - "Go"

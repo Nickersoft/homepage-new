@@ -34,7 +34,11 @@ const docs = await getCollection("code");
 
 <style lang="postcss"> 
   .link {
-    @apply flex flex-row items-center justify-start gap-4 py-4 opacity-50 relative;
+    @apply flex flex-row items-center justify-start gap-4 py-4 opacity-50 relative transition-all duration-75 cursor-pointer;
+
+    &:hover {
+      @apply opacity-90;
+    }
 
     &.active {
       @apply opacity-100;

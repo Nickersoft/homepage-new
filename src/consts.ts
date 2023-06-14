@@ -10,5 +10,6 @@ export const TAGS = {
   TypeScript: 'https://typescriptlang.org',
   JavaScript: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
   Go: 'https://go.dev',
-  Kotlin: 'https://kotlinlang.org'
+  Kotlin: 'https://kotlinlang.org',
+  Tailwind: "https://tailwindcss.com",
 }

@@ -1,25 +1,7 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
----
+import { getCollection } from "astro:content";
 
-<BaseLayout>
-  <div class="container lg:max-w-5xl mx-auto flex flex-row">
-    <nav class="w-72 flex-shrink-0">hi</nav>
-    <div class="flex-grow">
-      <h3 class="font-display text-5xl leading-relaxed">CityHop</h3>
-      <span class="font-display text-xl mb-8 block">
-        Listen to music. Travel the world.
-      </span>
-      <p class="leading-loose">
-        Aut nostrum odit. A quas et laborum sint et. Repellat at beatae id.
-        Consequuntur illum autem provident. Nemo ipsum quam doloremque quo
-        tempora consequatur itaque labore. Harum sint qui dolorem doloremque.
-        Quisquam non omnis ullam et officiis quo dolor illum. Rerum ex est odio
-        architecto ab doloremque. Neque sunt qui consequuntur suscipit sit.
-        Velit minus debitis aliquam a mollitia quo incidunt ducimus consectetur.
-        Nemo aut optio illum velit enim iusto cum. Sint officiis vitae dolor
-        ullam optio quo.
-      </p>
-    </div>
-  </div>
-</BaseLayout>
+const docs = await getCollection("code");
+
+return Astro.redirect(`/code/${docs[0].slug}`);
+---

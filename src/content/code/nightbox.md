@@ -1,9 +1,12 @@
 ---
 title: "Nightbox"
 tagline: "Dark color palettes for everyone."
+code: Nickersoft/nightbox
+site: https://nightbox.onrender.com
 tags:
   - "TypeScript"
   - "Svelte"
+  - "Tailwind"
 icon:
   name: "moon-bold" 
   pack: "solar"

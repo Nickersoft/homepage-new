@@ -1,6 +1,8 @@
 ---
 title: "Push.js"
 tagline: "The world's most advanced notifications framework."
+code: Nickersoft/push.js
+site: https://www.pushjs.org
 tags:
   - "JavaScript"
 icon:

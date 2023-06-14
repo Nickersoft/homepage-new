@@ -21,13 +21,13 @@ export async function getStaticPaths() {
 const {
   doc: {
     render,
-    data: { title, tags, tagline },
+    data: { title, tags, site, code, tagline },
   },
 } = Astro.props;
 
 const { Content } = await render();
 ---
 
-<CodeLayout tags={tags} title={title} tagline={tagline}>
+<CodeLayout code={code} site={site} tags={tags} title={title} tagline={tagline}>
   <Content />
 </CodeLayout>

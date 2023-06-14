@@ -24,6 +24,8 @@ const code = defineCollection({
 		title: z.string(),
 		tagline: z.string(),
     tags: z.array(z.enum(Object.keys(TAGS) as [string])),
+    site: z.string().url().optional(),
+    code: z.string().regex(/\w+\/\w+/),
     icon: z.object({
       name: z.string(),
       pack: z.string(),

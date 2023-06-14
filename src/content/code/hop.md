@@ -1,6 +1,7 @@
 ---
 title: "Hop"
 tagline: "The package manager for web apps."
+code: hop-apps/hop
 tags:
   - "TypeScript"
 icon:

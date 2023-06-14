@@ -1,9 +1,12 @@
 ---
 title: "CityHop"
 tagline: "Listen to music. Travel the world."
+code: Nickersoft/cityhop.cafe
+site: https://www.cityhop.cafe
 tags:
   - "TypeScript"
   - "Svelte"
+  - "Tailwind"
 icon:
   name: "globe" 
   pack: "mdi"

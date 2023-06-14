@@ -3,18 +3,21 @@ import { TAGS } from "../consts";
 
 import CodeNav from "../components/CodeNav.astro";
 import BaseLayout from "./BaseLayout.astro";
+import { Icon } from "astro-iconify";
 
 export interface Props {
   title: string;
   tagline: string;
+  code: string;
+  site?: string;
   tags: (keyof typeof TAGS)[];
 }
 
-const { tags, title, tagline } = Astro.props;
+const { tags, code, site, title, tagline } = Astro.props;
 ---
 
 <BaseLayout>
-  <div class="container lg:max-w-5xl mx-auto pt-32 gap-16 flex flex-row">
+  <div class="container lg:max-w-5xl mx-auto pt-16 gap-16 flex flex-row">
     <CodeNav />
 
     <article class="flex-grow leading-loose">
@@ -29,9 +32,9 @@ const { tags, title, tagline } = Astro.props;
       <ul class="flex flex-row items-center justify-start gap-4 py-8">
         {
           tags.map((tag) => (
-            <li>
+            <li class="border-r pr-4 leading-snug border-white border-opacity-20 last-of-type:border-none">
               <a
-                class="border font-serif opacity-75 hover:opacity-100 transition-opacity duration-150 cursor-pointer active:opacity-50 border-white rounded-md text-sm py-1 px-2 inline italic"
+                class="font-serif opacity-75 hover:opacity-100 transition-opacity duration-150 cursor-pointer active:opacity-50 text-sm italic"
                 href={TAGS[tag]}
                 target="_blank"
                 rel="noreferrer"
@@ -44,6 +47,49 @@ const { tags, title, tagline } = Astro.props;
       </ul>
 
       <slot />
+
+      <div class="flex flex-row items-center gap-4 justify-start py-8">
+        {
+          site && (
+            <a href={site} target="_blank" rel="noreferrer" class="btn primary">
+              Visit site
+              <Icon name="arrow-right" pack="mdi" class="w-4 h-4" />
+            </a>
+          )
+        }
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href={`https://www.github.com/${code}`}
+          class="btn"
+          class:list={site ? "secondary" : "primary"}
+        >
+          <Icon name="github" pack="mdi" class="w-4 h-4" />
+          View the code
+        </a>
+      </div>
     </article>
   </div>
 </BaseLayout>
+
+<style lang="postcss">
+  .btn {
+    @apply py-2 px-4 flex gap-2 flex-row items-center justify-center;
+
+    &:active {
+      @apply scale-[0.99] opacity-50;
+    }
+
+    &.primary {
+      @apply border border-white rounded-sm;
+    }
+
+    &.secondary {
+      @apply rounded-md transition-all duration-150;
+
+      &:hover {
+        @apply bg-white bg-opacity-10;
+      }
+    }
+  }
+</style>
