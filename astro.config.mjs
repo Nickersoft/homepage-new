@@ -4,12 +4,12 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import prefetch from "@astrojs/prefetch";
-import vercel from "@astrojs/vercel/static";
+import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://example.com",
-  output: "static",
+  output: "hybrid",
   integrations: [mdx(), sitemap(), tailwind(), prefetch()],
   adapter: vercel(),
 });

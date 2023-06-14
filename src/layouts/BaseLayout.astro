@@ -3,17 +3,18 @@ import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 
-import "@fontsource/playfair-display";
-import "@fontsource/inter";
-import "@fontsource/baskervville/400-italic.css";
-
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
 
-<!DOCTYPE html>
 <html lang="en" class="w-full h-full">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Inter&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
     <style lang="postcss"> 
       body {
         background: url('/static.png') 0 0 repeat, theme('colors.black');
