@@ -1,50 +1,31 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-
-import "@fontsource/playfair-display";
-import "@fontsource/inter";
-import "@fontsource/baskervville/400-italic.css";
-
 import Icon from "astro-iconify";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<!DOCTYPE html>
-<html lang="en" class="w-full h-full">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <main class="w-full h-full flex">
-      <div class="container m-auto text-center">
-        <h1 class="text-white blur-[0.5px] text-5xl font-display">
-          Tyler Nickerson
-        </h1>
-        <div class="shapes">
-          <div class="icon red" data-name="Founder">
-            <Icon name="square" pack="mdi" />
-          </div>
-          <div class="icon yellow" data-name="Designer">
-            <Icon name="triangle" pack="mdi" />
-          </div>
-          <div class="icon green" data-name="Developer">
-            <Icon name="circle" pack="mdi" />
-          </div>
+<BaseLayout>
+  <div class="w-full h-full flex">
+    <div class="container m-auto text-center">
+      <h1 class="text-white blur-[0.5px] text-5xl font-display">
+        Tyler Nickerson
+      </h1>
+      <div class="shapes">
+        <div class="icon red" data-name="Founder">
+          <Icon name="square" pack="mdi" />
+        </div>
+        <div class="icon yellow" data-name="Designer">
+          <Icon name="triangle" pack="mdi" />
+        </div>
+        <div class="icon green" data-name="Developer">
+          <Icon name="circle" pack="mdi" />
         </div>
       </div>
-    </main>
-    <!-- <Footer /> -->
-    <style lang="postcss"> 
-  body {
-    @apply text-white font-sans w-full h-full; 
+    </div>
+  </div>
+</BaseLayout>
 
-    background: url('/static.png') 0 0 repeat, theme('colors.black');
-  }
-
+<style lang="postcss"> 
   .shapes {
     @apply flex flex-row gap-8 items-center justify-center py-12 blur-[0.5px];
 
@@ -94,5 +75,3 @@ import Icon from "astro-iconify";
     }
   }
 </style>
-  </body>
-</html>

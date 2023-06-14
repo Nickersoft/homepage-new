@@ -1,0 +1,30 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
+import "@fontsource/playfair-display";
+import "@fontsource/inter";
+import "@fontsource/baskervville/400-italic.css";
+
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+---
+
+<!DOCTYPE html>
+<html lang="en" class="w-full h-full">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style lang="postcss"> 
+      body {
+        background: url('/static.png') 0 0 repeat, theme('colors.black');
+      }
+  </style>
+  </head>
+  <body class="w-full h-full flex flex-col text-white font-sans">
+    <Header />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
