@@ -2,6 +2,7 @@
 import HeaderLink from "./HeaderLink.astro";
 
 import { SITE_TITLE } from "../consts";
+import Icon from "astro-iconify";
 ---
 
 <header class="flex w-full flex-row justify-between items-center p-4">
@@ -71,6 +72,16 @@ import { SITE_TITLE } from "../consts";
       </svg>
       <span>Writing</span>
     </HeaderLink>
+
+    <a
+      href="mailto:tyler@linguistic.io"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="rounded-md bg-gradient-to-b flex flex-row items-center justify-center gap-2 from-white to-gray-light px-4 font-medium active:scale-[0.99] transition-all duration-150 active:text-opacity-75 py-2 text-sm text-black"
+    >
+      <Icon name="email-outline" pack="mdi" class="w-4 h-4" />
+      Contact
+    </a>
   </nav>
 </header>
 

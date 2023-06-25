@@ -1,13 +1,29 @@
 ---
+import { Icon } from "astro-iconify";
+
+import FooterIcon from "./FooterIcon.astro";
+
 const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
+  <FooterIcon
+    href="https://linkedin.com/in/tylernickerson"
+    name="linkedin"
+    pack="mdi"
+  />
+
+  <FooterIcon href="https://github.com/Nickersoft" name="github" pack="mdi" />
+
+  <FooterIcon
+    href="https://twitter.com/tylernickerson"
+    name="twitter"
+    pack="mdi"
+  />
 </footer>
-<style>
-	footer {
-		padding: 25px;
-		text-align: center;
-	}
+
+<style lang="postcss">
+  footer {
+    @apply flex flex-row items-center justify-center gap-4 py-8;
+  }
 </style>

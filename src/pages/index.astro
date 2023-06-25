@@ -7,9 +7,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout>
   <div class="w-full h-full flex">
     <div class="container m-auto text-center">
-      <h1 class="text-white blur-[0.5px] text-5xl font-display">
-        Tyler Nickerson
-      </h1>
+      <h1 class="text-white text-5xl font-display">Tyler Nickerson</h1>
       <div class="shapes">
         <div class="icon red" data-name="Founder">
           <Icon name="square" pack="mdi" />
@@ -27,7 +25,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <style lang="postcss"> 
   .shapes {
-    @apply flex flex-row gap-8 items-center justify-center py-12 blur-[0.5px];
+    @apply flex flex-row gap-8 items-center justify-center py-12;
 
     .icon {
       --icon-blur: 4px;
