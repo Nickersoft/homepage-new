@@ -17,11 +17,11 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
     />
     <style lang="postcss"> 
       body {
-        background: url('/static.png') 0 0 repeat, theme('colors.black');
+        background: theme('colors.background');
       }
   </style>
   </head>
-  <body class="w-full h-full flex flex-col text-white font-sans">
+  <body class="w-full h-full flex flex-col text-black font-sans">
     <Header />
     <main class="flex-grow">
       <slot />

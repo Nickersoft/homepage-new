@@ -1,23 +1,18 @@
 ---
-import Icon from "astro-iconify";
-
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
   <div class="w-full h-full flex">
     <div class="container m-auto text-center">
-      <h1 class="text-white text-5xl font-display">Tyler Nickerson</h1>
-      <div class="shapes">
-        <div class="icon red" data-name="Founder">
-          <Icon name="square" pack="mdi" />
-        </div>
-        <div class="icon yellow" data-name="Designer">
-          <Icon name="triangle" pack="mdi" />
-        </div>
-        <div class="icon green" data-name="Developer">
-          <Icon name="circle" pack="mdi" />
-        </div>
+      <h1 class="text-black text-6xl font-display">Tyler Nickerson</h1>
+      <div
+        class="flex flex-row gap-8 font-serif italic items-center justify-center py-12"
+      >
+        <a href="#">Founder</a>
+        <a href="#">Designer</a>
+
+        <a href="#">Developer</a>
       </div>
     </div>
   </div>

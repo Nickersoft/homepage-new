@@ -5,7 +5,7 @@ export const SITE_TITLE = 'Tyler Nickerson';
 
 export const SITE_DESCRIPTION = 'Welcome to my website!';
 
-export const TAGS = {
+export const TAGS: Record<string,string> = {
   Svelte: 'https://svelte.dev',
   TypeScript: 'https://typescriptlang.org',
   JavaScript: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',

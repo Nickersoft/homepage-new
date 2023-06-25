@@ -9,11 +9,12 @@ export default {
       serif: ['Baskervville', 'serif']
     },
     colors: {
-      black: '#1B1D21',
+      black: '#2F2F31',
       white: '#FFFFFF',
       red: '#FF5757',
       yellow: '#FFD954',
       green: '#72FF66',
+      background: '#FCF9F4',
       gray: {
         light: '#D6D6D6'
       }
