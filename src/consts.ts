@@ -1,15 +1,29 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = 'Tyler Nickerson';
+import type { SvelteComponent } from "svelte";
 
-export const SITE_DESCRIPTION = 'Welcome to my website!';
+export const SITE_TITLE = "Tyler Nickerson";
 
-export const TAGS: Record<string,string> = {
-  Svelte: 'https://svelte.dev',
-  TypeScript: 'https://typescriptlang.org',
-  JavaScript: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
-  Go: 'https://go.dev',
-  Kotlin: 'https://kotlinlang.org',
+export const SITE_DESCRIPTION = "Welcome to my website!";
+
+export const TAGS: Record<string, string> = {
+  Svelte: "https://svelte.dev",
+  TypeScript: "https://typescriptlang.org",
+  JavaScript: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  Go: "https://go.dev",
+  Kotlin: "https://kotlinlang.org",
   Tailwind: "https://tailwindcss.com",
-}
+};
+
+export const ICONS: Record<
+  string,
+  Promise<{ default: astroHTML.JSX.Element }>
+> = {
+  microphone: import("~icons/mdi/microphone"),
+  globe: import("~icons/mdi/globe"),
+  teminal: import("~icons/mdi/terminal"),
+  moon: import("~icons/solar/moon-bold"),
+  book: import("~icons/el/book"),
+  notification: import("~icons/mingcute/notification-fill"),
+};

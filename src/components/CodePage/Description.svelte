@@ -9,7 +9,9 @@
   export let code: string;
 </script>
 
-<article class="flex-grow leading-loose">
+<article
+  class="h-screen flex flex-col p-8 justify-center items-start leading-loose"
+>
   <h3 class="font-display text-5xl leading-relaxed">{title}</h3>
 
   <span class="font-display text-xl block">{tagline}</span>

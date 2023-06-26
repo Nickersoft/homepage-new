@@ -9,37 +9,40 @@
 
   export let items: CollectionEntry<"code">[];
 
-  let selectedIndex = 0;
+  let scrollY: number;
+  let height: number;
+  let offset: number;
+  $: console.log(scrollY, height, offset);
 
-  $: selectedItem = items[selectedIndex];
-
-  const goToNextPage = throttle({ interval: 1000 }, () => (selectedIndex += 1));
-
-  const goToPreviousPage = throttle(
-    { interval: 500 },
-    () => (selectedIndex -= 1)
-  );
+  let scrollPercentage = 0;
 
   onMount(() => {
-    function handleWheel(event) {
-      console.log(event);
-      if (event.deltaY > 0 && selectedIndex !== items.length - 1) {
-        goToNextPage();
-      } else if (selectedIndex !== 0) {
-        goToPreviousPage();
-      }
+    function updateScrollIndicator() {
+      const scrollTop = document.documentElement.scrollTop;
+      const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      scrollPercentage = (scrollTop / scrollHeight) * 100;
     }
 
-    window.addEventListener("wheel", handleWheel);
+    window.addEventListener("scroll", updateScrollIndicator);
+    return () => window.removeEventListener("scroll", updateScrollIndicator);
   });
 </script>
 
-<svelte:window />
+<svelte:window bind:scrollY />
 
 <div
-  class="container grid p-8"
+  class="grid px-8"
+  style:--percentScroll="{scrollPercentage}%"
+  bind:clientHeight={height}
   style="grid-template-columns: min-content auto auto"
 >
   <Navigation {items} />
-  <Description body={selectedItem.body} {...selectedItem.data} />
+
+  <div class="flex flex-col">
+    {#each items as item (item.slug)}
+      <Description body={item.body} {...item.data} />
+    {/each}
+  </div>
 </div>
