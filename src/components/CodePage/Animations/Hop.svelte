@@ -1,5 +1,8 @@
 <script lang="ts">
-  function typewriter(node: HTMLElement, { speed = 1 }) {
+  import { fly } from "svelte/transition";
+  import { linear, quadInOut } from "svelte/easing";
+
+  function typewriter(node: HTMLElement, { speed = 1, delay = 0 } = {}) {
     const valid =
       node.childNodes.length === 1 &&
       node.childNodes[0].nodeType === Node.TEXT_NODE;
@@ -16,6 +19,7 @@
 
     return {
       duration,
+      delay,
       tick: (t: number) => {
         const i = Math.trunc(text.length * t);
         node.textContent = text.slice(0, i);
@@ -24,7 +28,7 @@
   }
 </script>
 
-<div class="terminal">
+<div class="terminal" in:fly={{ x: 100, duration: 500 }}>
   <div class="lights">
     <div class="light red" />
     <div class="light yellow" />
@@ -33,7 +37,10 @@
 
   <div class="content">
     <div class="folder">~/Documents</div>
-    <div class="command">❯ <span>hop</span></div>
+    <div class="command">
+      <span in:typewriter={{ delay: 400 }}>hop</span>
+      <span in:typewriter={{ delay: 800 }}>install notion</span>
+    </div>
   </div>
 </div>
 
@@ -65,10 +72,25 @@
     }
 
     .content {
-      @apply font-mono flex flex-col gap-2;
+      @apply font-mono flex flex-col gap-0;
 
       .folder {
         @apply text-[#73DDFF] font-bold;
+      }
+
+      .command {
+        @apply text-white pb-64;
+
+        --highlight-color: #91ff8e;
+
+        &:before {
+          @apply text-[var(--highlight-color)];
+          content: "❯";
+        }
+
+        span:first-of-type {
+          @apply text-[var(--highlight-color)] pl-2;
+        }
       }
     }
   }

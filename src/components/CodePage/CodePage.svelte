@@ -26,7 +26,7 @@
 
 <div
   class="grid gap-8 justify-center items-center h-full w-full"
-  style="grid-template-columns: min-content 1fr 500px"
+  style="grid-template-columns: min-content 1fr 400px"
 >
   <Navigation activeItem={item.slug} {items} />
 
@@ -37,6 +37,8 @@
   </div>
 
   <div class="animation">
-    <Hop />
+    {#key item}
+      <Hop />
+    {/key}
   </div>
 </div>
