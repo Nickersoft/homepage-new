@@ -6,43 +6,37 @@
   import Navigation from "./Navigation.svelte";
   import Description from "./Description.svelte";
   import { onMount } from "svelte";
+  import { readable } from "svelte/store";
+  import Hop from "./Animations/Hop.svelte";
 
   export let items: CollectionEntry<"code">[];
+  export let selectedItem: string;
 
-  let scrollY: number;
-  let height: number;
-  let offset: number;
-  $: console.log(scrollY, height, offset);
-
-  let scrollPercentage = 0;
-
-  onMount(() => {
-    function updateScrollIndicator() {
-      const scrollTop = document.documentElement.scrollTop;
-      const scrollHeight =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
-      scrollPercentage = (scrollTop / scrollHeight) * 100;
-    }
-
-    window.addEventListener("scroll", updateScrollIndicator);
-    return () => window.removeEventListener("scroll", updateScrollIndicator);
+  const hashStore = readable(window.location.hash, (set) => {
+    const updateHash = () => set(window.location.hash);
+    window.addEventListener("hashchange", updateHash);
+    return () => window.removeEventListener("hashchange", updateHash);
   });
+
+  $: item =
+    items.find((item) => item.slug === $hashStore.substring(1)) ?? items[0];
+
+  $: console.log("fuck", selectedItem);
 </script>
 
-<svelte:window bind:scrollY />
-
 <div
-  class="grid px-8"
-  style:--percentScroll="{scrollPercentage}%"
-  bind:clientHeight={height}
-  style="grid-template-columns: min-content auto auto"
+  class="grid gap-8 justify-center items-center h-full w-full"
+  style="grid-template-columns: min-content 1fr 500px"
 >
-  <Navigation {items} />
+  <Navigation activeItem={item.slug} {items} />
 
-  <div class="flex flex-col">
-    {#each items as item (item.slug)}
-      <Description body={item.body} {...item.data} />
-    {/each}
+  <div class="relative">
+    {#key item}
+      <Description slug={item.slug} body={item.body} {...item.data} />
+    {/key}
+  </div>
+
+  <div class="animation">
+    <Hop />
   </div>
 </div>

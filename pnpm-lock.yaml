@@ -8,7 +8,10 @@ specifiers:
   '@astrojs/svelte': ^3.0.0
   '@astrojs/tailwind': ^4.0.0
   '@astrojs/vercel': ^3.5.0
+  '@iconify-json/el': ^1.1.4
   '@iconify-json/mdi': ^1.1.52
+  '@iconify-json/mingcute': ^1.1.7
+  '@iconify-json/solar': ^1.1.1
   add: ^2.0.6
   astro: ^2.7.0
   autoprefixer: ^10.4.14
@@ -41,7 +44,10 @@ dependencies:
   vite: 4.3.9
 
 devDependencies:
+  '@iconify-json/el': 1.1.4
   '@iconify-json/mdi': 1.1.52
+  '@iconify-json/mingcute': 1.1.7
+  '@iconify-json/solar': 1.1.1
   autoprefixer: 10.4.14_postcss@8.4.24
   postcss: 8.4.24
   prettier: 2.8.8
@@ -695,8 +701,26 @@ packages:
     dev: false
     optional: true
 
+  /@iconify-json/el/1.1.4:
+    resolution: {integrity: sha512-WETX/bWm+lPc0+lVhgL1YcovPxTpgnV+GcFHO7RKVNjzTwR8F5pfb54pqSuvyt8xXowGYAu+qWpdh7VY8TfeLA==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
   /@iconify-json/mdi/1.1.52:
     resolution: {integrity: sha512-tLzpFcmoGw1/jHcl+BshUd4bqvP4755OUluaARsuKskTp2aIPIAkRQOhzJGpry9CZ0i82z0alq4HrKrp9uvj4A==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/mingcute/1.1.7:
+    resolution: {integrity: sha512-luBuSPks/Lbk4SCyt1RWVCQ8RM1lCIXPMY30qDyk0AtI+8n+eOjMF18y1vDjHUk646Mhw4HQXoRsoPJHlt7mvA==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/solar/1.1.1:
+    resolution: {integrity: sha512-VN7vPHaUW5cASnm2iN986bwTMGans5zAk1cVYB6nAGDhWjqaBMS6bmYmlpAYpuLk08uMAp2YtLkC23XFQd1zhg==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true

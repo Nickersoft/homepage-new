@@ -8,5 +8,5 @@ const docs = await getCollection("code");
 ---
 
 <BaseLayout>
-  <CodePage client:load items={docs} />
+  <CodePage client:only items={docs} />
 </BaseLayout>

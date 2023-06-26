@@ -22,7 +22,7 @@ export const ICONS: Record<
 > = {
   microphone: import("~icons/mdi/microphone"),
   globe: import("~icons/mdi/globe"),
-  teminal: import("~icons/mdi/terminal"),
+  terminal: import("~icons/mdi/terminal"),
   moon: import("~icons/solar/moon-bold"),
   book: import("~icons/el/book"),
   notification: import("~icons/mingcute/notification-fill"),
