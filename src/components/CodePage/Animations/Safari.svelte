@@ -7,7 +7,7 @@
   import { fly } from "svelte/transition";
 </script>
 
-<div class="window" in:fly={{ x: 100, duration: 800 }}>
+<div class="window" in:fly={{ x: 100, duration: 700 }}>
   <div class="handle">
     <TrafficLights />
     <div class="navigation">

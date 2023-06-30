@@ -1,5 +1,9 @@
 <script lang="ts">
+  import ArrowRight from "~icons/mdi/arrow-right";
+  import GitHub from "~icons/mdi/github";
+
   import { fly } from "svelte/transition";
+
   import { TAGS } from "../../consts";
 
   export let title: string;
@@ -57,23 +61,21 @@
 
   <hr class="border-t mt-6 w-full border-black opacity-10 h-1" />
 
-  <div class="flex flex-row items-center gap-4 justify-start py-8">
-    <!-- {
-      site && (
-        <a href={site} target="_blank" rel="noreferrer" class="btn primary">
-          Visit site
-          <Icon name="arrow-right" pack="mdi" class="w-4 h-4" />
-        </a>
-      )
-    } -->
+  <div class="flex flex-row items-center gap-8 justify-start py-8">
+    {#if site}
+      <a href={site} target="_blank" rel="noreferrer" class="btn btn-primary">
+        Visit site
+        <ArrowRight class="w-4 h-4" />
+      </a>
+    {/if}
+
     <a
       target="_blank"
       rel="noreferrer"
       href={`https://www.github.com/${code}`}
-      class="btn btn-primary"
-      class:list={true ? "secondary" : "primary"}
+      class="btn btn-secondary"
     >
-      <!-- <Icon name="github" pack="mdi" class="w-4 h-4" /> -->
+      <GitHub class="w-4 h-4" />
       View the code
     </a>
   </div>

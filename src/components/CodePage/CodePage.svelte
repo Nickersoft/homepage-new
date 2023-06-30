@@ -9,6 +9,7 @@
   import Hop from "./Animations/Hop";
   import Safari from "./Animations/Safari.svelte";
   import ODict from "./Animations/ODict.svelte";
+  import Nightbox from "./Animations/Nightbox.svelte";
 
   export let items: CollectionEntry<"code">[];
   export let selectedItem: string;
@@ -43,6 +44,8 @@
         <Hop />
       {:else if item.slug === "odict"}
         <ODict />
+      {:else if item.slug === "nightbox"}
+        <Nightbox />
       {:else}
         <Safari />
       {/if}
