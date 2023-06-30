@@ -1,9 +1,13 @@
 <script lang="ts">
   import { fly } from "svelte/transition";
-  import { linear, quadInOut } from "svelte/easing";
-  import Spinner from "./Spinner.svelte";
-  import { onDestroy, onMount } from "svelte";
-  import { random } from "radash";
+  import { createEventDispatcher, onDestroy } from "svelte";
+
+  import TrafficLights from "./TrafficLights.svelte";
+
+  export let command: string;
+  export let args: string;
+
+  const dispatch = createEventDispatcher();
 
   function typewriter(node: HTMLElement, { speed = 1, delay = 0 } = {}) {
     const valid =
@@ -30,58 +34,36 @@
     };
   }
 
-  const texts = [
-    `Resolving app 'notion'...`,
-    `Building Notion...`,
-    `Installing Notion...`,
-    `Cleaning up...`,
-    `Successfully installed Notion!`,
-  ];
-
-  let textIndex = -1;
+  let showOutput = false;
 
   let timeout: NodeJS.Timeout;
 
-  function showText(offset: number) {
+  function handleEnd() {
     timeout = setTimeout(() => {
-      textIndex += 1;
-
-      if (textIndex < texts.length - 1) {
-        showText(random(800, 1200));
-      }
-    }, offset);
+      showOutput = true;
+      dispatch("run");
+    }, 100);
   }
 
-  onDestroy(() => {
-    clearTimeout(timeout);
-  });
+  onDestroy(() => timeout && clearTimeout(timeout));
 </script>
 
-<div class="terminal" in:fly={{ x: 100, duration: 500 }}>
-  <div class="lights">
-    <div class="light red" />
-    <div class="light yellow" />
-    <div class="light green" />
-  </div>
+<div class="terminal" in:fly={{ x: 100, duration: 800 }}>
+  <TrafficLights />
 
   <div class="content">
     <div class="folder">~/Documents</div>
     <div class="command">
-      <span in:typewriter={{ delay: 400 }}>hop</span>
-      <span in:typewriter={{ delay: 800 }} on:introend={() => showText(100)}>
-        install notion
+      <span in:typewriter={{ delay: 400 }}>{command}</span>
+      <span in:typewriter={{ delay: 800 }} on:introend={handleEnd}>
+        {args}
       </span>
     </div>
-    {#if textIndex >= 0}
-      <div class="output">
-        {#if textIndex < texts.length - 1}
-          <Spinner />
-        {:else}
-          <span class="check">√</span>
-        {/if}
-        <span>{texts[textIndex]}</span>
-      </div>
-    {/if}
+    <div class="output">
+      {#if showOutput}
+        <slot />
+      {/if}
+    </div>
   </div>
 </div>
 
@@ -91,26 +73,6 @@
     @apply flex flex-col gap-4 h-96;
 
     background-image: linear-gradient(to bottom right, #434c52, #30363b);
-
-    .lights {
-      @apply flex flex-row gap-2;
-
-      .light {
-        @apply rounded-full w-3 h-3 block border border-black border-opacity-10;
-
-        &.red {
-          @apply bg-red;
-        }
-
-        &.yellow {
-          @apply bg-yellow;
-        }
-
-        &.green {
-          @apply bg-green;
-        }
-      }
-    }
 
     .content {
       @apply font-mono flex flex-col gap-0;
@@ -136,10 +98,6 @@
 
       .output {
         @apply text-white;
-
-        .check {
-          @apply text-green font-bold;
-        }
       }
     }
   }

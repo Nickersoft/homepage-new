@@ -1,13 +1,14 @@
 <script lang="ts">
   import type { CollectionEntry } from "astro:content";
 
-  import { throttle, debounce } from "radash";
-
   import Navigation from "./Navigation.svelte";
   import Description from "./Description.svelte";
-  import { onMount } from "svelte";
+
   import { readable } from "svelte/store";
-  import Hop from "./Animations/Hop.svelte";
+
+  import Hop from "./Animations/Hop";
+  import Safari from "./Animations/Safari.svelte";
+  import ODict from "./Animations/ODict.svelte";
 
   export let items: CollectionEntry<"code">[];
   export let selectedItem: string;
@@ -38,7 +39,13 @@
 
   <div class="animation">
     {#key item}
-      <Hop />
+      {#if item.slug === "hop"}
+        <Hop />
+      {:else if item.slug === "odict"}
+        <ODict />
+      {:else}
+        <Safari />
+      {/if}
     {/key}
   </div>
 </div>
