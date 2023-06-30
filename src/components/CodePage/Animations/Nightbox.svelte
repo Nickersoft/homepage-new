@@ -6,6 +6,6 @@
 <Safari>
   <div
     style={`background: url("${nightbox}") 0 0 no-repeat; background-size: cover`}
-    class="w-[800px] h-full"
+    class="w-[900px] h-full"
   />
 </Safari>

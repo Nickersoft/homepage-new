@@ -10,6 +10,7 @@
   import Safari from "./Animations/Safari.svelte";
   import ODict from "./Animations/ODict.svelte";
   import Nightbox from "./Animations/Nightbox.svelte";
+  import Push from "./Animations/Push.svelte";
 
   export let items: CollectionEntry<"code">[];
   export let selectedItem: string;
@@ -46,6 +47,8 @@
         <ODict />
       {:else if item.slug === "nightbox"}
         <Nightbox />
+      {:else if item.slug === "push"}
+        <Push />
       {:else}
         <Safari />
       {/if}
