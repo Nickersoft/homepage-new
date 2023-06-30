@@ -4,20 +4,31 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+
+import "@fontsource/baskervville/400.css";
+import "@fontsource/baskervville/400-italic.css";
+
+import "@fontsource/fira-code/400.css";
+import "@fontsource/fira-code/500.css";
+
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+
+import "@fontsource/playfair-display/400.css";
 ---
 
 <html lang="en" class="w-full h-full">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Fira+Code:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display&display=swap"
-      rel="stylesheet"
-    />
-    <style lang="postcss"> 
+    <style lang="postcss" is:global> 
       body {
         background: theme('colors.background');
+      }
+
+      .btn-primary {
+        @apply rounded-md flex flex-row items-center justify-center gap-2 px-4 font-medium active:scale-[0.99] transition-all duration-150 active:text-opacity-75 py-2 text-sm text-white;
+
+        background-image: linear-gradient(to bottom right, #4B4A4A, theme('colors.black'));
       }
   </style>
   </head>

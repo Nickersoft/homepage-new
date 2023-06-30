@@ -55,6 +55,8 @@
 
   <p>{body}</p>
 
+  <hr class="border-t mt-6 w-full border-black opacity-10 h-1" />
+
   <div class="flex flex-row items-center gap-4 justify-start py-8">
     <!-- {
       site && (
@@ -67,8 +69,8 @@
     <a
       target="_blank"
       rel="noreferrer"
-      href={`https://www.github.com/$code`}
-      class="btn"
+      href={`https://www.github.com/${code}`}
+      class="btn btn-primary"
       class:list={true ? "secondary" : "primary"}
     >
       <!-- <Icon name="github" pack="mdi" class="w-4 h-4" /> -->
