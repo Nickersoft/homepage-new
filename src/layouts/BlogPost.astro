@@ -33,7 +33,7 @@ const { title, original, description, pubDate, updatedDate, heroImage } =
     }
 
     <div
-      class="prose prose-p:leading-loose w-full !max-w-full prose-headings:font-display prose-figure:text-center prose-img:mx-auto prose-h1:mb-4 prose-h2:mb-4 prose-h2:mt-6 content"
+      class="prose prose-base prose-p:leading-loose w-full !max-w-full prose-headings:font-sans prose-figure:text-center prose-img:mx-auto prose-h1:mb-4 prose-h2:mb-6 prose-h2:mt-8 content"
     >
       <slot />
       <hr />
@@ -59,7 +59,7 @@ const { title, original, description, pubDate, updatedDate, heroImage } =
 
 <style lang="postcss">
   .article {
-    @apply max-w-4xl mx-auto flex flex-col items-center;
+    @apply max-w-3xl mx-auto flex flex-col items-center;
   }
 
   hr {
@@ -68,7 +68,7 @@ const { title, original, description, pubDate, updatedDate, heroImage } =
 
   .notice {
     @apply rounded-lg bg-gradient-to-b from-white to-[rgba(0,0,0,0.02)];
-    @apply border border-black border-opacity-10 shadow-lg p-4 text-center;
+    @apply border border-black border-opacity-10 shadow-lg p-4 text-center text-sm;
   }
 
   .hero {
@@ -76,7 +76,7 @@ const { title, original, description, pubDate, updatedDate, heroImage } =
   }
 
   .title {
-    @apply text-5xl font-display text-center leading-normal;
+    @apply text-4xl font-display font-bold text-center leading-normal;
     @apply w-full py-6;  
   }
   </style>
