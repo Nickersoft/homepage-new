@@ -27,7 +27,7 @@
 
 <style lang="postcss">
   .window {
-    @apply shadow-lg rounded-l-lg border-black border border-opacity-10 overflow-hidden flex flex-col h-[500px] relative;
+    @apply shadow-lg rounded-l-lg border-black border-l border-y border-opacity-10 overflow-hidden flex flex-col h-[500px] relative;
 
     .content {
       @apply flex-grow overflow-hidden;

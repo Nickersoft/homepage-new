@@ -83,7 +83,7 @@
 
 <style lang="postcss">
   .terminal {
-    @apply p-4 w-full shadow-lg border-black border-opacity-10 rounded-tl-lg rounded-bl-lg border;
+    @apply p-4 w-full shadow-lg border-black border-opacity-10 border-l border-y rounded-tl-lg rounded-bl-lg;
     @apply flex flex-col gap-4 h-[400px] relative;
 
     background-image: linear-gradient(to bottom right, #434c52, #30363b);

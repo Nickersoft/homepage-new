@@ -1,51 +1,82 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import BaseLayout from "./BaseLayout.astro";
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, original, description, pubDate, updatedDate, heroImage } =
+  Astro.props;
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			.title {
-				font-size: 2em;
-				margin: 0.25em 0 0;
-			}
-			hr {
-				border-top: 1px solid #ddd;
-				margin: 1rem 0;
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
-	</head>
+<BaseLayout>
+  <article class="article">
+    <h1 class="title">{title}</h1>
+    <!-- {
+      heroImage && (
+        <img class="hero" width={720} height={360} src={heroImage} alt="" />
+      )
+    } -->
+    <FormattedDate date={pubDate} />
 
-	<body>
-		<Header />
-		<main>
-			<article>
-				{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-				<h1 class="title">{title}</h1>
-				<FormattedDate date={pubDate} />
-				{
-					updatedDate && (
-						<div class="last-updated-on">
-							Last updated on <FormattedDate date={updatedDate} />
-						</div>
-					)
-				}
-				<hr />
-				<slot />
-			</article>
-		</main>
-		<Footer />
-	</body>
-</html>
+    <hr />
+
+    {
+      updatedDate && (
+        <div class="last-updated-on">
+          Last updated on <FormattedDate date={updatedDate} />
+        </div>
+      )
+    }
+
+    <div
+      class="prose prose-p:leading-loose w-full !max-w-full prose-headings:font-display prose-figure:text-center prose-img:mx-auto prose-h1:mb-4 prose-h2:mb-4 prose-h2:mt-6 content"
+    >
+      <slot />
+      <hr />
+      {
+        original && (
+          <div class="notice">
+            This article was originally published{" "}
+            <a
+              href={original}
+              class="no-underline"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              here
+            </a>{" "}
+            and has been republished above for convenience.
+          </div>
+        )
+      }
+    </div>
+  </article>
+</BaseLayout>
+
+<style lang="postcss">
+  .article {
+    @apply max-w-4xl mx-auto flex flex-col items-center;
+  }
+
+  hr {
+    @apply w-full border-black opacity-10 my-8 !important;
+  }
+
+  .notice {
+    @apply rounded-lg bg-gradient-to-b from-white to-[rgba(0,0,0,0.02)];
+    @apply border border-black border-opacity-10 shadow-lg p-4 text-center;
+  }
+
+  .hero {
+    @apply rounded-md;
+  }
+
+  .title {
+    @apply text-5xl font-display text-center leading-normal;
+    @apply w-full py-6;  
+  }
+  </style>
