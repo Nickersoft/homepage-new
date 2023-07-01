@@ -15,7 +15,7 @@
 
 <style lang="postcss">
   .notification {
-    @apply bg-gradient-to-b from-white to-[rgba(0,0,0,0.02)] p-4 rounded-l-xl border border-black border-opacity-10 shadow-lg;
+    @apply bg-gradient-to-b from-[rgba(255,255,255,0.75)] to-[rgba(0,0,0,0.02)] p-4 rounded-l-xl border border-black border-opacity-10 shadow-lg;
     @apply flex flex-row justify-start items-center gap-4;
 
     .text {

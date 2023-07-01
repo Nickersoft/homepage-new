@@ -3,7 +3,6 @@ title: "Your Duolingo lessons probably aren't sticking. Here's why."
 description: "Getting yourself back on track might be simpler than you think."
 pubDate: "2023-01-03"
 original: "https://www.linguistic.io/blog/duolingo"
-heroImage: "/placeholder-hero.jpg"
 ---
 
 We've all been there. You're lying in bed browsing Instagram, when all of a sudden a notification pokes its way into view from the top of your screen.
@@ -58,9 +57,6 @@ It's true. I grew up surrounded by native English speakers, so why bother learni
 
 Sadly, unlike singing, staying proficient in a language is much, _much_ harder. Depending on the language, there can be dozens of components to attaining fluency... pronunciation, grammar, spelling, listening, reading, slang, honorifics, colloquialisms, recognizing accents, knowing when and how to conjugate verbs... the list goes on. With singing, you can practice alone every night to avoid getting rusty, maybe even belt out a few of your favorite cover songs.
 
-<img src="../../../images/blog/guitar.jpeg" class="img-full">
-<figcaption>It's usually easier to find other people to sing with than it is finding a language partner.</figcaption>
-
 With languages, staying proficient is not nearly as fun.
 
 Which brings us back to Duolingo. To avoid getting rusty, apps like Duolingo push you to engage in constant review. To be perfectly honest, reviewing what you've learned is important. Relentlessly drilling you on vocabulary will ensure you remember it, at least in the short term.
@@ -70,8 +66,6 @@ However, as previously mentioned, I think we can both agree that studying like t
 ## "When will I EVER USE THIS?!?"
 
 As much as I hate to say it... this question is very much up to you to answer. The reason anyone becomes good at anything is _by doing it_. Not by studying the theory of it, but by _actually doing it_. Jimi Hendrix didn't become famous by studying music theory while never actually touching a guitar. So the real reason Duolingo's lessons aren't sticking isn't that you're dumb, or because you're lazy, but because you **don't have the very real outlet you need to apply what you've learned.**
-
----
 
 You may have already tried apps like HelloTalk or Tandem, or maybe you've booked a few 1:1 lessons with a native speaker... if you have, good for you for taking your learning seriously! If it's working for you, fantastic. Keep it up.
 

@@ -1,20 +1,21 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+
+import OpenInNew from "~icons/mdi/open-in-new";
+
 import FormattedDate from "../components/FormattedDate.astro";
 import BaseLayout from "./BaseLayout.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, original, description, pubDate, updatedDate, heroImage } =
-  Astro.props;
+const { title, original, description, pubDate, updatedDate } = Astro.props;
 ---
 
 <BaseLayout>
   <article class="article">
     <h1 class="title">{title}</h1>
+
+    <p class="description">{description}</p>
     <!-- {
       heroImage && (
         <img class="hero" width={720} height={360} src={heroImage} alt="" />
@@ -33,29 +34,40 @@ const { title, original, description, pubDate, updatedDate, heroImage } =
     }
 
     <div
-      class="prose prose-base prose-p:leading-loose w-full !max-w-full prose-headings:font-sans prose-figure:text-center prose-img:mx-auto prose-h1:mb-4 prose-h2:mb-6 prose-h2:mt-8 content"
+      class="prose prose-blockquote:font-normal prose-blockquote:text-black prose-figcaption:mt-6 prose-base prose-p:leading-loose w-full !max-w-full prose-headings:font-sans prose-figure:text-center prose-img:mx-auto content"
     >
       <slot />
       <hr />
       {
         original && (
           <div class="notice">
-            This article was originally published{" "}
+            This article was originally published on{" "}
             <a
+              class="inline-flex gap-0.5 flex-row justify-center items-center"
               href={original}
-              class="no-underline"
               target="_blank"
               rel="noreferrer noopener"
             >
-              here
+              {new URL(original).hostname}
+              <OpenInNew class="w-3 h-3" />
             </a>{" "}
-            and has been republished above for convenience.
+            and has been posted above for convenience.
           </div>
         )
       }
     </div>
   </article>
 </BaseLayout>
+
+<style lang="postcss" is:global>
+  .prose img:not(.unstyled) {
+    @apply rounded-md shadow-md border border-black border-opacity-5;
+  }
+
+  .prose .unstyled img {
+    @apply rounded-none shadow-none border-none !important;
+  }
+</style>
 
 <style lang="postcss">
   .article {
@@ -66,9 +78,13 @@ const { title, original, description, pubDate, updatedDate, heroImage } =
     @apply w-full border-black opacity-10 my-8 !important;
   }
 
+  .description {
+    @apply text-xl font-serif italic opacity-75 mb-8;
+  }
+
   .notice {
     @apply rounded-lg bg-gradient-to-b from-white to-[rgba(0,0,0,0.02)];
-    @apply border border-black border-opacity-10 shadow-lg p-4 text-center text-sm;
+    @apply border border-black border-opacity-10 shadow-md p-4 text-center text-sm;
   }
 
   .hero {
