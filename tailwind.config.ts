@@ -24,7 +24,7 @@ export default {
       red: "#F47373",
       yellow: "#F4E773",
       green: "#73F478",
-      background: "#FAF8F6",
+      background: "#1E1E1E",
       gray: {
         light: "#D6D6D6",
       },

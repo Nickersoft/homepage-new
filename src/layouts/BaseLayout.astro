@@ -12,7 +12,8 @@ import "@fontsource/fira-code/400.css";
 import "@fontsource/fira-code/500.css";
 
 import "@fontsource/inter/400.css";
-import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
 
 import "@fontsource/playfair-display/400.css";
 ---
@@ -22,7 +23,8 @@ import "@fontsource/playfair-display/400.css";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <style lang="postcss" is:global> 
       body {
-        background: url('/static.png') repeat 0 0, theme('colors.background');
+        @apply text-white;
+        background: theme('colors.background');
       }
 
       .btn-primary {
@@ -39,11 +41,9 @@ import "@fontsource/playfair-display/400.css";
       }
   </style>
   </head>
-  <body class="w-full h-full flex flex-col bg-background text-black font-sans">
-    <Header />
-    <main class="flex-grow">
+  <body class="w-full h-full flex flex-col bg-background text-white font-sans">
+    <main class="flex-grow py-16">
       <slot />
     </main>
-    <Footer />
   </body>
 </html>

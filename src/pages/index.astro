@@ -1,69 +1,67 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+import { getCollection } from "astro:content";
+
+import FormattedDate from "../components/FormattedDate.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+import Twitter from "~icons/mdi/twitter";
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 ---
 
 <BaseLayout>
-  <div class="w-full h-full flex">
-    <div class="container m-auto text-center">
-      <h1 class="text-black text-6xl font-display">Tyler Nickerson</h1>
-      <div
-        class="flex flex-row gap-8 font-serif italic items-center justify-center py-12"
-      >
-        <a href="#">Founder</a>
-        <a href="#">Designer</a>
-
-        <a href="#">Developer</a>
-      </div>
+  <div
+    class="max-w-xl m-auto font-sans leading-relaxed py-4 text-base text-left"
+  >
+    <h1 class="text-4xl -ml-1 font-sans font-bold">Tyler Nickerson</h1>
+    <div class="flex flex-row pt-8">
+      <Twitter class="opacity-50" />
     </div>
+
+    <p class="py-4 opacity-80">
+      I am a multi-diciplinary entrepreneur, designer, developer living in
+      Seattle. Originally hailing from rural Massachusetts, I've been designing
+      and building software for the past ten years.
+    </p>
+    <p class="mb-4 opacity-80">
+      Here you'll mostly find my writing, as well as where to find me elsewhere
+      on the web.
+    </p>
+    <button
+      class="bg-gradient-to-b mb-4 from-white to-[rgba(255,255,255,0.8)] text-sm text-opacity-95 px-4 py-2 text-black shadow-md rounded-md font-semibold active:scale-[0.99] transition-all duration-150 active:text-opacity-50"
+    >
+      Contact me
+    </button>
+    <hr class="opacity-10" />
+
+    <ul>
+      {
+        posts.map((post) => (
+          <li>
+            <FormattedDate date={post.data.pubDate} />
+            <a href={`/writing/${post.slug}/`}>{post.data.title}</a>
+            <p>{post.data.description}</p>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </BaseLayout>
 
 <style lang="postcss"> 
-  .shapes {
-    @apply flex flex-row gap-8 items-center justify-center py-12;
+   ul {
+    li {
+      @apply py-4 flex flex-col gap-1;
 
-    .icon {
-      --icon-blur: 4px;
-
-      @apply w-10 h-10 relative cursor-pointer;
-      
-      svg {
-        @apply transition-all duration-150;
-      }
-      
-      &:hover {
-        --icon-blur: 6px;
-
-        &:after {
-          @apply scale-100 opacity-100;
-        }
+      a {
+        @apply block; 
+        @apply text-lg font-sans font-bold mb-0 mt-1;
       }
 
-      &:before {
-        @apply absolute inset-0 opacity-10;
-        content: '';
-        background: url('/static.png') 0 0 repeat;
-      }
-
-      &:after {
-        @apply absolute scale-95 -bottom-10 opacity-0 text-white left-1/2 -translate-x-1/2 text-base transition-all duration-150;
-        @apply lowercase italic font-serif;
-        content: attr(data-name);
-      }
-
-      &.red > svg {
-        @apply text-red;
-        filter: drop-shadow(0 0 var(--icon-blur) theme('colors.red'));
-      }
-
-      &.yellow > svg {
-        @apply text-yellow;
-        filter: drop-shadow(0 0 var(--icon-blur) theme('colors.yellow'));
-      }
-
-      &.green > svg {
-        @apply text-green;
-        filter: drop-shadow(0 0 var(--icon-blur) theme('colors.green'));
+      p {
+        @apply opacity-75 text-base;
       }
     }
   }
