@@ -27,8 +27,6 @@ While design systems are most commonly associated with design teams, they don't 
 
 In this article, we'll be talking about general guidelines and steps you can follow to begin building and enforcing a design language of your own. It can be quite the rabbit hole, so we'll keep it high level and I'll provide links to additional resources you can reference as well.
 
-[![](https://storage.googleapis.com/blog-images-backup/1*GPjaPKNNUYHU8EsA3Z0JGA.png)](https://logrocket.com/signup/)
-
 ## Anatomy of a design system
 
 Before diving in, it is important to first understand the anatomy of the typical design system. Perhaps you've heard the term "atomic design" before. Atomic design is a metaphor devised by web developer Brad Frost to describe the hierarchy of components in a design system:

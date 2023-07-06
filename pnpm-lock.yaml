@@ -13,6 +13,7 @@ specifiers:
   '@fontsource/inter': ^5.0.3
   '@fontsource/playfair-display': ^5.0.3
   '@iconify-json/el': ^1.1.4
+  '@iconify-json/game-icons': ^1.1.2
   '@iconify-json/mdi': ^1.1.52
   '@iconify-json/mingcute': ^1.1.7
   '@iconify-json/solar': ^1.1.1
@@ -56,6 +57,7 @@ dependencies:
 devDependencies:
   '@astrojs/mdx': 0.19.7_astro@2.7.0
   '@iconify-json/el': 1.1.4
+  '@iconify-json/game-icons': 1.1.2
   '@iconify-json/mdi': 1.1.52
   '@iconify-json/mingcute': 1.1.7
   '@iconify-json/solar': 1.1.1
@@ -674,6 +676,12 @@ packages:
 
   /@iconify-json/el/1.1.4:
     resolution: {integrity: sha512-WETX/bWm+lPc0+lVhgL1YcovPxTpgnV+GcFHO7RKVNjzTwR8F5pfb54pqSuvyt8xXowGYAu+qWpdh7VY8TfeLA==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/game-icons/1.1.2:
+    resolution: {integrity: sha512-XZqaFmmkKRQLSx8cJDC1RVWRZ11VoBSWhbtH+unPd5dc2JE+aF/zEBKVfVMEIibFu1PEAcJSMmPe48cUtEjVwA==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true

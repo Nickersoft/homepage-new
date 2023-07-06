@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+
+import FormattedDate from "../../components/FormattedDate.astro";
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<PageLayout title="Writing">
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <FormattedDate date={post.data.pubDate} />
+          <a href={`/writing/${post.slug}/`}>{post.data.title}</a>
+          <p>{post.data.description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</PageLayout>
+
+<style lang="postcss">
+  ul {
+    li {
+      @apply py-4 flex flex-col gap-1;
+
+      a {
+        @apply block; 
+        @apply text-lg font-sans font-bold mb-0 mt-1;
+      }
+
+      p {
+        @apply opacity-75 text-base;
+      }
+    }
+  }
+</style>

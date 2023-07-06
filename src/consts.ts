@@ -13,6 +13,7 @@ export const TAGS: Record<string, string> = {
   JavaScript: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
   Go: "https://go.dev",
   Kotlin: "https://kotlinlang.org",
+  Deno: "https://deno.land",
   Tailwind: "https://tailwindcss.com",
 };
 
@@ -22,6 +23,7 @@ export const ICONS: Record<
 > = {
   microphone: import("~icons/mdi/microphone"),
   globe: import("~icons/mdi/globe"),
+  monkey: import("~icons/game-icons/gorilla"),
   terminal: import("~icons/mdi/terminal"),
   moon: import("~icons/solar/moon-bold"),
   book: import("~icons/el/book"),
