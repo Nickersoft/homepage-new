@@ -14,9 +14,11 @@ const { title, original, description, pubDate, updatedDate } = Astro.props;
 
 <BaseLayout>
   <article class="article">
-    <nav>
-      <Button title="Back" icon={Back} />
-      <span>Tyler Nickerson</span>
+    <nav class="flex w-full justify-between items-center flex-row">
+      <Button variant="secondary" title="Back" href="/" icon={Back} />
+      <span class="opacity-50 flex-grow text-center">Tyler Nickerson</span>
+
+      <Button variant="secondary" title="Back" href="/" icon={Back} />
     </nav>
 
     <h1 class="title">{title}</h1>

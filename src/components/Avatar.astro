@@ -11,7 +11,9 @@ import me from "../images/me.jpg";
     @apply rounded-full overflow-hidden w-24 h-24 mb-8 relative shadow-md;
 
     &:after {
-      @apply absolute inset-0 bg-gradient-to-br from-red to-[purple] opacity-60;
+      @apply absolute inset-0 opacity-50;
+
+      background-image: linear-gradient(to bottom right, transparent, theme('colors.green'));
       content:'';
     }
   }
