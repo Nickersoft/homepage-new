@@ -5,7 +5,8 @@ import OpenInNew from "~icons/mdi/open-in-new";
 
 import FormattedDate from "../components/FormattedDate.astro";
 import BaseLayout from "./BaseLayout.astro";
-
+import Button from "../components/Button.astro";
+import Back from "~icons/mdi/arrow-left";
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, original, description, pubDate, updatedDate } = Astro.props;
@@ -13,6 +14,11 @@ const { title, original, description, pubDate, updatedDate } = Astro.props;
 
 <BaseLayout>
   <article class="article">
+    <nav>
+      <Button title="Back" icon={Back} />
+      <span>Tyler Nickerson</span>
+    </nav>
+
     <h1 class="title">{title}</h1>
 
     <p class="description">{description}</p>
@@ -34,7 +40,7 @@ const { title, original, description, pubDate, updatedDate } = Astro.props;
     }
 
     <div
-      class="prose prose-blockquote:font-normal prose-blockquote:text-black prose-figcaption:mt-6 prose-base prose-p:leading-loose w-full !max-w-full prose-headings:font-sans prose-figure:text-center prose-img:mx-auto content"
+      class="prose prose-invert prose-blockquote:font-normal prose-blockquote:text-white prose-figcaption:mt-6 prose-base prose-p:leading-loose w-full !max-w-full prose-headings:font-sans prose-figure:text-center prose-img:mx-auto content"
     >
       <slot />
       <hr />
@@ -61,7 +67,7 @@ const { title, original, description, pubDate, updatedDate } = Astro.props;
 
 <style lang="postcss" is:global>
   .prose img:not(.unstyled) {
-    @apply rounded-md shadow-md border border-black border-opacity-5;
+    @apply rounded-md shadow-md border border-white border-opacity-5;
   }
 
   .prose .unstyled img {
@@ -71,20 +77,19 @@ const { title, original, description, pubDate, updatedDate } = Astro.props;
 
 <style lang="postcss">
   .article {
-    @apply max-w-3xl mx-auto flex flex-col items-center;
+    @apply max-w-3xl py-20 mx-auto flex flex-col items-center;
   }
 
   hr {
-    @apply w-full border-black opacity-10 my-8 !important;
+    @apply w-full border-white opacity-10 my-8 !important;
   }
 
   .description {
-    @apply text-xl font-serif italic opacity-75 mb-8;
+    @apply text-lg font-sans opacity-75 mb-8;
   }
 
   .notice {
-    @apply rounded-lg bg-gradient-to-b from-white to-[rgba(0,0,0,0.02)];
-    @apply border border-black border-opacity-10 shadow-md p-4 text-center text-sm;
+    @apply text-white text-opacity-50 p-4 text-center text-sm;
   }
 
   .hero {
@@ -92,7 +97,7 @@ const { title, original, description, pubDate, updatedDate } = Astro.props;
   }
 
   .title {
-    @apply text-4xl font-display font-bold text-center leading-normal;
+    @apply text-4xl font-sans font-bold text-center leading-normal;
     @apply w-full py-6;  
   }
   </style>

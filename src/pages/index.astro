@@ -4,37 +4,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
 import FormattedDate from "../components/FormattedDate.astro";
-import PageLayout from "../layouts/PageLayout.astro";
 import Twitter from "~icons/mdi/twitter";
+import Email from "~icons/mdi/email";
+import Introduction from "../components/Introduction.mdx";
+
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
 <BaseLayout>
-  <div
-    class="max-w-xl m-auto font-sans leading-relaxed py-4 text-base text-left"
+  <main
+    class="max-w-xl py-20 m-auto font-sans leading-relaxed text-base text-left"
   >
-    <h1 class="text-4xl -ml-1 font-sans font-bold">Tyler Nickerson</h1>
-    <div class="flex flex-row pt-8">
-      <Twitter class="opacity-50" />
-    </div>
+    <Introduction />
 
-    <p class="py-4 opacity-80">
-      I am a multi-diciplinary entrepreneur, designer, developer living in
-      Seattle. Originally hailing from rural Massachusetts, I've been designing
-      and building software for the past ten years.
-    </p>
-    <p class="mb-4 opacity-80">
-      Here you'll mostly find my writing, as well as where to find me elsewhere
-      on the web.
-    </p>
-    <button
-      class="bg-gradient-to-b mb-4 from-white to-[rgba(255,255,255,0.8)] text-sm text-opacity-95 px-4 py-2 text-black shadow-md rounded-md font-semibold active:scale-[0.99] transition-all duration-150 active:text-opacity-50"
+    <h2
+      class="font-bold text-2xl border-b border-white border-opacity-10 py-4 mb-4"
     >
-      Contact me
-    </button>
-    <hr class="opacity-10" />
+      Writing
+    </h2>
 
     <ul>
       {
@@ -47,17 +36,44 @@ const posts = (await getCollection("blog")).sort(
         ))
       }
     </ul>
-  </div>
+  </main>
 </BaseLayout>
 
+<style lang="postcss" is:global> 
+  main {
+    h1 {
+      @apply text-4xl -ml-1 font-sans font-bold;
+    }
+
+    p {
+      @apply mb-4 block text-opacity-80 text-white leading-relaxed;
+
+      & > a {
+        @apply text-opacity-100 text-white border-dashed border-b border-white transition-all duration-150;
+        @apply pb-0.5 active:text-opacity-80;
+      }
+    }
+
+    .social p {
+      @apply flex flex-row gap-4 pt-6 pb-2 text-xl;
+
+      a {
+        @apply block border-none p-0 opacity-50 hover:opacity-90;
+      }
+    }
+  }
+</style>
+
 <style lang="postcss"> 
+
+
    ul {
     li {
       @apply py-4 flex flex-col gap-1;
 
       a {
         @apply block; 
-        @apply text-lg font-sans font-bold mb-0 mt-1;
+        @apply text-lg font-sans font-semibold mb-0 mt-1;
       }
 
       p {

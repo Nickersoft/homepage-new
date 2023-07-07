@@ -1,0 +1,19 @@
+---
+export interface Props {
+  title: string;
+  icon: astroHTML.JSX.Element;
+}
+
+const { title, icon: Icon } = Astro.props;
+---
+
+<a class="btn">
+  <Icon />
+  {title}
+</a>
+
+<style lang="postcss"> 
+  .btn {
+    @apply inline-flex gap-2 flex-row items-center bg-white bg-opacity-10 mb-4 text-sm px-4 py-2 text-white cursor-pointer active:scale-[0.99] rounded-lg font-semibold transition-all duration-150 active:opacity-50 mt-2;
+  }
+</style>

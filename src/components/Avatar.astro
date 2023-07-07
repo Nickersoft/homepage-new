@@ -1,0 +1,18 @@
+---
+import me from "../images/me.jpg";
+---
+
+<div class="img">
+  <img src={me} alt="Selfie" class="grayscale w-full h-full object-fit" />
+</div>
+
+<style lang="postcss"> 
+  .img {
+    @apply rounded-full overflow-hidden w-24 h-24 mb-8 relative shadow-md;
+
+    &:after {
+      @apply absolute inset-0 bg-gradient-to-br from-red to-[purple] opacity-60;
+      content:'';
+    }
+  }
+</style>

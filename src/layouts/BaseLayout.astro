@@ -42,8 +42,10 @@ import "@fontsource/playfair-display/400.css";
   </style>
   </head>
   <body class="w-full h-full flex flex-col bg-background text-white font-sans">
-    <main class="flex-grow py-16">
-      <slot />
-    </main>
+    <slot />
+
+    <footer class="text-xs opacity-50 text-center py-8">
+      Copyright {new Date().getFullYear()} Tyler Nickerson
+    </footer>
   </body>
 </html>
