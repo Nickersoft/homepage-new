@@ -12,15 +12,11 @@ const posts = (await getCollection("blog")).sort(
 
 <h2>Projects</h2>
 
-<ul class="flex flex-col gap-8">
+<ul class="grid grid-cols-2 gap-8">
   <div class="flex flex-row gap-4 items-center justify-start">
-    <div
-      class="rounded-lg bg-gradient-to-br w-12 h-12 text-lg flex justify-center items-center"
-    >
-      <Notification class="drop-shadow-lg" />
-    </div>
-    <div class="flex flex-col gap-1">
-      <h3 class="text-lg">Push.js</h3>
+   
+    <div class="flex flex-col gap-1 bg-gradient-to-br from-red to-yellow p-4 rounded-xl">
+      <h3 class="text-lg">   <Notification class="inline text-sm" /> Push.js</h3>
       <p class="m-0 text-sm">
         The world's most advanced notification framework
       </p>
