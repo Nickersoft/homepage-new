@@ -1,7 +1,0 @@
----
-import { getCollection } from "astro:content";
-
-const docs = await getCollection("code");
-
-return Astro.redirect(`/code/${docs[0].slug}`);
----

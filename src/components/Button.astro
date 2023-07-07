@@ -1,0 +1,55 @@
+---
+export interface Props {
+  title: string;
+  icon: astroHTML.JSX.Element;
+  variant?: "primary" | "secondary";
+  href: string;
+  iconPlacement?: "before" | "after";
+}
+
+const {
+  href,
+  title,
+  icon: Icon,
+  variant = "primary",
+  iconPlacement = "before",
+} = Astro.props;
+---
+
+<a
+  class="btn"
+  class:list={[
+    {
+      "btn-primary": variant === "primary",
+      "btn-secondary": variant === "secondary",
+      "flex-row-reverse": iconPlacement === "after",
+    },
+  ]}
+  href={href}
+>
+  <Icon />
+  {title}
+</a>
+
+<style lang="postcss"> 
+  .btn {
+    @apply inline-flex gap-2 flex-row items-center text-sm px-4 py-2 rounded-lg;
+    @apply active:scale-[0.99] transition-all duration-150 active:opacity-50 cursor-pointer;
+    
+    &-secondary {
+      @apply text-white text-opacity-75;
+
+      &:active {
+        @apply scale-[0.99] opacity-50;
+      }
+
+      &:hover {
+        @apply bg-white bg-opacity-5 text-opacity-90;
+      }
+    }
+
+    &-primary {
+      @apply bg-white bg-opacity-10 text-white cursor-pointer font-semibold;
+    }
+  }
+</style>

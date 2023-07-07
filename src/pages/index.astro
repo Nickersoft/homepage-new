@@ -1,74 +1,54 @@
 ---
-import Icon from "astro-iconify";
-
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+import { getCollection } from "astro:content";
+
+import FormattedDate from "../components/FormattedDate.astro";
+import Twitter from "~icons/mdi/twitter";
+import Email from "~icons/mdi/email";
+import Introduction from "../components/Introduction.mdx";
+import Writing from "../components/Writing.astro";
+import Projects from "../components/Projects.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 ---
 
 <BaseLayout>
-  <div class="w-full h-full flex">
-    <div class="container m-auto text-center">
-      <h1 class="text-white text-5xl font-display">Tyler Nickerson</h1>
-      <div class="shapes">
-        <div class="icon red" data-name="Founder">
-          <Icon name="square" pack="mdi" />
-        </div>
-        <div class="icon yellow" data-name="Designer">
-          <Icon name="triangle" pack="mdi" />
-        </div>
-        <div class="icon green" data-name="Developer">
-          <Icon name="circle" pack="mdi" />
-        </div>
-      </div>
-    </div>
-  </div>
+  <main
+    class="max-w-3xl py-20 m-auto flex flex-col gap-8 font-sans leading-relaxed text-base text-left"
+  >
+    <Introduction />
+    <Writing />
+    <Projects />
+  </main>
 </BaseLayout>
 
-<style lang="postcss"> 
-  .shapes {
-    @apply flex flex-row gap-8 items-center justify-center py-12;
+<style lang="postcss" is:global> 
+  main {
+    h1 {
+      @apply text-4xl -ml-1 font-sans font-bold;
+    }
 
-    .icon {
-      --icon-blur: 4px;
+    h2 {
+      @apply font-bold text-2xl border-b border-white border-opacity-10 py-4 mb-4;
+    }
 
-      @apply w-10 h-10 relative cursor-pointer;
-      
-      svg {
-        @apply transition-all duration-150;
+    p {
+      @apply mb-4 block text-opacity-80 text-white leading-relaxed;
+
+      & > a {
+        @apply text-opacity-100 text-white border-dashed border-b border-white transition-all duration-150;
+        @apply pb-0.5 active:text-opacity-80;
       }
-      
-      &:hover {
-        --icon-blur: 6px;
+    }
 
-        &:after {
-          @apply scale-100 opacity-100;
-        }
-      }
+    .social p {
+      @apply flex flex-row gap-4 pt-8 pb-4 text-lg;
 
-      &:before {
-        @apply absolute inset-0 opacity-10;
-        content: '';
-        background: url('/static.png') 0 0 repeat;
-      }
-
-      &:after {
-        @apply absolute scale-95 -bottom-10 opacity-0 text-white left-1/2 -translate-x-1/2 text-base transition-all duration-150;
-        @apply lowercase italic font-serif;
-        content: attr(data-name);
-      }
-
-      &.red > svg {
-        @apply text-red;
-        filter: drop-shadow(0 0 var(--icon-blur) theme('colors.red'));
-      }
-
-      &.yellow > svg {
-        @apply text-yellow;
-        filter: drop-shadow(0 0 var(--icon-blur) theme('colors.yellow'));
-      }
-
-      &.green > svg {
-        @apply text-green;
-        filter: drop-shadow(0 0 var(--icon-blur) theme('colors.green'));
+      a {
+        @apply block border-none p-0 opacity-50 hover:opacity-90;
       }
     }
   }

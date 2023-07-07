@@ -1,51 +1,106 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
+import type { CollectionEntry } from "astro:content";
 
-type Props = CollectionEntry<'blog'>['data'];
+import OpenInNew from "~icons/mdi/open-in-new";
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+import FormattedDate from "../components/FormattedDate.astro";
+import BaseLayout from "./BaseLayout.astro";
+import Button from "../components/Button.astro";
+import Back from "~icons/mdi/arrow-left";
+import Tweet from "~icons/mdi/twitter";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, original, description, pubDate, updatedDate } = Astro.props;
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			.title {
-				font-size: 2em;
-				margin: 0.25em 0 0;
-			}
-			hr {
-				border-top: 1px solid #ddd;
-				margin: 1rem 0;
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
-	</head>
+<BaseLayout>
+  <article class="article">
+    <nav class="mb-8 flex w-full justify-between items-center flex-row">
+      <Button variant="secondary" title="Back" href="/" icon={Back} />
+      <span class="opacity-50 flex-grow text-center">Tyler Nickerson</span>
+      <Button variant="secondary" title="Share" href="/" icon={Tweet} />
+    </nav>
 
-	<body>
-		<Header />
-		<main>
-			<article>
-				{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-				<h1 class="title">{title}</h1>
-				<FormattedDate date={pubDate} />
-				{
-					updatedDate && (
-						<div class="last-updated-on">
-							Last updated on <FormattedDate date={updatedDate} />
-						</div>
-					)
-				}
-				<hr />
-				<slot />
-			</article>
-		</main>
-		<Footer />
-	</body>
-</html>
+    <h1 class="title">{title}</h1>
+
+    <p class="description">{description}</p>
+    <!-- {
+      heroImage && (
+        <img class="hero" width={720} height={360} src={heroImage} alt="" />
+      )
+    } -->
+    <FormattedDate date={pubDate} />
+
+    <hr />
+
+    {
+      updatedDate && (
+        <div class="last-updated-on">
+          Last updated on <FormattedDate date={updatedDate} />
+        </div>
+      )
+    }
+
+    <div
+      class="prose prose-invert prose-blockquote:font-normal prose-blockquote:text-white prose-figcaption:mt-6 prose-base prose-p:leading-loose w-full !max-w-full prose-headings:font-sans prose-figure:text-center prose-img:mx-auto content"
+    >
+      <slot />
+      <hr />
+      {
+        original && (
+          <div class="notice">
+            This article was originally published on{" "}
+            <a
+              class="inline-flex gap-0.5 flex-row justify-center items-center"
+              href={original}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              {new URL(original).hostname}
+              <OpenInNew class="w-3 h-3" />
+            </a>{" "}
+            and has been posted above for convenience.
+          </div>
+        )
+      }
+    </div>
+  </article>
+</BaseLayout>
+
+<style lang="postcss" is:global>
+  .prose img:not(.unstyled) {
+    @apply rounded-md shadow-md border border-white border-opacity-5;
+  }
+
+  .prose .unstyled img {
+    @apply rounded-none shadow-none border-none !important;
+  }
+</style>
+
+<style lang="postcss">
+  .article {
+    @apply max-w-3xl py-20 mx-auto flex flex-col items-center;
+  }
+
+  hr {
+    @apply w-full border-white opacity-10 my-8 !important;
+  }
+
+  .description {
+    @apply text-lg font-sans opacity-75 mb-8;
+  }
+
+  .notice {
+    @apply text-white text-opacity-50 text-center text-sm;
+  }
+
+  .hero {
+    @apply rounded-md;
+  }
+
+  .title {
+    @apply text-4xl font-sans font-bold text-center leading-normal;
+    @apply w-full py-2;  
+  }
+  </style>
