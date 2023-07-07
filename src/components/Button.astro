@@ -4,9 +4,16 @@ export interface Props {
   icon: astroHTML.JSX.Element;
   variant?: "primary" | "secondary";
   href: string;
+  iconPlacement?: "before" | "after";
 }
 
-const { href, title, icon: Icon, variant = "primary" } = Astro.props;
+const {
+  href,
+  title,
+  icon: Icon,
+  variant = "primary",
+  iconPlacement = "before",
+} = Astro.props;
 ---
 
 <a
@@ -15,6 +22,7 @@ const { href, title, icon: Icon, variant = "primary" } = Astro.props;
     {
       "btn-primary": variant === "primary",
       "btn-secondary": variant === "secondary",
+      "flex-row-reverse": iconPlacement === "after",
     },
   ]}
   href={href}
@@ -41,7 +49,7 @@ const { href, title, icon: Icon, variant = "primary" } = Astro.props;
     }
 
     &-primary {
-      @apply bg-white mb-4 bg-opacity-10 text-white cursor-pointer font-semibold mt-2;
+      @apply bg-white bg-opacity-10 text-white cursor-pointer font-semibold;
     }
   }
 </style>

@@ -8,10 +8,7 @@ specifiers:
   '@astrojs/svelte': ^3.0.0
   '@astrojs/tailwind': ^4.0.0
   '@astrojs/vercel': ^3.5.0
-  '@fontsource/baskervville': ^5.0.3
-  '@fontsource/fira-code': ^5.0.3
   '@fontsource/inter': ^5.0.3
-  '@fontsource/playfair-display': ^5.0.3
   '@iconify-json/el': ^1.1.4
   '@iconify-json/game-icons': ^1.1.2
   '@iconify-json/mdi': ^1.1.52
@@ -19,7 +16,6 @@ specifiers:
   '@iconify-json/solar': ^1.1.1
   '@microflash/remark-figure-caption': ^1.0.0
   '@tailwindcss/typography': ^0.5.9
-  add: ^2.0.6
   astro: ^2.7.0
   autoprefixer: ^10.4.14
   postcss: ^8.4.24
@@ -40,11 +36,7 @@ dependencies:
   '@astrojs/svelte': 3.0.0_zpgxwr5lzfkriigleqzruiol2i
   '@astrojs/tailwind': 4.0.0_kiug2u77jwejiah4khm3kj2a5y
   '@astrojs/vercel': 3.5.0_astro@2.7.0+react@18.2.0
-  '@fontsource/baskervville': 5.0.3
-  '@fontsource/fira-code': 5.0.3
   '@fontsource/inter': 5.0.3
-  '@fontsource/playfair-display': 5.0.3
-  add: 2.0.6
   astro: 2.7.0
   radash: 10.9.0
   react: 18.2.0
@@ -658,20 +650,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@fontsource/baskervville/5.0.3:
-    resolution: {integrity: sha512-M/SWPi1WNd4vAKpKJrX+kUgiKeda1tZO0Bu6W2jtDl4zh0TZGNYG8UQrgxiF+SfS/XsDEv/W2b56LtpF3qe65w==}
-    dev: false
-
-  /@fontsource/fira-code/5.0.3:
-    resolution: {integrity: sha512-csSax2QNXYUzUc2UaIv08WfMwFOcWJWlqn5EkA5+hcnM9Kp0VhfFLEcJBEvhWHTZT7ySMvj7oePWSSWiVF3n1g==}
-    dev: false
-
   /@fontsource/inter/5.0.3:
     resolution: {integrity: sha512-JJvh5xht71F6e0E5r2+Ffu8g+CYAxMvnGJm9ZMg5IIjy8UwxLp+8C99TgPJupdEyBpEJv0wuMG2Rd183z/bV8g==}
-    dev: false
-
-  /@fontsource/playfair-display/5.0.3:
-    resolution: {integrity: sha512-3qoi899hTgHwoo1lr+BBocrdt7SCVCPlQHPv0lCv6PaC7LkR/ck3nGEypZfFpDmSFOvfHWbA4/22BXObKsVVyQ==}
     dev: false
 
   /@iconify-json/el/1.1.4:
@@ -1046,10 +1026,6 @@ packages:
     resolution: {integrity: sha512-jaVNAFBHNLXspO543WnNNPZFRtavh3skAkITqD0/2aeMkKZTN+254PyhwxFYrk3vQ1xfY+2wbesJMs/JC8/PwQ==}
     engines: {node: '>=0.4.0'}
     hasBin: true
-
-  /add/2.0.6:
-    resolution: {integrity: sha512-j5QzrmsokwWWp6kUcJQySpbG+xfOBqqKnup3OIk1pz+kB/80SLorZ9V8zHFLO92Lcd+hbvq8bT+zOGoPkmBV0Q==}
-    dev: false
 
   /agent-base/6.0.2:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}

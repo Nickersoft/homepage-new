@@ -1,0 +1,59 @@
+---
+import { getCollection } from "astro:content";
+
+import FormattedDate from "./FormattedDate.astro";
+import Notification from "~icons/mingcute/notification-fill";
+import Monkey from "~icons/game-icons/gorilla";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<h2>Projects</h2>
+
+<ul class="flex flex-col gap-8">
+  <div class="flex flex-row gap-4 items-center justify-start">
+    <div
+      class="rounded-lg bg-gradient-to-br w-12 h-12 text-lg flex justify-center items-center"
+    >
+      <Notification class="drop-shadow-lg" />
+    </div>
+    <div class="flex flex-col gap-1">
+      <h3 class="text-lg">Push.js</h3>
+      <p class="m-0 text-sm">
+        The world's most advanced notification framework
+      </p>
+    </div>
+  </div>
+  <div class="flex flex-row gap-4 items-center justify-start">
+    <div
+      class="rounded-lg bg-gradient-to-br w-12 h-12 text-lg flex justify-center items-center"
+    >
+      <Monkey class="drop-shadow-lg" />
+    </div>
+    <div class="flex flex-col gap-1">
+      <h3 class="text-lg">Push.js</h3>
+      <p class="m-0 text-sm">
+        The world's most advanced notification framework
+      </p>
+    </div>
+  </div>
+</ul>
+
+<style lang="postcss"> 
+  a {
+    @apply block; 
+    @apply text-lg font-sans font-normal mb-0 mt-1 py-4 rounded-lg px-4 flex flex-col gap-2;
+    @apply transition-all duration-75;
+    @apply -mx-4;
+
+    &:hover {
+      @apply bg-white bg-opacity-[0.03];
+    }
+
+    &:active {
+      @apply opacity-50;
+    }
+  }     
+</style>

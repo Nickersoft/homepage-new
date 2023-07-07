@@ -7,6 +7,8 @@ import FormattedDate from "../components/FormattedDate.astro";
 import Twitter from "~icons/mdi/twitter";
 import Email from "~icons/mdi/email";
 import Introduction from "../components/Introduction.mdx";
+import Writing from "../components/Writing.astro";
+import Projects from "../components/Projects.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -19,23 +21,7 @@ const posts = (await getCollection("blog")).sort(
   >
     <Introduction />
 
-    <h2
-      class="font-bold text-2xl border-b border-white border-opacity-10 py-4 mb-4"
-    >
-      Writing
-    </h2>
-
-    <ul>
-      {
-        posts.map((post) => (
-          <li>
-            <FormattedDate date={post.data.pubDate} />
-            <a href={`/writing/${post.slug}/`}>{post.data.title}</a>
-            <p>{post.data.description}</p>
-          </li>
-        ))
-      }
-    </ul>
+    <Writing />
   </main>
 </BaseLayout>
 
@@ -43,6 +29,10 @@ const posts = (await getCollection("blog")).sort(
   main {
     h1 {
       @apply text-4xl -ml-1 font-sans font-bold;
+    }
+
+    h2 {
+      @apply font-bold text-2xl border-b border-white border-opacity-10 py-4 mb-4;
     }
 
     p {
@@ -55,29 +45,10 @@ const posts = (await getCollection("blog")).sort(
     }
 
     .social p {
-      @apply flex flex-row gap-4 pt-6 pb-2 text-xl;
+      @apply flex flex-row gap-4 pt-8 pb-4 text-lg;
 
       a {
         @apply block border-none p-0 opacity-50 hover:opacity-90;
-      }
-    }
-  }
-</style>
-
-<style lang="postcss"> 
-
-
-   ul {
-    li {
-      @apply py-4 flex flex-col gap-1;
-
-      a {
-        @apply block; 
-        @apply text-lg font-sans font-semibold mb-0 mt-1;
-      }
-
-      p {
-        @apply opacity-75 text-base;
       }
     }
   }

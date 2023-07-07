@@ -1,29 +1,36 @@
 import Twitter from "~icons/mdi/twitter";
 import Email from "~icons/mdi/email";
+import LinkedIn from "~icons/mdi/linkedin";
+import Layers from "~icons/mdi/layers";
+import GitHub from "~icons/mdi/github";
+import OpenInNew from "~icons/mdi/open-in-new";
 
-import Avatar from './Avatar.astro';
-import Button from './Button.astro';
+import Avatar from "./Avatar.astro";
+import Button from "./Button.astro";
 
 <div class="mb-8">
 
-  <Avatar />
-  
-  # Tyler Nickerson
+<Avatar />
 
-  <div class="social">
-    [<Twitter />](https://twitter.com/tylernickerson)
-    [<Twitter />](https://twitter.com/tylernickerson)
-    [<Twitter />](https://twitter.com/tylernickerson)
-    [<Twitter />](https://twitter.com/tylernickerson)
+# Tyler Nickerson
+
+<div class="social">
+  [<Twitter />
+  ](https://twitter.com/tylernickerson) [<LinkedIn />
+  ](https://linkedin.com/in/tylernickerson) [<Layers />
+  ](https://layers.to/tylernickerson) [<GitHub />
+  ](https://github.com/nickersoft)
+</div>
+
+Hi there! 👋🏻 I'm Tyler, a founder, designer, and developer living in Seattle.
+
+I'm currently the co-founder of [Linguistic](https://linguistic.io), an AI-powered platform for digital language learning and immersion. I also started [The Open Dictionary Project](https://odict.org), an open file format for lexical data.
+
+Here you'll mostly find my writing, as well as where to find me elsewhere on
+the web.
+
+  <div class="flex my-8 flex-row items-center gap-2"> 
+    <Button href="mailto:tyler@linguistic.io" title="Message me" icon={Email} />
+    <Button href="https://read.cv/tnick" variant="secondary" iconPlacement="after" title="Read my resume" icon={OpenInNew} />
   </div>
-
-  Hi there! 👋🏻 I'm Tyler, a founder, designer, and developer living in Seattle. 
-  
-  I'm currently the co-founder of [Linguistic](https://linguistic.io), an AI-powered platform for digital language learning and immersion.
-  Before that, I built software at a bunch of companies like Baseten and Coursera.
-  
-  Here you'll mostly find my writing, as well as where to find me elsewhere on
-  the web.
-
-  <Button title="Message me" icon={Email} />
 </div>

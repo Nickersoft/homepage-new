@@ -14,10 +14,9 @@ const { title, original, description, pubDate, updatedDate } = Astro.props;
 
 <BaseLayout>
   <article class="article">
-    <nav class="flex w-full justify-between items-center flex-row">
+    <nav class="mb-8 flex w-full justify-between items-center flex-row">
       <Button variant="secondary" title="Back" href="/" icon={Back} />
       <span class="opacity-50 flex-grow text-center">Tyler Nickerson</span>
-
       <Button variant="secondary" title="Back" href="/" icon={Back} />
     </nav>
 
@@ -100,6 +99,6 @@ const { title, original, description, pubDate, updatedDate } = Astro.props;
 
   .title {
     @apply text-4xl font-sans font-bold text-center leading-normal;
-    @apply w-full py-6;  
+    @apply w-full py-2;  
   }
   </style>
