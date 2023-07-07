@@ -10,17 +10,21 @@ const posts = (await getCollection("blog")).sort(
 );
 ---
 
+<div> 
+
 <h2>Projects</h2>
 
 <ul class="grid grid-cols-2 gap-8">
   <div class="flex flex-row gap-4 items-center justify-start">
    
-    <div class="flex flex-col gap-1 bg-gradient-to-br from-red to-yellow p-4 rounded-xl">
-      <h3 class="text-lg">   <Notification class="inline text-sm" /> Push.js</h3>
-      <p class="m-0 text-sm">
-        The world's most advanced notification framework
-      </p>
-    </div>
+    <a href="#" class="block m-0 bg-gradient-to-br active:opacity-50 transition-all duration-150 from-red to-yellow p-[1px] rounded-xl">
+      <div class="bg-background p-4 rounded-xl"> 
+        <h3 class="text-lg mb-1">   <Notification class="inline text-sm mr-1" /> Push.js</h3>
+        <p class="m-0 text-sm">
+          The world's most advanced notification framework
+        </p>
+      </div>
+    </a>
   </div>
   <div class="flex flex-row gap-4 items-center justify-start">
     <div
@@ -36,6 +40,7 @@ const posts = (await getCollection("blog")).sort(
     </div>
   </div>
 </ul>
+</div>
 
 <style lang="postcss"> 
   a {

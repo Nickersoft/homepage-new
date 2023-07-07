@@ -8,20 +8,21 @@ const posts = (await getCollection("blog")).sort(
 );
 ---
 
-<h2>Recent Thoughts</h2>
-
-<ul>
-  {
-    posts.map((post) => (
-      <li>
-        <a href={`/blog/${post.slug}/`}>
-          <FormattedDate date={post.data.pubDate} />
-          {post.data.title}
-        </a>
-      </li>
-    ))
-  }
-</ul>
+<div>
+  <h2>Recent Thoughts</h2>
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <a href={`/blog/${post.slug}/`}>
+            <FormattedDate date={post.data.pubDate} />
+            {post.data.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
 
 <style lang="postcss"> 
   a {

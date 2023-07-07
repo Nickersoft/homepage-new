@@ -17,11 +17,11 @@ const posts = (await getCollection("blog")).sort(
 
 <BaseLayout>
   <main
-    class="max-w-3xl py-20 m-auto font-sans leading-relaxed text-base text-left"
+    class="max-w-3xl py-20 m-auto flex flex-col gap-8 font-sans leading-relaxed text-base text-left"
   >
     <Introduction />
-    <Projects />
     <Writing />
+    <Projects />
   </main>
 </BaseLayout>
 
