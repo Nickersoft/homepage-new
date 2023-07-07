@@ -8,6 +8,8 @@ heroImage: "/placeholder-hero.jpg"
 
 Whether you’re building a product, a tool, a website, a service, or a startup: first impressions are everything. Users inherently gravitate towards products they can trust, products that feel legitimate and provide a sense of security. A website that looks like it was designed by a child always make users feel safe and sound. Even if your product is great, no one will use it if it looks like you don’t know what your doing.
 
+
+
 Yet, as a developer, design can often feel like an uphill battle. Your number one goal is to ensure the software you’re building works, and that it works well. Most developers give little or no thought to the visual design of their work, and for most developers that’s okay.
 
 But if you’re a frontend developer, design should be at the heart of everything you do. Not only do you need to implement the designs of others, but you really should be able to handle designing your own project.
@@ -34,7 +36,7 @@ Skeuomorphism is a design principle where shadows, gradients, and textures are u
 
 But first let’s get you grounded in the relevant design principles.
 
-![The iOS 6 Find My Friends app (2011) heavily utilized skeuomorphic design, as well as the majority of Apple’s products at the time.](/blog/designing-as-a-developer/fmf.png)
+![The iOS 6 Find My Friends app (2011) heavily utilized skeuomorphic design, as well as the majority of Apple’s products at the time.](../../assets/fmf.png)
 
 Much of this may have been attributed to Apple’s own interpretation of modern design language, as their 2011 User Interface Guidelines specify:
 
@@ -42,13 +44,13 @@ Much of this may have been attributed to Apple’s own interpretation of modern 
 
 Yet by 2012, a slow migration had begun towards a much flatter design system. Driven by the emergence of design languages like [Metro UI](https://en.wikipedia.org/wiki/Metro_%28design_language%29) and [Material Design](https://en.wikipedia.org/wiki/Material_Design), flat design introduced softer and more uniform color palettes, thinner typefaces, and the use of shadows as tools of systematic hierarchy as opposed to the reinforcement of hyper-realism (referred to by Google as [“Elevation Hierarchy”](https://material.io/design/environment/elevation.html#elevation-hierarchy)).
 
-![iOS Calculator: 2011 (skeuomorphic) vs. 2013 (flat)](/blog/designing-as-a-developer/calculator.png)
+![iOS Calculator: 2011 (skeuomorphic) vs. 2013 (flat)](../../assets/calculator.png)
 
 Alright, so what’s semi-skeuomorphism? Semiskeu is a design principle that combines the colorful gradients and use of shadows found in skeuomorphic design with many of the principles found in flat design.
 
 You’re likely pretty familiar with this one too, as it’s pretty much everywhere. A great example of semiskeu in action is the [Stripe homepage](https://stripe.com):
 
-![](/blog/designing-as-a-developer/stripe.png)
+![](../../assets/stripe.png)
 
 What do you notice?
 
@@ -78,15 +80,15 @@ Choose your color palette carefully.
 4. **Never use absolute blacks.** Pure, opaque black (#000) is often too harsh for most webpages. Even this article has its font color set to an opacity of 84%.
 5. **Ensure colored components do not border each other.** Unless the colors are very strong compliments of one another, often times the contrast of two neighboring colors can create a sense of polarization and division that breaks the flow of your page. If a navigation bar might touch a colored hero, opt for a transparent navbar background instead.
 
-![](/blog/designing-as-a-developer/edart1.png)
+![](../../assets/edart1.png)
 
-![](/blog/designing-as-a-developer/edart2.png)
+![](../../assets/edart2.png)
 
-![The first production website I ever wrote (2013) looked like Windows XP threw up on a page. Its biggest design fault was its use of too many primary colors. Meanwhile, the project’s redesign (early 2014) overused a singular primary color far too much, which was equally as toxic. Your website should contain one or two primary colors, and utilize a grayscale background for all body content. By third redesign (late 2014), I had learned my lesson.](/blog/designing-as-a-developer/edart3.png)
+![The first production website I ever wrote (2013) looked like Windows XP threw up on a page. Its biggest design fault was its use of too many primary colors. Meanwhile, the project’s redesign (early 2014) overused a singular primary color far too much, which was equally as toxic. Your website should contain one or two primary colors, and utilize a grayscale background for all body content. By third redesign (late 2014), I had learned my lesson.](../../assets/edart3.png)
 
 ### Example
 
-![](/blog/designing-as-a-developer/example.png)
+![](../../assets/example.png)
 
 Using only these five simple rules, we can drastically transform this black-and-blue webpage into a much more aesthetically appealing site:
 
@@ -108,7 +110,7 @@ While color serves many purposes, it can also be used to imply light through the
 
 Where do you think the light source is?
 
-![](/blog/designing-as-a-developer/stripe-spiral.png)
+![](../../assets/stripe-spiral.png)
 
 Here’s a hint: Stripe uses a radial light source. The light appears directly above the elements, which explains the low offset of the drop-shadow and the concentrated light green in the background gradient.
 
@@ -120,13 +122,13 @@ Here’s a hint: Stripe uses a radial light source. The light appears directly a
 4. **Always keep the opacity of shadows to under 25%.** Err on the side of subtlety so not to detract from your design. If you are using a dark background, in some cases you may need to bump up the opacity of your shadow in order to ensure its visibility.
 5. **Shadows don’t always need to be black.** When using shadows on colored surfaces, it is often advantageous to use a very dark or dulled variant of the background color to improve the shadow’s blend.
 
-![In most cases, a simple monochromatic gradient can be used to create light. However, complementary colors, such as purple and pink, can work just as well. <a  href="http://udacity.com" target="_blank" rel="noreferrer noopener">Udacity</a> uses the approach in many of their accent components.](/blog/designing-as-a-developer/udacity.png)
+![In most cases, a simple monochromatic gradient can be used to create light. However, complementary colors, such as purple and pink, can work just as well. Udacity uses the approach in many of their accent components.](../../assets/udacity.png)
 
 ### Example
 
 Now let’s put these rules to use. Here we add dimension to two sets of flat name cards. The primary cards utilize a monotone gradient to imply and illustrate light, while the accented cards use complementary colors to add an accent to the card’s heading:
 
-![](/blog/designing-as-a-developer/hierarchy.png)
+![](../../assets/shadows.png)
 
 How do they use our rules of thumb?
 
@@ -138,7 +140,7 @@ How do they use our rules of thumb?
 
 <div class="unstyled">
 
-![Always keep the angle of your light consistent. Notice how the gradient and flat shadow follow the same angle.](/blog/designing-as-a-developer/angles.png)
+![Always keep the angle of your light consistent. Notice how the gradient and flat shadow follow the same angle.](../../assets/angles.png)
 
 </div>
 
@@ -154,8 +156,8 @@ How do they use our rules of thumb?
 You may have found yourself digging the font used in the above cards. This font is called Circular, and it is one of the most common fonts used by companies today. In fact, it’s the official font of both Spotify and Airbnb:
 
 <div class="flex w-full flex-row justify-between overflow-hidden">
-  <img class="unstyled w-1/3" src="/blog/designing-as-a-developer/spotify.png" />
-  <img class="unstyled w-1/3" src="/blog/designing-as-a-developer/airbnb.png" />
+  <img class="unstyled w-1/3" src="../../assets/spotify.png" />
+  <img class="unstyled w-1/3" src="../../assets/airbnb.png" />
 </div>
 
 The Circular font stems from a [sans-serif](https://en.wikipedia.org/wiki/Sans-serif) font family called geometric sans. Geo-sans features clean geometric shapes and offers modernist flair, making it one of the most popular font families among modern designers. You can never go wrong using a geo-sans font on your webpage. Among the most popular are:
@@ -174,7 +176,7 @@ The Circular font stems from a [sans-serif](https://en.wikipedia.org/wiki/Sans-s
 
 ### Example
 
-![](/blog/designing-as-a-developer/blog.png)
+![](../../assets/blog.png)
 
 Using these four rules, we can convert the above mess of text into a structured article:
 
@@ -198,6 +200,6 @@ There are additional considerations when choosing fonts as well, like not using 
 
 ## What’s Next
 
-Hopefully this guide has given a bit of insight as to the direction you should pursue when designing and implementing your frontend platforms in 2018. There’s so much more to talk about, but I promised myself I wouldn’t write a book here. Feel free to follow my [personal blog](https://tylernickerson.com/writing) for more design and frontend-related topics or check out the [guidelines I’m developing](https://github.com/Nickersoft/design) in order to put all these design rules on paper.
+Hopefully this guide has given a bit of insight as to the direction you should pursue when designing and implementing your frontend platforms in 2018. There’s so much more to talk about, but I promised myself I wouldn’t write a book here. Feel free to follow my [personal blog](https://tylernickerson.com/blog) for more design and frontend-related topics or check out the [guidelines I’m developing](https://github.com/Nickersoft/design) in order to put all these design rules on paper.
 
 Happy designing and developing!

@@ -1,0 +1,10 @@
+{
+  "showInlineTitle": false,
+  "attachmentFolderPath": "images",
+  "showUnsupportedFiles": false,
+  "userIgnoreFilters": [
+    "pages/",
+    "components/",
+    "layouts/"
+  ]
+}

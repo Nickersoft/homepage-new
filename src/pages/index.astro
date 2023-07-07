@@ -1,18 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import { getCollection } from "astro:content";
-
-import FormattedDate from "../components/FormattedDate.astro";
-import Twitter from "~icons/mdi/twitter";
-import Email from "~icons/mdi/email";
 import Introduction from "../components/Introduction.mdx";
 import Writing from "../components/Writing.astro";
-import Projects from "../components/Projects.astro";
-
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+import Projects from "../components/Projects.astro"; 
 ---
 
 <BaseLayout>
