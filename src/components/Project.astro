@@ -1,8 +1,6 @@
 ---
 import uniqolor from 'uniqolor';
 
-const { random } = uniqolor;
-
 export interface Props {
   icon: astroHTML.JSX.Element;
   title: string;
@@ -12,11 +10,11 @@ export interface Props {
 
 const { icon: Icon, title, tagline, href } = Astro.props;
 
-const startColor = random().color;
-const endColor = random().color;
+const startColor = uniqolor(Buffer.from(title).toString('base64')).color;
+const endColor = uniqolor(Buffer.from(tagline).toString('base64')).color;
 ---
-<a href={href} class="project" style={`--startColor: ${startColor}; --endColor: ${endColor}`}>
-  <div class="bg-background p-4 rounded-xl"> 
+<a target="_blank" rel="nopenner noreferrer" href={href} class="project" style={`--startColor: ${startColor}; --endColor: ${endColor}`}>
+  <div class="inner"> 
     <h3 class="text-lg mb-1 flex flex-row items-center gap-2">
       <Icon class="inline text-sm" /> 
       {title}
@@ -29,7 +27,14 @@ const endColor = random().color;
 
 <style lang="postcss"> 
   .project {
-    @apply block m-0 active:opacity-50 transition-all duration-150 p-[1px] rounded-xl;
+    @apply block m-0 active:opacity-50 transition-all duration-150 p-[2px] rounded-xl;
+    @apply active:scale-[0.99];
+
     background-image: linear-gradient(to bottom right, var(--startColor), var(--endColor));
+    
+    .inner {
+      @apply bg-background p-4;
+      border-radius: calc(theme('borderRadius.xl') - 2px);
+    }
   }
 </style>
