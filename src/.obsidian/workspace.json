@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/blog/design-system.md",
-                "mode": "source",
+                "file": "content/blog/duolingo.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/blog/design-system.md",
+                "file": "content/blog/duolingo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/blog/design-system.md",
+                "file": "content/blog/duolingo.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/blog/design-system.md"
+                "file": "content/blog/duolingo.md"
               }
             }
           }
@@ -149,7 +149,7 @@
   "active": "ba846adb9d44d529",
   "lastOpenFiles": [
     "content/blog/designing-as-a-developer.md",
-    "content/blog/duolingo.md",
-    "content/blog/design-system.md"
+    "content/blog/design-system.md",
+    "content/blog/duolingo.md"
   ]
 }

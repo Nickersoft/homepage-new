@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import FormattedDate from "./FormattedDate.astro";
 import Notification from "~icons/mingcute/notification-fill";
 import Monkey from "~icons/game-icons/gorilla";
+import Project from "./Project.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -14,31 +15,11 @@ const posts = (await getCollection("blog")).sort(
 
 <h2>Projects</h2>
 
-<ul class="grid grid-cols-2 gap-8">
-  <div class="flex flex-row gap-4 items-center justify-start">
-   
-    <a href="#" class="block m-0 bg-gradient-to-br active:opacity-50 transition-all duration-150 from-red to-yellow p-[1px] rounded-xl">
-      <div class="bg-background p-4 rounded-xl"> 
-        <h3 class="text-lg mb-1">   <Notification class="inline text-sm mr-1" /> Push.js</h3>
-        <p class="m-0 text-sm">
-          The world's most advanced notification framework
-        </p>
-      </div>
-    </a>
-  </div>
-  <div class="flex flex-row gap-4 items-center justify-start">
-    <div
-      class="rounded-lg bg-gradient-to-br w-12 h-12 text-lg flex justify-center items-center"
-    >
-      <Monkey class="drop-shadow-lg" />
-    </div>
-    <div class="flex flex-col gap-1">
-      <h3 class="text-lg">Push.js</h3>
-      <p class="m-0 text-sm">
-        The world's most advanced notification framework
-      </p>
-    </div>
-  </div>
+<ul class="grid grid-cols-2 gap-4">
+  <Project href="https://pushjs.org" title="Push.js" icon={Notification} tagline="The world's most advanced notification framework" />
+  <Project href="https://odict.org" title="The Open Dictionary" icon={Notification} tagline="A blazingly-fast, portable dictionary format" />
+  <Project href="https://github.com/Nickersoft/oa" title="oa" icon={Notification} tagline="Dead-simple monkey testing" />
+  
 </ul>
 </div>
 

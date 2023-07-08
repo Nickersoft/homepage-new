@@ -1,0 +1,33 @@
+---
+import { random } from 'uniqolor';
+
+export interface Props {
+  icon: astroHTML.JSX.Element;
+  title: string;
+  tagline: string;
+  href: string;
+}
+
+const { icon: Icon, title, tagline, href } = Astro.props;
+
+const startColor = random().color;
+const endColor = random().color;
+---
+<a href={href} class="project" style={`--startColor: ${startColor}; --endColor: ${endColor}`}>
+  <div class="bg-background p-4 rounded-xl"> 
+    <h3 class="text-lg mb-1 flex flex-row items-center gap-2">
+      <Icon class="inline text-sm" /> 
+      {title}
+    </h3> 
+    <p class="m-0 text-sm">
+      {tagline}
+    </p>
+  </div>
+</a>
+
+<style lang="postcss"> 
+  .project {
+    @apply block m-0 active:opacity-50 transition-all duration-150 p-[1px] rounded-xl;
+    background-image: linear-gradient(to bottom right, var(--startColor), var(--endColor));
+  }
+</style>
