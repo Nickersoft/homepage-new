@@ -4,6 +4,13 @@ import { getCollection } from "astro:content";
 import FormattedDate from "./FormattedDate.astro";
 import Notification from "~icons/mingcute/notification-fill";
 import Monkey from "~icons/game-icons/gorilla";
+import Globe from '~icons/mdi/globe';
+import Book from '~icons/el/book';
+import Moon from '~icons/solar/moon-bold';
+import Mic from '~icons/mdi/microphone';
+import Terminal from '~icons/mdi/terminal';
+import Mail from '~icons/mdi/email';
+
 import Project from "./Project.astro";
 
 const posts = (await getCollection("blog")).sort(
@@ -15,14 +22,15 @@ const posts = (await getCollection("blog")).sort(
 
 <h2>Projects</h2>
 
-<ul class="grid grid-cols-2 gap-4">
-  <Project href="https://pushjs.org" title="Push.js" icon={Notification} tagline="The world's most advanced notification framework" />
-  <Project href="https://odict.org" title="The Open Dictionary" icon={Notification} tagline="A blazingly-fast, portable dictionary format" />
-  <Project href="https://cityhop.cafe" title="Cityhop" icon={Notification} tagline="Aesthetic walks around the world" />
-  <Project href="https://github.com/Nickersoft/oa" title="oa" icon={Notification} tagline="Dead-simple monkey testing" />
-  <Project href="https://github.com/Nickersoft/nightbox" title="nightbox" icon={Notification} tagline="Dark color palettes for everyone" />
-  <Project href="https://github.com/Nickersoft/hop" title="hop" icon={Notification} tagline="The package manager for web apps" />
-  
+<ul class="grid gap-4" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+  <Project href="https://pushjs.org" title="Push.js" icon={Notification} tagline="Desktop notifications made easy" />
+  <Project href="https://odict.org" title="The Open Dictionary" icon={Book} tagline="A blazingly-fast dictionary format" />
+  <Project href="https://cityhop.cafe" title="Cityhop" icon={Globe} tagline="Aesthetic walks around the world" />
+  <Project href="https://github.com/Nickersoft/oa" title="oa" icon={Monkey} tagline="Dead-simple monkey testing" />
+  <Project href="https://github.com/Nickersoft/hop" title="Hop" icon={Terminal} tagline="The package manager for web apps" />
+  <Project href="https://github.com/Nickersoft/nightbox" title="Nightbox" icon={Moon} tagline="Dark color palettes for everyone" />
+  <Project href="https://github.com/Nickersoft/booth.js" title="Booth.js" icon={Mic} tagline="Audio recording in record time" />
+  <Project href="https://github.com/Nickersoft/maildown" title="Maildown" icon={Mail} tagline="Write emails in Markdown" />
 </ul>
 </div>
 

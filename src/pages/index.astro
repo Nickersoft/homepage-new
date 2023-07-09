@@ -7,13 +7,13 @@ import Projects from "../components/Projects.astro";
 ---
 
 <BaseLayout>
-  <main
-    class="max-w-3xl py-20 m-auto flex flex-col gap-8 font-sans leading-relaxed text-base text-left"
+  <div
+    class="flex flex-col gap-8"
   >
     <Introduction />
     <Writing />
     <Projects />
-  </main>
+  </div>
 </BaseLayout>
 
 <style lang="postcss" is:global> 
@@ -23,14 +23,14 @@ import Projects from "../components/Projects.astro";
     }
 
     h2 {
-      @apply font-bold text-2xl border-b border-white border-opacity-10 py-4 mb-4;
+      @apply font-bold text-2xl border-b border-black dark:border-white dark:border-opacity-10 py-4 mb-4 border-opacity-10;
     }
 
     p {
-      @apply mb-4 block text-opacity-80 text-white leading-relaxed;
+      @apply mb-4 block text-opacity-80 dark:text-opacity-80 text-black dark:text-white leading-relaxed;
 
       & > a {
-        @apply text-opacity-100 text-white border-dashed border-b border-white transition-all duration-150;
+        @apply text-opacity-100 dark:text-opacity-100 text-black dark:text-white border-dashed border-b border-black dark:border-white transition-all duration-150;
         @apply pb-0.5 active:text-opacity-80;
       }
     }

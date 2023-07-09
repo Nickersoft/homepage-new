@@ -19,14 +19,13 @@ export default {
         "0px 0px 0px 0px rgba(60, 59, 57, 0.14), 7px 8px 23px 0px rgba(60, 59, 57, 0.14), 28px 30px 41px 0px rgba(60, 59, 57, 0.12), 63px 68px 56px 0px rgba(60, 59, 57, 0.07), 113px 120px 66px 0px rgba(60, 59, 57, 0.02), 176px 188px 72px 0px rgba(60, 59, 57, 0.00)",
     },
     colors: {
-      black: "#2F2F31",
+      black: "#191919",
       white: "#FFFFFF",
       red: "#F47373",
       yellow: "#F4E773",
       green: "#73F478",
       clear: "transparent",
       purple: "#8F00FF",
-      background: "#191919",
       gray: {
         light: "#D6D6D6",
       },

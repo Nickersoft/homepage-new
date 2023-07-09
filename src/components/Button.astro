@@ -37,19 +37,19 @@ const {
     @apply active:scale-[0.99] transition-all duration-150 active:opacity-50 cursor-pointer;
     
     &-secondary {
-      @apply text-white text-opacity-75;
+      @apply dark:text-white dark:text-opacity-75 text-black text-opacity-75;
 
       &:active {
         @apply scale-[0.99] opacity-50;
       }
 
       &:hover {
-        @apply bg-white bg-opacity-5 text-opacity-90;
+        @apply dark:bg-white dark:bg-opacity-5 bg-opacity-5 text-opacity-90 bg-black;
       }
     }
 
     &-primary {
-      @apply bg-white bg-opacity-10 text-white cursor-pointer font-semibold;
+      @apply dark:bg-white dark:bg-opacity-10 dark:text-white bg-opacity-10 text-black cursor-pointer font-semibold bg-black;
     }
   }
 </style>
