@@ -12,25 +12,21 @@ import "@fontsource/inter/700.css";
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <style lang="postcss" is:global> 
-      body {
-        @apply w-full h-full flex flex-col text-black dark:text-white font-sans;
-      
-        @media (prefers-color-scheme: dark) {
-          background: url('/static.png'), theme('colors.black');
-        }
+        body {
+          @apply w-full h-full flex flex-col text-black dark:text-white font-sans;
+        
+          @media (prefers-color-scheme: dark) {
+            background: url('/static.png'), theme('colors.black');
+          }
 
-        @media (prefers-color-scheme: light) {
-          background: url('/static-lm.png'), theme('colors.white');
+          @media (prefers-color-scheme: light) {
+            background: url('/static-lm.png'), theme('colors.white');
+          }
         }
-      }
-  </style>
+    </style>
   </head>
   <body>
-    <main
-      class="max-w-3xl px-8 py-20 m-auto font-sans leading-relaxed text-base text-left"
-    >
-      <slot />
-    </main>
+    <slot />
     <footer class="text-xs opacity-50 text-center py-8">
       Copyright {new Date().getFullYear()} Tyler Nickerson
     </footer>
