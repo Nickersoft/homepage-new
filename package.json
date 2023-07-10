@@ -3,10 +3,10 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "FONTCONFIG_PATH=. astro dev",
-    "start": "FONTCONFIG_PATH=. astro dev",
-    "build": "FONTCONFIG_PATH=. astro build",
-    "preview": "FONTCONFIG_PATH=. astro preview",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
     "astro": "astro"
   },
   "devDependencies": {
