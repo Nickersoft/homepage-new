@@ -1,5 +1,8 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { Image } from 'astro:assets';
+
+import me from '../assets/me.png';
 
 import OpenInNew from "~icons/mdi/open-in-new";
 
@@ -8,6 +11,7 @@ import BaseLayout from "./BaseLayout.astro";
 import Button from "../components/Button.astro";
 import Back from "~icons/mdi/arrow-left";
 import Tweet from "~icons/mdi/twitter";
+import Avatar from "../components/Avatar.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -20,35 +24,25 @@ function getShareURL() {
 }
 ---
 
-<BaseLayout>
-  <nav class="flex top-0 fixed p-2 w-full justify-between items-center flex-row">
-    <!-- <Button variant="secondary" title="Back" href="/" icon={Back} /> -->
-    <a href="/" class="font-semibold hover:opacity-80 transition-all duration-150 opacity-50 pl-2">Tyler Nickerson</a>
+<BaseLayout type="article" title={title} description={description}>
+  
+  <nav class="flex top-0 z-50 fixed p-4 w-full justify-between items-center flex-row">
+    <Button variant="secondary" title="Back" href="/" icon={Back} />
     <Button variant="secondary" href={getShareURL()} title="Share" icon={Tweet} />
   </nav>
+
   <article class="article">
-    <h1 class="title">{title}</h1>
-
-    <p class="description">{description}</p>
-    <!-- {
-      heroImage && (
-        <img class="hero" width={720} height={360} src={heroImage} alt="" />
-      )
-    } -->
-    <FormattedDate date={pubDate} />
-
+    
+    <header class="py-4 flex flex-col items-center"> 
+      <FormattedDate date={pubDate} />
+      <h1 class="title">{title}</h1>
+      <p class="description">{description}</p>
+    </header>
+    
     <hr />
 
-    {
-      updatedDate && (
-        <div class="last-updated-on">
-          Last updated on <FormattedDate date={updatedDate} />
-        </div>
-      )
-    }
-
     <div
-      class="prose dark:prose-invert prose-blockquote:font-normal prose-figcaption:mt-6 prose-base prose-p:leading-loose w-full !max-w-full prose-headings:font-sans prose-figure:text-center prose-img:mx-auto content"
+      class="prose pt-4 dark:prose-invert prose-blockquote:font-normal prose-figcaption:mt-6 prose-base prose-p:leading-loose w-full !max-w-full prose-headings:font-sans prose-figure:text-center prose-img:mx-auto content"
     >
       <slot />
       <hr />
@@ -93,7 +87,7 @@ function getShareURL() {
   }
 
   .description {
-    @apply text-lg font-sans opacity-75 mt-2 mb-8;
+    @apply text-lg font-sans opacity-75 mt-2;
   }
 
   .notice {

@@ -26,7 +26,6 @@
     "@microflash/remark-figure-caption": "^1.0.0",
     "@tailwindcss/typography": "^0.5.9",
     "astro": "^2.8.0",
-    "astro-social-images": "^0.4.1",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.25",
     "prettier": "^3.0.0",
