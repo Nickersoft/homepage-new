@@ -13,6 +13,7 @@ export default {
     },
     boxShadow: {
       none: "none",
+      sm: "0 2px 12px rgba(0,0,0,0.1)",
       md:
         "0px 0px 0px 0px rgba(69, 50, 19, 0.05), 3px 5px 12px 0px rgba(69, 50, 19, 0.05), 10px 19px 22px 0px rgba(69, 50, 19, 0.04), 24px 43px 29px 0px rgba(69, 50, 19, 0.02), 42px 76px 35px 0px rgba(69, 50, 19, 0.01), 66px 118px 38px 0px rgba(69, 50, 19, 0.00)",
       lg:
