@@ -14,7 +14,7 @@ import rehypeExternalLinks from "rehype-external-links";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://example.com",
+  site: "https://www.tylernickerson.com",
   output: "hybrid",
   integrations: [mdx(), sitemap(), tailwind(), prefetch(), svelte()],
   adapter: vercel(),
