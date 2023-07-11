@@ -1,17 +1,22 @@
 ---
 import me from '../assets/me.png';
 
+import inter400 from '@fontsource/inter/files/inter-latin-400-normal.woff2';
+import inter600 from '@fontsource/inter/files/inter-latin-600-normal.woff2';
+import inter700 from '@fontsource/inter/files/inter-latin-700-normal.woff2';
+
 export interface Props {
 	title: string;
 	description: string;
+  image?: string;
 	type?: 'article' | 'website';
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, type='website' } = Astro.props;
+const { title, description, image, type='website' } = Astro.props;
 
-const socialImage = new URL(me.src, Astro.url);
+const socialImage = new URL(image ?? me.src, Astro.url);
 ---
 
 <!-- Global Metadata -->
@@ -19,6 +24,16 @@ const socialImage = new URL(me.src, Astro.url);
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
+
+{[inter400, inter600, inter700].map(url => (
+  <link
+    rel="preload"
+    as="font"
+    crossorigin="anonymous"
+    href={url}
+    type="font/woff2"
+  />
+))}
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />

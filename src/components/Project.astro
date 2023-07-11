@@ -34,13 +34,25 @@ const endColor = uniqolor(Buffer.from(tagline).toString('base64')).color;
 
     @apply block m-0 active:opacity-50 transition-all duration-150 rounded-lg shadow-sm;
     @apply active:scale-[0.99];
-
+    
     padding: var(--border-width);
     background-image: linear-gradient(to bottom right, var(--startColor), var(--endColor));
     
+    &:hover > .inner:after {
+      @apply opacity-100;
+    }
+    
     .inner {
       @apply dark:bg-black p-4 h-full flex flex-row gap-4 items-center text-left bg-white;
+      @apply relative overflow-hidden;
+
       border-radius: calc(theme('borderRadius.lg') - var(--border-width));
+
+      &:after {
+        @apply absolute inset-0 opacity-0 transition-all duration-150;
+        @apply dark:bg-white dark:bg-opacity-[0.03];
+        content: '';
+      }
     }
   }
 </style>
