@@ -22,8 +22,18 @@ const socialImage = new URL(image ?? me.src, Astro.url);
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
+
+<link
+  href="/favicon-light.png"
+  rel="icon"
+  media="(prefers-color-scheme: light)"
+/>
+<link
+  href="/favicon-dark.png"
+  rel="icon"
+  media="(prefers-color-scheme: dark)"
+/>
 
 {[inter400, inter600, inter700].map(url => (
   <link
