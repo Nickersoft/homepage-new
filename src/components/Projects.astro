@@ -14,7 +14,7 @@ const projects = await getCollection("projects");
 
 <ul class="grid gap-4" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
   {projects.map(({data: project}) => (
-    <Project href={project.url} title={project.title} icon={ICONS[project.icon].default} tagline={project.tagline} />
+    <Project href={project.url} title={project.title} icon={ICONS[project.icon]} tagline={project.tagline} />
   ))}
 </ul>
 </div>
