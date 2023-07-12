@@ -3,7 +3,6 @@ title: "Designing as a developer in 2018"
 description: "You don’t need an art degree to make your website beautiful"
 pubDate: "2018-08-13"
 original: "https://blog.logrocket.com/designing-as-a-developer-in-2018-eca1ab5bff2/"
-heroImage: "/placeholder-hero.jpg"
 ---
 
 Whether you’re building a product, a tool, a website, a service, or a startup: first impressions are everything. Users inherently gravitate towards products they can trust, products that feel legitimate and provide a sense of security. A website that looks like it was designed by a child always make users feel safe and sound. Even if your product is great, no one will use it if it looks like you don’t know what your doing.

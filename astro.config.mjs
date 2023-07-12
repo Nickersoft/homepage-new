@@ -6,7 +6,6 @@ import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
 import prefetch from "@astrojs/prefetch";
 import vercel from "@astrojs/vercel/serverless";
-import svelte from "@astrojs/svelte";
 import Icons from "unplugin-icons/vite";
 
 import remarkFigureCaption from "@microflash/remark-figure-caption";
@@ -16,7 +15,7 @@ import rehypeExternalLinks from "rehype-external-links";
 export default defineConfig({
   site: "https://www.tylernickerson.com",
   output: "hybrid",
-  integrations: [mdx(), sitemap(), tailwind(), prefetch(), svelte()],
+  integrations: [mdx(), sitemap(), tailwind(), prefetch()],
   adapter: vercel(),
   experimental: {
     assets: true,
@@ -28,7 +27,7 @@ export default defineConfig({
   vite: {
     plugins: [
       Icons({
-        compiler: "svelte",
+        compiler: "astro",
       }),
     ],
   },
