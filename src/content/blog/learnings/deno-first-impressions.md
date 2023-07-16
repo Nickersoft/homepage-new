@@ -5,11 +5,9 @@ pubDate: "2023-07-15"
 image: ../../../assets/dino.jpg
 ---
 
+Call me five years late to the party, but this past month, I used Deno for the first time. Yeah, I know. I'm lame.
 
-
-Call me five years late to the party, but in this past month, I used Deno for the first time. Yeah, I know. I'm lame.
-
-For those who aren't aware, [Deno](https://deno.land) is a JavaScript framework created by Ryan Dahl, the original creator of Node. Launched in 2018 and written in Rust (a language I've still yet to master), Deno has boasts several advantages over the Node runtime.
+For those who aren't aware, [Deno](https://deno.land) is a JavaScript framework created by Ryan Dahl, the original creator of Node. Launched in 2018 and written in Rust (a language I've still yet to master), Deno boasts several advantages over the Node runtime.
 
 Notably:
 
@@ -18,7 +16,7 @@ Notably:
 - Native support for the most popular web APIs
 - Generally faster than Node
 
-With [Bun](https://bun.sh) still *far* away from production-readiness, I figured I'd take a stab at Deno to see if there is any escaping the gravity of the Node ecosystem. 
+With [Bun](https://bun.sh) still *far* away from production readiness, I figured I'd take a stab at Deno to see if there is any escaping the gravity of the Node ecosystem. 
 
 As any JavaScript developer worth their salt will know, it's *exhausting* to start every new project by setting up a type checker, formatter, package manager, linter, bundler, and testing library. Sometimes, if you're feeling really saucy, you'll throw in a utility library like Lodash. It's hell and most of us just accept it.
 
