@@ -5,6 +5,9 @@ import inter400 from '@fontsource/inter/files/inter-latin-400-normal.woff2';
 import inter600 from '@fontsource/inter/files/inter-latin-600-normal.woff2';
 import inter700 from '@fontsource/inter/files/inter-latin-700-normal.woff2';
 
+import firaCode400 from '@fontsource/fira-code/files/fira-code-latin-400-normal.woff2';
+import firaCode700 from '@fontsource/fira-code/files/fira-code-latin-700-normal.woff2';
+
 export interface Props {
 	title: string;
 	description: string;
@@ -35,7 +38,7 @@ const socialImage = new URL(image ?? me.src, Astro.url);
   media="(prefers-color-scheme: dark)"
 />
 
-{[inter400, inter600, inter700].map(url => (
+{[inter400, inter600, inter700, firaCode400, firaCode700].map(url => (
   <link
     rel="preload"
     as="font"

@@ -13,11 +13,11 @@ Chances are if you're reading this, you already know what one is, or at the very
 
 For a quick example, we can turn to Google, one of the leaders in brand development:
 
-![](../../assets/gmail.png)
+![](../../../assets/gmail.png)
 
-![](../../assets/calendar.png)
+![](../../../assets/calendar.png)
 
-![](../../assets/translate.png)
+![](../../../assets/translate.png)
 
 Above are three Google products: Mail, Calendar, and Translate. Notice the continuity between the three. Mail and Calendar both share a prominent white (yet colorful) "call-to-action" button, as well as the same style of TextBox. Calendar and Translate share the same style of a flat, navigation action button.
 
@@ -37,13 +37,13 @@ Before diving in, it is important to first understand the anatomy of the typical
 3. **Templates —** denote reusable pages that contain dynamic data (such as a profile page)
 4. **Pages —** denote a specific implementation of a template (such as a specific user profile page)
 
-![Atomic Design by Brad Frost (2013)](../../assets/atomic.png)
+![Atomic Design by Brad Frost (2013)](../../../assets/atomic.png)
 
 The majority of design systems focus primarily on atoms and molecules, while sometimes containing organisms such as headers, footers, and side navigation. Template and page implementations are typically left up to the consumers of the design system to implement (i.e. frontend developers).
 
 That said, transcending the notion of web design, in general, design systems can be represented by the following hierarchy:
 
-![](../../assets/hierarchy.png)
+![](../../../assets/hierarchy.png)
 
 In the sections below, we'll be honing in mainly on developing and refining atoms, or design elements, with which you can begin building a design language.
 
@@ -71,13 +71,13 @@ This brings us to our first step: introspection and visual auditing. Comb over t
 
 In a design language, each artifact should have a well-defined purpose and unique visual distinction from all other elements. If you have too many components used in the exact same way or that look nearly identical then you'll never know when to use one or the other (and believe it or not, people hate [making choices](https://www.nytimes.com/2010/02/27/your-money/27shortcuts.html)).
 
-![Say you're building a confirmation dialog and can use any of the above buttons... how would you know which to use? They're definitely all unique but do they really differ in purpose?](../../assets/buttons.png)
+![Say you're building a confirmation dialog and can use any of the above buttons... how would you know which to use? They're definitely all unique but do they really differ in purpose?](../../../assets/buttons.png)
 
 By the end of the audit, you want to make sure all remaining components and styles exist to serve a distinct purpose and convey an individual meaning.
 
 To help guide us through these guidelines, we'll be improving the design system surrounding the following modal:
 
-![](../../assets/spam.png)
+![](../../../assets/spam.png)
 
 Looks like something off a spam site, doesn't it?
 
@@ -109,7 +109,7 @@ Mixing and matching weights and sizes randomly will lead to inconsistency across
 
 Going back to our example with Butterscotch, we can consolidate and normalize our sizing, fonts, and types to drastically improve the structure of the modal and utilize our new design system:
 
-![](../../assets/spacing.png)
+![](../../../assets/spacing.png)
 
 Notably:
 
@@ -141,7 +141,7 @@ In total, there are roughly 16 unique colors that the design system should be co
 
 Returning to Butterscotch, we can normalize our color palette by choosing a primary color (in this case purple), and applying grayscale to the rest of the UI. Given that "Accept Later" provides a secondary action, it should not be competing with the primary action button for attention.
 
-![](../../assets/colors.png)
+![](../../../assets/colors.png)
 
 Note the reuse of specific shades of gray, notably in the title bar of the modal.
 
@@ -159,9 +159,9 @@ While this technique often renders fantastic UIs, overusing or consistently pick
 
 Your UI should not be an MC Escher puzzle. Look at the interface below and try to determine which element is on top. Is it the left nav? Why isn't there a top shadow? Is the nav attached to the navbar? If that's the case, why doesn't the top nav have a shadow too? How can the top nav be attached to both side navs and yet the side navs have different elevations?
 
-![](../../assets/elevation.png)
+![](../../../assets/elevation.png)
 
-![](../../assets/mce.jpeg)
+![](../../../assets/mce.jpeg)
 
 When constructing a design language, it is crucial to make the unique elevation levels of components clear. Google's Material Design library does an [excellent job](https://material.io/design/environment/elevation.html) of defining eight unique elevation levels and assigning elevation ranges to a specific component to ensure the hierarchy remains consistent.
 
@@ -173,7 +173,7 @@ According to Material Design, elevation serves three main purposes:
 
 Elevation can also be used to indicate focus in three-dimensional space. For example, Google utilizes elevation in material design to signify when a card is "picked up" (elevated focus) while Udacity utilizes elevation to depress buttons when hovered over (de-elevated focus).
 
-![](../../assets/focus.png)
+![](../../../assets/focus.png)
 
 Important questions to ask when deciding on the elevation levels of your UI should be:
 
@@ -185,7 +185,7 @@ Important questions to ask when deciding on the elevation levels of your UI shou
 
 Going back to Butterscotch, you'll notice so far everything within the modal has been flat. To present our action button as a physical object on the screen, we can utilize de-elevated focus to give it a sense of clickability:
 
-![](../../assets/focus-example.png)
+![](../../../assets/focus-example.png)
 
 ### Resources
 
@@ -201,6 +201,6 @@ Design systems are highly complex, highly discussed endeavors, and unfortunately
 
 Now that our modal is better structured, we can run a final audit and determine which components, colors, fonts, and sizes our design system can consist of:
 
-![](../../assets/final.png)
+![](../../../assets/final.png)
 
 While our palette and typography may seem incomplete, keep in mind this was just an example of how to approach seeding a design system. When such analysis is run over an entire platform, a comprehensive system can be easily built.
