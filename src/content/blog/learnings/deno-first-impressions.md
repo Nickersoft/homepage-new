@@ -2,7 +2,10 @@
 title: "First Impressions: Deno"
 description: "It's 2023. Has it gotten better?"
 pubDate: "2023-07-15"
+image: ../../../assets/dino.jpg
 ---
+
+
 
 Call me five years late to the party, but in this past month, I used Deno for the first time. Yeah, I know. I'm lame.
 

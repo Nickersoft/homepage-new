@@ -12,7 +12,7 @@ import Avatar from "../components/Avatar.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, original, description, pubDate, heroImage } = Astro.props;
+const { title, original, description, pubDate, image } = Astro.props;
 
 function getShareURL() {
   const url = Astro.url.toString();
@@ -21,7 +21,7 @@ function getShareURL() {
 }
 ---
 
-<BaseLayout type="article" title={title} image={heroImage?.src} description={description}>
+<BaseLayout type="article" title={title} image={image?.src} description={description}>
   
   <nav class="nav">
     <Button variant="secondary" title="Back" href="/" icon={Back} />
