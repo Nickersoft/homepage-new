@@ -2,7 +2,7 @@
 title: "Hiring at Ground Zero"
 description: "How we hired our first engineers from nothing, for free"
 pubDate: "2023-07-23"
-image: ../../../assets/dino.jpg
+image: ../../../assets/ground-zero.jpg
 ---
 
 One of the most common pieces of advice shared with founders with respect to hiring is to *source from your own network*. 
