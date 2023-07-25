@@ -10,9 +10,9 @@ import Back from "~icons/mdi/arrow-left";
 import Tweet from "~icons/mdi/twitter";
 import Avatar from "../components/Avatar.astro";
 
-type Props = CollectionEntry<"blog">["data"];
+type Props = CollectionEntry<"blog">["data"] & { readingTime: string };
 
-const { title, original, description, pubDate, image } = Astro.props;
+const { title, original, description, readingTime, pubDate, image } = Astro.props;
 
 function getShareURL() {
   const url = Astro.url.toString();
@@ -28,10 +28,12 @@ function getShareURL() {
     <Button variant="secondary" href={getShareURL()} title="Share" icon={Tweet} />
   </nav>
 
-  <article class="article">
+  <article class="article fade-up">
     
     <header class="py-2 flex flex-col items-center"> 
-      <FormattedDate date={pubDate} />
+      <span class="text-xs uppercase tracking-widest font-semibold text-white text-opacity-50" >
+        <FormattedDate date={pubDate} /> • {readingTime}
+      </span>
       <h1 class="title">{title}</h1>
       <p class="description">{description}</p>
       <span class="pill">
@@ -101,7 +103,7 @@ function getShareURL() {
 
   .title {
     @apply text-4xl font-sans font-bold text-center leading-normal;
-    @apply w-full py-2;  
+    @apply w-full mt-4;  
   }
 
   .pill {

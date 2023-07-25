@@ -11,6 +11,8 @@ import Icons from "unplugin-icons/vite";
 import remarkFigureCaption from "@microflash/remark-figure-caption";
 import rehypeExternalLinks from "rehype-external-links";
 
+import { remarkReadingTime } from "./remark-reading-time.mjs";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.tylernickerson.com",
@@ -21,7 +23,7 @@ export default defineConfig({
     assets: true,
   },
   markdown: {
-    remarkPlugins: [remarkFigureCaption],
+    remarkPlugins: [remarkFigureCaption, remarkReadingTime],
     rehypePlugins: [rehypeExternalLinks],
   },
   vite: {

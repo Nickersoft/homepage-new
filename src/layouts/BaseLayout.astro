@@ -44,3 +44,22 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION, type, image } = Astr
     </footer>
   </body>
 </html>
+
+<style lang="postcss" is:global>
+  @keyframes fadeUp {
+    from {
+      @apply opacity-0;
+      transform: translate3d(0, 0.3rem, 0)
+    }
+
+    to {
+      @apply opacity-100;
+      transform: translate3d(0, 0, 0)
+    }
+  }
+
+  .fade-up {
+    animation: fadeUp 400ms ease-in-out;
+    animation-fill-mode: both;
+  }
+</style>
