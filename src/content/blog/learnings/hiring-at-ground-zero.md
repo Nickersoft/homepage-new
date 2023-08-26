@@ -15,7 +15,7 @@ Given my extensive background in frontend engineering and design, we figured it 
 
 No one came to mind.
 
-After scouring the web and finding zero articles about how tiny teams such as ours hire their first engineers and how they screen candidates, I decided to write one. This is the story of how Victoria and I managed to snag our first engineers.
+After scouring the web and finding zero articles about how super-early startups like us actually find talented people out of the blue, I decided to write one. This is the story of how Victoria and I managed to snag our first engineers while knowing effectively no one.
 
 ## Catching Lightning in a Bottle
 
@@ -25,8 +25,9 @@ For example:
 
 1. [Drew Houston](https://en.wikipedia.org/wiki/Drew_Houston) (founder and CEO of [Dropbox](https://dropbox.com)) met his cofounder [Arash Ferdowsi](https://en.wikipedia.org/wiki/Arash_Ferdowsi) after Arash watched one of Dropbox's early demos and decided to drop out of college to start the company with him
 2. [Paul English](https://en.wikipedia.org/wiki/Paul_M._English) (co-founder and CTO of [Kayak](https://kayak.com)) met his cofounder Steve Hafner after his boss at [Greylock](https://greylock.com/) introduced the two of them
-3. My founder friend met some of his first engineers by cold DM'ing employees impacted by a layoff at a nearby office
-4. Victoria and I met each other by chance after ending up in the same [On Deck](https://www.beondeck.com/) cohort in 2022
+3. At the last startup I worked at, the CTO met the company's founding engineer via a referral from their investor's in-house talent network
+4. My founder friend met some of his first engineers by cold DM'ing employees impacted by a layoff at a nearby office
+5. Victoria and I met each other by chance after ending up in the same [On Deck](https://www.beondeck.com/) cohort in 2022
 
 Finding just ONE person crazy enough to join your mission is hard enough, let alone an entire team.
 
@@ -122,9 +123,9 @@ With our new rubric in hand, I wanted to make sure we were extrapolating enough 
 
 Worst of all, the take-home wasn't even screening for arguably our most important criteria: the candidate's communication and problem-solving skills. Excelling in these areas would be crucial for our backend role, as we were hoping that our hire could help lead several of our more ambitious technical initiatives. As much as I hate live technical screens, I made the tough decision to swap out our backend assessment for a live coding round. 
 
-No LeetCode, though. **Never LeetCode**.
+No LeetCode, though. *Never* LeetCode.
 
-#### The Backend Interview
+### The (New) Backend Interview
 
 There are so many times as a technical founder you end up bashing your head against a wall and asking:
 
@@ -134,7 +135,9 @@ What's great about those moments is once you *do* solve the problem, you can pac
 
 That's what I did. 
 
-I constructed a simple coding problem based on a method *still used in our codebase* I had *written myself*. After learning how aggressively *not* startup-friendly CoderPad's pricing is, I set up a (decently cheap) team plan on [repl.it](https://repl.it) and used their collaboration feature to host interviews. The only downside was that they *still* don't support anonymous collaboration, so every one of my candidates had to sign up for an account before joining my room. 
+I constructed a simple coding problem based on a method *still used in our codebase* I had *written myself*. This way, the problem we were asking candidates to solve was almost *guaranteed* to be something they might face on a day-to-day basis.
 
-Super annoying.
+After learning how aggressively *not* startup-friendly CoderPad's pricing is, I set up a (decently cheap) team plan on [repl.it](https://repl.it) and used their collaboration feature to host interviews. The only downside was that they *still* don't support anonymous collaboration, so every one of my candidates had to sign up for an account before joining my room. Super-duper annoying.
+
+The live coding interview was a success. Not only did it effectively gauge candidates' communication and problem-solving skills, but it very easily weeded out unqualified applicants. Only a handful of candidates attempted to even solve the problem, and only two of them actually did.
 
