@@ -37,5 +37,8 @@
     "uniqolor": "^1.1.0",
     "unplugin-icons": "^0.17.0",
     "vite": "^4.4.11"
+  },
+  "dependencies": {
+    "sharp": "^0.32.6"
   }
 }
