@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 
 import FormattedDate from "@components/FormattedDate.astro";
-import { getPostSlug } from "@utils";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -13,25 +12,9 @@ const posts = (await getCollection("blog")).sort(
   <h2>Thoughts</h2>
   <ul>
     {
-      posts.filter(post => post.slug.startsWith('thoughts')).map((post) => (
+      posts.map((post) => (
         <li>
-          <a href={`/blog/${getPostSlug(post)}/`}>
-            <FormattedDate date={post.data.pubDate} />
-            {post.data.title}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
-</div>
-
-<div> 
-  <h2>Learnings</h2>
-  <ul>
-    {
-      posts.filter(post => post.slug.startsWith('learnings')).map((post) => (
-        <li>
-          <a href={`/blog/${getPostSlug(post)}/`}>
+          <a href={`/blog/${post.slug}/`}>
             <FormattedDate date={post.data.pubDate} />
             {post.data.title}
           </a>

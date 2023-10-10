@@ -35,7 +35,7 @@ Skeuomorphism is a design principle where shadows, gradients, and textures are u
 
 But first let’s get you grounded in the relevant design principles.
 
-![The iOS 6 Find My Friends app (2011) heavily utilized skeuomorphic design, as well as the majority of Apple’s products at the time.](../../../assets/fmf.png)
+![The iOS 6 Find My Friends app (2011) heavily utilized skeuomorphic design, as well as the majority of Apple’s products at the time.](../../assets/fmf.png)
 
 Much of this may have been attributed to Apple’s own interpretation of modern design language, as their 2011 User Interface Guidelines specify:
 
@@ -43,13 +43,13 @@ Much of this may have been attributed to Apple’s own interpretation of modern 
 
 Yet by 2012, a slow migration had begun towards a much flatter design system. Driven by the emergence of design languages like [Metro UI](https://en.wikipedia.org/wiki/Metro_%28design_language%29) and [Material Design](https://en.wikipedia.org/wiki/Material_Design), flat design introduced softer and more uniform color palettes, thinner typefaces, and the use of shadows as tools of systematic hierarchy as opposed to the reinforcement of hyper-realism (referred to by Google as [“Elevation Hierarchy”](https://material.io/design/environment/elevation.html#elevation-hierarchy)).
 
-![iOS Calculator: 2011 (skeuomorphic) vs. 2013 (flat)](../../../assets/calculator.png)
+![iOS Calculator: 2011 (skeuomorphic) vs. 2013 (flat)](../../assets/calculator.png)
 
 Alright, so what’s semi-skeuomorphism? Semiskeu is a design principle that combines the colorful gradients and use of shadows found in skeuomorphic design with many of the principles found in flat design.
 
 You’re likely pretty familiar with this one too, as it’s pretty much everywhere. A great example of semiskeu in action is the [Stripe homepage](https://stripe.com):
 
-![](../../../assets/stripe.png)
+![](../../assets/stripe.png)
 
 What do you notice?
 
@@ -79,15 +79,15 @@ Choose your color palette carefully.
 4. **Never use absolute blacks.** Pure, opaque black (#000) is often too harsh for most webpages. Even this article has its font color set to an opacity of 84%.
 5. **Ensure colored components do not border each other.** Unless the colors are very strong compliments of one another, often times the contrast of two neighboring colors can create a sense of polarization and division that breaks the flow of your page. If a navigation bar might touch a colored hero, opt for a transparent navbar background instead.
 
-![](../../../assets/edart1.png)
+![](../../assets/edart1.png)
 
-![](../../../assets/edart2.png)
+![](../../assets/edart2.png)
 
-![The first production website I ever wrote (2013) looked like Windows XP threw up on a page. Its biggest design fault was its use of too many primary colors. Meanwhile, the project’s redesign (early 2014) overused a singular primary color far too much, which was equally as toxic. Your website should contain one or two primary colors, and utilize a grayscale background for all body content. By third redesign (late 2014), I had learned my lesson.](../../../assets/edart3.png)
+![The first production website I ever wrote (2013) looked like Windows XP threw up on a page. Its biggest design fault was its use of too many primary colors. Meanwhile, the project’s redesign (early 2014) overused a singular primary color far too much, which was equally as toxic. Your website should contain one or two primary colors, and utilize a grayscale background for all body content. By third redesign (late 2014), I had learned my lesson.](../../assets/edart3.png)
 
 ### Example
 
-![](../../../assets/example.png)
+![](../../assets/example.png)
 
 Using only these five simple rules, we can drastically transform this black-and-blue webpage into a much more aesthetically appealing site:
 
@@ -109,7 +109,7 @@ While color serves many purposes, it can also be used to imply light through the
 
 Where do you think the light source is?
 
-![](../../../assets/stripe-spiral.png)
+![](../../assets/stripe-spiral.png)
 
 Here’s a hint: Stripe uses a radial light source. The light appears directly above the elements, which explains the low offset of the drop-shadow and the concentrated light green in the background gradient.
 
@@ -121,13 +121,13 @@ Here’s a hint: Stripe uses a radial light source. The light appears directly a
 4. **Always keep the opacity of shadows to under 25%.** Err on the side of subtlety so not to detract from your design. If you are using a dark background, in some cases you may need to bump up the opacity of your shadow in order to ensure its visibility.
 5. **Shadows don’t always need to be black.** When using shadows on colored surfaces, it is often advantageous to use a very dark or dulled variant of the background color to improve the shadow’s blend.
 
-![In most cases, a simple monochromatic gradient can be used to create light. However, complementary colors, such as purple and pink, can work just as well. Udacity uses the approach in many of their accent components.](../../../assets/udacity.png)
+![In most cases, a simple monochromatic gradient can be used to create light. However, complementary colors, such as purple and pink, can work just as well. Udacity uses the approach in many of their accent components.](../../assets/udacity.png)
 
 ### Example
 
 Now let’s put these rules to use. Here we add dimension to two sets of flat name cards. The primary cards utilize a monotone gradient to imply and illustrate light, while the accented cards use complementary colors to add an accent to the card’s heading:
 
-![](../../../assets/shadows.png)
+![](../../assets/shadows.png)
 
 How do they use our rules of thumb?
 
@@ -139,7 +139,7 @@ How do they use our rules of thumb?
 
 <div class="unstyled">
 
-![Always keep the angle of your light consistent. Notice how the gradient and flat shadow follow the same angle.](../../../assets/angles.png)
+![Always keep the angle of your light consistent. Notice how the gradient and flat shadow follow the same angle.](../../assets/angles.png)
 
 </div>
 
@@ -175,7 +175,7 @@ The Circular font stems from a [sans-serif](https://en.wikipedia.org/wiki/Sans-s
 
 ### Example
 
-![](../../../assets/blog.png)
+![](../../assets/blog.png)
 
 Using these four rules, we can convert the above mess of text into a structured article:
 

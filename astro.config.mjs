@@ -17,9 +17,6 @@ export default defineConfig({
   output: "hybrid",
   integrations: [mdx(), sitemap(), tailwind(), prefetch()],
   adapter: vercel(),
-  experimental: {
-    assets: true,
-  },
   markdown: {
     remarkPlugins: [remarkFigureCaption],
     rehypePlugins: [rehypeExternalLinks],

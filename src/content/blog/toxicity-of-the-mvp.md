@@ -57,7 +57,7 @@ Why: Suddenly your website explodes. People are uploading hundreds of pics a da
 
 Though varying in degrees of applicability, software architectures allow you to build code with structure and integrity. They stop you from asking questions such as "where should I put this logic?" and improve codebase navigation. While the most popular architecture is Modal-View-Controller [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller), there are many others as well, such as [MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel), [MVP](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter), [VIP](https://hackernoon.com/introducing-clean-swift-architecture-vip-770a639ad7bf?gi=161549ad2d6a), [VIPER](https://www.objc.io/issues/13-architecture/viper/).
 
-![One of the most complex software architectures, VIPER, conceptualizes iOS apps as a series of modules consisting of a View (pure visuals), Presenter (visual logic), Interactor (non-visual logic), Entity (data model), and Router (transition logic).](../../../assets/viper.png)
+![One of the most complex software architectures, VIPER, conceptualizes iOS apps as a series of modules consisting of a View (pure visuals), Presenter (visual logic), Interactor (non-visual logic), Entity (data model), and Router (transition logic).](../../assets/viper.png)
 
 Whichever architecture you choose very much depends on the needs of your software. Furthermore, certain frameworks may use their own architectures or app structures, such as [Angular](https://angular.io/) (NgModules) or [React](https://reactjs.org/) ([Flux](https://medium.com/@cabot_solutions/flux-the-react-js-application-architecture-a-comprehensive-study-fd2585d06483) / [Redux](https://redux.js.org/)).
 
@@ -115,7 +115,7 @@ Lastly, when deciding on an architecture or framework to achieve any of the abov
 
 Frameworks such as [React](https://reactjs.org/) and [Angular](https://angular.io/) are fairly new to the game, having only been around for less than 10 years, so only time will tell. What is important is that you and your developers will be able to always find the resources you need to continue building your product well into the future. A decent indicator of a framework's support may be [how many StackOverflow questions exist for it](https://insights.stackoverflow.com/trends), its [GitHub star count](https://github.com/trending), and [its GitHub contributor activity](https://help.github.com/articles/viewing-contribution-activity-in-a-repository/).
 
-![React, Vue.js, and Angular 6 questions on StackOverflow as of December 2018.](../../../assets/ecosystem.png)
+![React, Vue.js, and Angular 6 questions on StackOverflow as of December 2018.](../../assets/ecosystem.png)
 
 It's important to note an exception to the rule: sometimes you have no choice. Take for example [Apollo's iOS library](https://github.com/apollographql/apollo-ios): it is poorly maintained, poorly documented, but still remains one of the most popular (if not only) solutions for using GraphQL on iOS (unless you want to write your own framework).
 
