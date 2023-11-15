@@ -21,37 +21,29 @@ function getShareURL() {
 }
 ---
 
-<BaseLayout
-  type="article"
-  title={title}
-  image={image?.src}
-  description={description}
->
+<BaseLayout type="article" title={title} image={image?.src} description={description}>
+  
   <nav class="nav">
     <Button variant="secondary" title="Back" href="/" icon={Back} />
-    <Button
-      variant="secondary"
-      href={getShareURL()}
-      title="Share"
-      icon={Tweet}
-    />
+    <Button variant="secondary" href={getShareURL()} title="Share" icon={Tweet} />
   </nav>
 
   <article class="article">
-    <header class="py-2 flex flex-col items-center">
+    
+    <header class="py-2 flex flex-col items-center"> 
       <FormattedDate date={pubDate} />
       <h1 class="title">{title}</h1>
       <p class="description">{description}</p>
       <span class="pill">
         <Avatar width={16} height={16} />
-         Tyler Nickerson
+        Tyler Nickerson
       </span>
     </header>
-
+    
     <hr />
 
     <div
-      class="prose pt-2 prose-base lg:prose-lg prose-code:font-normal dark:prose-invert prose-blockquote:font-normal prose-figcaption:mt-6 prose-p:leading-loose w-full !max-w-full prose-headings:font-sans prose-figure:text-center prose-img:mx-auto content"
+      class="prose pt-2 prose-code:font-normal  dark:prose-invert prose-blockquote:font-normal prose-figcaption:mt-6 prose-base prose-p:leading-loose w-full !max-w-full prose-headings:font-sans prose-figure:text-center prose-img:mx-auto content"
     >
       <slot />
       <hr />
