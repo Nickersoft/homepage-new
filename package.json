@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^1.1.4",
+    "@astrojs/mdx": "^1.1.5",
     "@astrojs/prefetch": "^0.4.1",
     "@astrojs/rss": "^3.0.0",
     "@astrojs/sitemap": "^3.0.3",
@@ -18,14 +18,16 @@
     "@astrojs/vercel": "^5.2.0",
     "@fontsource/fira-code": "^5.0.15",
     "@fontsource/inter": "^5.0.15",
-    "@iconify-json/el": "^1.1.5",
-    "@iconify-json/game-icons": "^1.1.3",
-    "@iconify-json/mdi": "^1.1.55",
-    "@iconify-json/mingcute": "^1.1.11",
-    "@iconify-json/solar": "^1.1.6",
+    "@iconify-json/el": "^1.1.6",
+    "@iconify-json/game-icons": "^1.1.5",
+    "@iconify-json/mdi": "^1.1.56",
+    "@iconify-json/mingcute": "^1.1.12",
+    "@iconify-json/solar": "^1.1.7",
     "@microflash/remark-figure-caption": "^2.0.2",
     "@tailwindcss/typography": "^0.5.10",
-    "astro": "^3.5.3",
+    "@types/markdown-it": "^13.0.7",
+    "@types/sanitize-html": "^2.9.5",
+    "astro": "^3.6.0",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.31",
     "prettier": "^3.1.0",
@@ -33,12 +35,14 @@
     "react": "^18.2.0",
     "rehype-external-links": "^3.0.0",
     "tailwindcss": "^3.3.5",
-    "typescript": "^5.2.2",
+    "typescript": "^5.3.2",
     "uniqolor": "^1.1.0",
-    "unplugin-icons": "^0.17.3",
-    "vite": "^4.5.0"
+    "unplugin-icons": "^0.17.4",
+    "vite": "^5.0.2"
   },
   "dependencies": {
+    "markdown-it": "^13.0.2",
+    "sanitize-html": "^2.11.0",
     "sharp": "^0.32.6"
   }
 }

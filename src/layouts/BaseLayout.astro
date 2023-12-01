@@ -5,7 +5,7 @@ export interface Props {
   title?: string;
   description?: string;
   image?: string;
-  type?: 'website' | 'article';
+  type?: "website" | "article";
 }
 
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
@@ -14,15 +14,25 @@ import "@fontsource/inter/400.css";
 import "@fontsource/inter/600.css";
 import "@fontsource/inter/700.css";
 
-import '@fontsource/fira-code/400.css';
-import '@fontsource/fira-code/700.css';
+import "@fontsource/fira-code/400.css";
+import "@fontsource/fira-code/700.css";
 
-const { title = SITE_TITLE, description = SITE_DESCRIPTION, type, image } = Astro.props;
+const {
+  title = SITE_TITLE,
+  description = SITE_DESCRIPTION,
+  type,
+  image,
+} = Astro.props;
 ---
 
 <html lang="en" class="w-full h-full">
   <head>
-    <BaseHead image={image} title={title} description={description} type={type} />
+    <BaseHead
+      image={image}
+      title={title}
+      description={description}
+      type={type}
+    />
     <style lang="postcss" is:global> 
         body {
           @apply w-full h-full flex flex-col text-black dark:text-white font-sans;
