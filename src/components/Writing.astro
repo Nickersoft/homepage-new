@@ -9,12 +9,12 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <div>
-  <h2>Thoughts</h2>
+  <h2>Writing</h2>
   <ul>
     {
       posts.map((post) => (
         <li>
-          <a href={`/blog/${post.slug}/`}>
+          <a data-astro-prefetch="hover" href={`/blog/${post.slug}/`}>
             <FormattedDate date={post.data.pubDate} />
             {post.data.title}
           </a>
@@ -32,7 +32,7 @@ const posts = (await getCollection("blog")).sort(
     @apply -mx-4;
 
     &:hover {
-      @apply dark:bg-white dark:bg-opacity-[0.03] bg-black bg-opacity-[0.03];
+      @apply dark:bg-gray-800 bg-gray-100;
     }
 
     &:active {

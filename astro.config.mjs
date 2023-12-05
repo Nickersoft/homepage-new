@@ -4,7 +4,6 @@ import { join } from "node:path";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
-import prefetch from "@astrojs/prefetch";
 import vercel from "@astrojs/vercel/serverless";
 import Icons from "unplugin-icons/vite";
 
@@ -15,8 +14,9 @@ import rehypeExternalLinks from "rehype-external-links";
 export default defineConfig({
   site: "https://www.tylernickerson.com",
   output: "hybrid",
-  integrations: [mdx(), sitemap(), tailwind(), prefetch()],
+  integrations: [mdx(), sitemap(), tailwind()],
   adapter: vercel(),
+  prefetch: true,
   markdown: {
     remarkPlugins: [remarkFigureCaption],
     rehypePlugins: [rehypeExternalLinks],

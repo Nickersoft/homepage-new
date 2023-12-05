@@ -1,5 +1,5 @@
 ---
-import uniqolor from 'uniqolor';
+import uniqolor from "uniqolor";
 
 export interface Props {
   icon: astroHTML.JSX.Element;
@@ -10,21 +10,27 @@ export interface Props {
 
 const { icon: Icon, title, tagline, href } = Astro.props;
 
-const startColor = uniqolor(Buffer.from(title).toString('base64')).color;
-const endColor = uniqolor(Buffer.from(tagline).toString('base64')).color;
+const startColor = uniqolor(Buffer.from(title).toString("base64")).color;
+const endColor = uniqolor(Buffer.from(tagline).toString("base64")).color;
 ---
-<a target="_blank" rel="nopenner noreferrer" href={href} class="project" style={`--startColor: ${startColor}; --endColor: ${endColor}`}>
-  <div class="inner"> 
-    <Icon class="flex-shrink-0 text-base mx-2 text-[var(--startColor)]" /> 
+
+<a
+  target="_blank"
+  rel="nopenner noreferrer"
+  href={href}
+  class="project"
+  style={`--startColor: ${startColor}; --endColor: ${endColor}`}
+>
+  <div class="inner">
+    <Icon class="flex-shrink-0 text-base mx-2 text-[var(--startColor)]" />
     <div>
       <h3 class="text-lg mb-[0.5]">
         {title}
-      </h3> 
+      </h3>
       <p class="m-0 text-sm">
         {tagline}
       </p>
     </div>
-
   </div>
 </a>
 
@@ -43,14 +49,14 @@ const endColor = uniqolor(Buffer.from(tagline).toString('base64')).color;
     }
     
     .inner {
-      @apply dark:bg-black p-4 h-full flex flex-row gap-4 items-center text-left bg-white;
+      @apply dark:bg-gray-900 p-4 h-full flex flex-row gap-4 items-center text-left bg-gray-0;
       @apply relative overflow-hidden;
 
       border-radius: calc(theme('borderRadius.lg') - var(--border-width));
 
       &:after {
         @apply absolute inset-0 opacity-0 transition-all duration-150;
-        @apply dark:bg-white dark:bg-opacity-[0.03];
+        @apply dark:bg-gray-0 dark:bg-opacity-[0.03];
         content: '';
       }
     }

@@ -1,0 +1,15 @@
+<div
+  class="prose relative pt-2 prose-code:font-normal dark:prose-invert prose-h2:font-semibold prose-blockquote:font-normal prose-figcaption:mt-6 prose-base prose-p:leading-loose w-full !max-w-full prose-headings:font-sans prose-figure:text-center prose-img:mx-auto"
+>
+  <slot />
+</div>
+
+<style lang="postcss" is:global>
+  .prose img:not(.unstyled) {
+    @apply rounded-md shadow-md border dark:border-dark;
+  }
+
+  .prose .unstyled img {
+    @apply rounded-none shadow-none border-none !important;
+  }
+</style>

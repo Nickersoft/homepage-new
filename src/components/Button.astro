@@ -1,22 +1,24 @@
 ---
-export interface Props {
+export type Props = {
   title: string;
-  icon: astroHTML.JSX.Element;
+  icon?: astroHTML.JSX.Element;
+  href?: string;
   variant?: "primary" | "secondary";
-  href: string;
   iconPlacement?: "before" | "after";
-}
+};
 
 const {
-  href,
   title,
   icon: Icon,
+  href,
   variant = "primary",
   iconPlacement = "before",
 } = Astro.props;
+
+const Tag = href ? "a" : "button";
 ---
 
-<a
+<Tag
   class="btn"
   class:list={[
     {
@@ -27,9 +29,9 @@ const {
   ]}
   href={href}
 >
-  <Icon />
+  {Icon && <Icon />}
   {title}
-</a>
+</Tag>
 
 <style lang="postcss"> 
   .btn {
@@ -37,19 +39,19 @@ const {
     @apply active:scale-[0.99] transition-all duration-150 active:opacity-50 cursor-pointer;
     
     &-secondary {
-      @apply dark:text-white dark:text-opacity-75 text-black text-opacity-75;
+      @apply dark:text-dark dark:text-opacity-75 text-opacity-75;
 
       &:active {
         @apply scale-[0.99] opacity-50;
       }
 
       &:hover {
-        @apply dark:bg-white dark:bg-opacity-5 bg-opacity-5 dark:text-opacity-90 text-opacity-90 bg-black;
+        @apply dark:bg-gray-800 dark:text-opacity-90 text-opacity-90 bg-gray-100;
       }
     }
 
     &-primary {
-      @apply dark:bg-white dark:bg-opacity-10 dark:text-white bg-opacity-10 text-black cursor-pointer font-semibold bg-black;
+      @apply dark:bg-gray-800 dark:text-dark bg-gray-100 cursor-pointer font-semibold;
     }
   }
 </style>

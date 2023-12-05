@@ -4,13 +4,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Introduction from "../components/Introduction.mdx";
 import Writing from "../components/Writing.astro";
 import Projects from "../components/Projects.astro";
+import Portfolio from "@components/Portfolio.astro";
 ---
 
 <BaseLayout>
   <main
-    class="max-w-3xl p-8 pt-16 m-auto font-sans leading-relaxed text-base text-left flex flex-col gap-8"
+    class="max-w-3xl animate-fade-up p-8 pt-16 m-auto font-sans leading-relaxed text-base text-left flex flex-col gap-8"
   >
     <Introduction />
+    <Portfolio />
     <Writing />
     <Projects />
   </main>
@@ -23,14 +25,14 @@ import Projects from "../components/Projects.astro";
     }
 
     h2 {
-      @apply font-bold text-2xl border-b border-black dark:border-white dark:border-opacity-10 py-4 mb-4 border-opacity-10;
+      @apply font-semibold text-2xl border-b dark:border-dark py-4 mb-4;
     }
 
     p {
-      @apply mb-4 block text-opacity-80 dark:text-opacity-80 text-black dark:text-white leading-relaxed;
+      @apply mb-4 block dark:text-subtle-dark text-subtle leading-relaxed;
 
       & > a {
-        @apply text-opacity-100 dark:text-opacity-100 text-black dark:text-white border-dashed border-b border-black dark:border-white transition-all duration-150;
+        @apply dark:text-dark border-dashed border-b dark:border-gray-0 border-gray-900 transition-all duration-150;
         @apply pb-0.5 active:text-opacity-80;
       }
     }

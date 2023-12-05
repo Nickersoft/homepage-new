@@ -8,30 +8,22 @@ import { ICONS } from "../consts";
 const projects = await getCollection("projects");
 ---
 
-<div> 
+<div>
+  <h2>Projects</h2>
 
-<h2>Projects</h2>
-
-<ul class="grid gap-4" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
-  {projects.map(({data: project}) => (
-    <Project href={project.url} title={project.title} icon={ICONS[project.icon]} tagline={project.tagline} />
-  ))}
-</ul>
+  <ul
+    class="grid gap-4"
+    style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));"
+  >
+    {
+      projects.map(({ data: project }) => (
+        <Project
+          href={project.url}
+          title={project.title}
+          icon={ICONS[project.icon]}
+          tagline={project.tagline}
+        />
+      ))
+    }
+  </ul>
 </div>
-
-<style lang="postcss"> 
-  a {
-    @apply block; 
-    @apply text-lg font-sans font-normal mb-0 mt-1 py-4 rounded-lg px-4 flex flex-col gap-2;
-    @apply transition-all duration-75;
-    @apply -mx-4;
-
-    &:hover {
-      @apply bg-white bg-opacity-[0.03];
-    }
-
-    &:active {
-      @apply opacity-50;
-    }
-  }     
-</style>

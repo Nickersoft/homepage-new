@@ -1,0 +1,124 @@
+---
+import { Image } from "astro:assets";
+
+import Back from "~icons/mdi/arrow-left";
+import Tweet from "~icons/mdi/twitter";
+
+import Button from "@components/Button.astro";
+import Prose from "@components/Prose.astro";
+import FormattedDate from "@components/FormattedDate.astro";
+import OriginallyPosted from "@components/OriginallyPosted.astro";
+
+import BaseLayout from "./BaseLayout.astro";
+
+export type Props = {
+  title: string;
+  subtitle: string;
+  image?: ImageMetadata;
+  original?: string;
+  pubDate?: Date;
+  showHero?: boolean;
+};
+
+const { title, subtitle, pubDate, image, original, showHero } = Astro.props;
+
+function getShareURL() {
+  const url = Astro.url.toString();
+  const tweet = `An absolutely lovely read by @tylernickerson: ${url}`;
+  return `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweet)}`;
+}
+---
+
+<BaseLayout type="article" title={title} image={image?.src}>
+  <nav>
+    <Button variant="secondary" title="Back" href="/" icon={Back} />
+    <Button
+      variant="secondary"
+      href={getShareURL()}
+      title="Share"
+      icon={Tweet}
+    />
+  </nav>
+
+  {
+    image && showHero && (
+      <div class="cover">
+        <Image densities={[1, 2, 3]} quality="high" alt="" src={image} />{" "}
+      </div>
+    )
+  }
+
+  <article class:list={[{ "mt-16": !image || !showHero }]}>
+    <header>
+      {pubDate && <FormattedDate date={pubDate} />}
+      <h1>{title}</h1>
+      <p>{subtitle}</p>
+      <div class="flex flex-row justify-center gap-4 items-center">
+        <slot name="tags" />
+      </div>
+    </header>
+
+    <hr />
+
+    <aside class="not-prose">
+      <slot name="toc" />
+    </aside>
+
+    <div class="prose-wrapper">
+      <Prose>
+        <slot />
+        <hr />
+        {original && <OriginallyPosted original={original} />}
+      </Prose>
+    </div>
+  </article>
+</BaseLayout>
+
+<style lang="postcss">
+  nav {
+    @apply flex top-0 z-50 fixed p-4 w-full justify-between items-center flex-row;
+    @apply bg-gray-0 dark:bg-gray-900 bg-opacity-75 dark:bg-opacity-75 backdrop-blur-lg;
+    @apply lg:bg-clear lg:backdrop-blur-none;
+  }
+
+  .cover {
+    @apply mb-16 container mx-auto px-8;
+
+    :global(img) {
+      @apply h-[28rem] mt-[4.5rem] object-cover rounded-lg shadow-md;
+    }
+  }
+
+  article {
+    @apply items-center p-8 mx-auto w-full grid container gap-8;
+    @apply grid-cols-[1fr,48rem,1fr];
+    @apply animate-fade-up;
+  }
+
+  header {
+    @apply py-2 flex flex-col items-center col-start-2;
+
+    h1 {
+      @apply text-4xl font-sans font-bold text-center leading-normal;
+      @apply w-full py-2;  
+    }
+
+    p {
+      @apply text-lg font-sans text-subtle dark:text-subtle-dark mt-2;  
+    }
+  }
+
+  hr {
+    @apply w-full dark:border-gray-700 my-8 !important;
+    @apply col-start-2;
+  }
+
+  .prose-wrapper {
+    @apply col-start-2;
+  }
+
+  aside {
+    @apply sticky text-right justify-self-end self-start top-32;
+    @apply col-start-1;
+  }
+</style>

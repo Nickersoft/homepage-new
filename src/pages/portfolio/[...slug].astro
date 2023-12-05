@@ -1,0 +1,55 @@
+---
+export const prerender = false;
+
+import PasswordBox from "@components/PasswordBox.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import CaseStudy from "@layouts/CaseStudy.astro";
+import { getCollection } from "astro:content";
+
+const { slug } = Astro.params;
+
+const caseStudies = await getCollection("caseStudy");
+const page = caseStudies.find((page) => page.slug === slug?.split("/").pop());
+
+if (!page) {
+  return Astro.redirect("/404");
+}
+
+const {
+  data: { title, roles, protected: protect },
+} = page;
+
+let authenticated = false;
+
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData();
+    const password = data.get("password");
+
+    if (password === process.env.PORTFOLIO_PASSWORD) {
+      authenticated = true;
+    }
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
+
+const { Content, headings } = await page.render();
+---
+
+<CaseStudy headings={headings} {...page.data}>
+  <!-- <div class="h-screen flex justify-center items-center w-screen">
+    {!authenticated && <PasswordBox />}
+  </div> -->
+
+  <Content />
+</CaseStudy>
+
+<style lang="postcss">
+
+  .case-study {
+    
+  }
+</style>

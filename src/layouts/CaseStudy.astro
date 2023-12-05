@@ -1,0 +1,81 @@
+---
+import type { CollectionEntry } from "astro:content";
+import type { MarkdownHeading } from "astro";
+
+import Pill from "@components/Pill.astro";
+import ProseLayout from "./ProseLayout.astro";
+
+type Props = CollectionEntry<"caseStudy">["data"] & {
+  headings: MarkdownHeading[];
+};
+
+const { title, headings, year, roles, image } = Astro.props;
+---
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const id = entry.target.id;
+
+        if (entry.isIntersecting) {
+          document
+            .querySelectorAll(`aside li a`)
+            .forEach((el) => el.classList.remove("active"));
+          document
+            .querySelector(`aside li a[href="#${id}"]`)
+            ?.classList.add("active");
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll("h2[id]").forEach((el) => {
+    observer.observe(el);
+  });
+</script>
+
+<ProseLayout title={title} subtitle={year.toString()} showHero image={image}>
+  <Fragment slot="tags">
+    {roles.map((role) => <Pill>{role}</Pill>)}
+  </Fragment>
+
+  <ul class="toc" slot="toc">
+    {
+      headings
+        .filter(({ depth }) => depth === 2)
+        .map((heading) => (
+          <li>
+            <a href={`#${heading.slug}`}>{heading.text.split(":")[0]}</a>
+          </li>
+        ))
+    }
+  </ul>
+
+  <slot />
+</ProseLayout>
+
+<style lang="postcss">
+  .cover {
+    @apply h-[28rem] mt-[4.5rem] object-cover;
+  }
+
+  :global(h2 span) {
+    @apply !text-sm tracking-widest uppercase font-semibold opacity-50 block mb-2;
+  }
+
+  ul.toc {
+    li {
+      @apply py-2;
+
+      a {
+        @apply opacity-50 transition-opacity duration-300;
+
+        &.active {
+          @apply opacity-100;
+        }
+      }
+    }
+  }
+</style>

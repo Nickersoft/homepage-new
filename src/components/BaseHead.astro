@@ -1,23 +1,19 @@
 ---
-import me from '../assets/me.png';
+import me from "../assets/me.png";
 
-import inter400 from '@fontsource/inter/files/inter-latin-400-normal.woff2';
-import inter600 from '@fontsource/inter/files/inter-latin-600-normal.woff2';
-import inter700 from '@fontsource/inter/files/inter-latin-700-normal.woff2';
-
-import firaCode400 from '@fontsource/fira-code/files/fira-code-latin-400-normal.woff2';
-import firaCode700 from '@fontsource/fira-code/files/fira-code-latin-700-normal.woff2';
+import inter from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2";
+import firaCode from "@fontsource-variable/fira-code/files/fira-code-latin-wght-normal.woff2";
 
 export interface Props {
-	title: string;
-	description: string;
+  title: string;
+  description: string;
   image?: string;
-	type?: 'article' | 'website';
+  type?: "article" | "website";
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image, type='website' } = Astro.props;
+const { title, description, image, type = "website" } = Astro.props;
 
 const socialImage = new URL(image ?? me.src, Astro.url);
 ---
@@ -38,15 +34,17 @@ const socialImage = new URL(image ?? me.src, Astro.url);
   media="(prefers-color-scheme: dark)"
 />
 
-{[inter400, inter600, inter700, firaCode400, firaCode700].map(url => (
-  <link
-    rel="preload"
-    as="font"
-    crossorigin="anonymous"
-    href={url}
-    type="font/woff2"
-  />
-))}
+{
+  [inter, firaCode].map((url) => (
+    <link
+      rel="preload"
+      as="font"
+      crossorigin="anonymous"
+      href={url}
+      type="font/woff2"
+    />
+  ))
+}
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -61,11 +59,14 @@ const socialImage = new URL(image ?? me.src, Astro.url);
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={socialImage}>
+<meta property="og:image" content={socialImage} />
 
 <!-- Twitter -->
-<meta property="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+<meta
+  property="twitter:card"
+  content={image ? "summary_large_image" : "summary"}
+/>
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={socialImage}>
+<meta property="twitter:image" content={socialImage} />

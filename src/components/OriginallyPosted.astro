@@ -1,0 +1,29 @@
+---
+import OpenInNew from "~icons/mdi/open-in-new";
+
+export type Props = {
+  original: string;
+};
+
+const { original } = Astro.props;
+---
+
+<div class="notice">
+  This article was originally published on{" "}
+  <a
+    class="inline-flex gap-0.5 flex-row justify-center items-center"
+    href={original}
+    target="_blank"
+    rel="noreferrer noopener"
+  >
+    {new URL(original).hostname}
+    <OpenInNew class="w-3 h-3" />
+  </a>{" "}
+   and has been posted above for convenience.
+</div>
+
+<style lang="postcss">
+  .notice {
+    @apply dark:text-muted-dark text-center text-sm text-muted;
+  }
+</style>

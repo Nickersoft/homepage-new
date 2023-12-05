@@ -10,12 +10,8 @@ export interface Props {
 
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
-import "@fontsource/inter/400.css";
-import "@fontsource/inter/600.css";
-import "@fontsource/inter/700.css";
-
-import "@fontsource/fira-code/400.css";
-import "@fontsource/fira-code/700.css";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/fira-code";
 
 const {
   title = SITE_TITLE,
@@ -25,7 +21,7 @@ const {
 } = Astro.props;
 ---
 
-<html lang="en" class="w-full h-full">
+<html lang="en" class="scroll-smooth w-full h-full">
   <head>
     <BaseHead
       image={image}
@@ -35,14 +31,14 @@ const {
     />
     <style lang="postcss" is:global> 
         body {
-          @apply w-full h-full flex flex-col text-black dark:text-white font-sans;
+          @apply w-full h-full flex flex-col dark:text-dark font-sans;
         
           @media (prefers-color-scheme: dark) {
-            background: url('/static.png'), theme('colors.black');
+            background: url('/static.png'), theme('colors.gray.900');
           }
 
           @media (prefers-color-scheme: light) {
-            background: url('/static-lm.png'), theme('colors.white');
+            background: url('/static-lm.png'), theme('colors.gray.0');
           }
         }
     </style>

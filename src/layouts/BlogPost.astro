@@ -1,118 +1,28 @@
 ---
 import type { CollectionEntry } from "astro:content";
 
-import OpenInNew from "~icons/mdi/open-in-new";
+import Avatar from "@components/Avatar.astro";
+import Pill from "@components/Pill.astro";
 
-import FormattedDate from "../components/FormattedDate.astro";
-import BaseLayout from "./BaseLayout.astro";
-import Button from "../components/Button.astro";
-import Back from "~icons/mdi/arrow-left";
-import Tweet from "~icons/mdi/twitter";
-import Avatar from "../components/Avatar.astro";
+import ProseLayout from "./ProseLayout.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, original, description, pubDate, image } = Astro.props;
-
-function getShareURL() {
-  const url = Astro.url.toString();
-  const tweet = `An absolutely lovely read by @tylernickerson: ${url}`;
-  return `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweet)}`;
-}
 ---
 
-<BaseLayout type="article" title={title} image={image?.src} description={description}>
-  
-  <nav class="nav">
-    <Button variant="secondary" title="Back" href="/" icon={Back} />
-    <Button variant="secondary" href={getShareURL()} title="Share" icon={Tweet} />
-  </nav>
-
-  <article class="article">
-    
-    <header class="py-2 flex flex-col items-center"> 
-      <FormattedDate date={pubDate} />
-      <h1 class="title">{title}</h1>
-      <p class="description">{description}</p>
-      <span class="pill">
-        <Avatar width={16} height={16} />
-        Tyler Nickerson
-      </span>
-    </header>
-    
-    <hr />
-
-    <div
-      class="prose pt-2 prose-code:font-normal  dark:prose-invert prose-blockquote:font-normal prose-figcaption:mt-6 prose-base prose-p:leading-loose w-full !max-w-full prose-headings:font-sans prose-figure:text-center prose-img:mx-auto content"
-    >
-      <slot />
-      <hr />
-      {
-        original && (
-          <div class="notice">
-            This article was originally published on{" "}
-            <a
-              class="inline-flex gap-0.5 flex-row justify-center items-center"
-              href={original}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              {new URL(original).hostname}
-              <OpenInNew class="w-3 h-3" />
-            </a>{" "}
-            and has been posted above for convenience.
-          </div>
-        )
-      }
-    </div>
-  </article>
-</BaseLayout>
-
-<style lang="postcss" is:global>
-  .prose img:not(.unstyled) {
-    @apply rounded-md shadow-md border border-white border-opacity-5;
-  }
-
-  .prose .unstyled img {
-    @apply rounded-none shadow-none border-none !important;
-  }
-</style>
-
-<style lang="postcss">
-  .article {
-    @apply flex flex-col items-center lg:max-w-3xl p-8 mx-auto pt-24 w-full;
-  }
-
-  hr {
-    @apply w-full border-black dark:border-white opacity-10 my-8 !important;
-  }
-
-  .description {
-    @apply text-lg font-sans opacity-75 mt-2;
-  }
-
-  .notice {
-    @apply dark:text-white text-opacity-50 text-center text-sm text-black;
-  }
-
-  .hero {
-    @apply rounded-md;
-  }
-
-  .title {
-    @apply text-4xl font-sans font-bold text-center leading-normal;
-    @apply w-full py-2;  
-  }
-
-  .pill {
-    @apply flex flex-row items-center gap-2 mt-8 text-sm px-4 py-2 rounded-full;
-    @apply text-black text-opacity-75 dark:text-white dark:text-opacity-75;
-    @apply border border-black dark:border-opacity-5 dark:border-white border-opacity-10;
-    @apply dark:bg-white dark:bg-opacity-5;
-  }
-
-  .nav {
-    @apply flex top-0 z-50 fixed p-4 w-full justify-between items-center flex-row;
-    @apply bg-white dark:bg-black bg-opacity-75 dark:bg-opacity-75 backdrop-blur-lg lg:bg-clear lg:backdrop-blur-none;
-  }
-  </style>
+<ProseLayout
+  title={title}
+  image={image}
+  pubDate={pubDate}
+  subtitle={description}
+  original={original}
+>
+  <Fragment slot="tags">
+    <Pill>
+      <Avatar width={16} height={16} />
+       Tyler Nickerson
+    </Pill>
+  </Fragment>
+  <slot />
+</ProseLayout>
