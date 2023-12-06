@@ -3,6 +3,8 @@ import PasswordBox from "@components/PasswordBox.astro";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 
+import type { Props as BaseLayoutProps } from "./BaseLayout.astro";
+
 let authenticated = false;
 
 if (Astro.request.method === "POST") {
@@ -19,11 +21,13 @@ if (Astro.request.method === "POST") {
     }
   }
 }
+
+export type Props = BaseLayoutProps;
 ---
 
 {
   !authenticated ? (
-    <BaseLayout showFooter={false}>
+    <BaseLayout {...Astro.props} showFooter={false}>
       <PasswordBox />
     </BaseLayout>
   ) : (

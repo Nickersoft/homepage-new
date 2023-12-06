@@ -24,7 +24,11 @@ const { Content, headings } = await render();
 const Wrapper = protect ? ProtectedPage : Fragment;
 ---
 
-<Wrapper>
+<Wrapper
+  image={data.image.src}
+  title={data.title}
+  description="A case study by Tyler Nickerson"
+>
   <CaseStudy headings={headings} {...data}>
     <Content />
   </CaseStudy>
