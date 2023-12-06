@@ -30,8 +30,8 @@ export default {
           dark: theme("colors.gray.0/0.1"),
         },
         emphasis: {
-          light: theme("colors.gray.900/0.3"),
-          dark: theme("colors.gray.0/0.3"),
+          light: theme("colors.gray.900/0.2"),
+          dark: theme("colors.gray.0/0.2"),
         },
       };
     },
@@ -39,7 +39,7 @@ export default {
       DEFAULT: theme("colors.gray.900"),
       dark: theme("colors.gray.0"),
       subtle: {
-        DEFAULT: theme("colors.gray.700"),
+        DEFAULT: theme("colors.gray.600"),
         dark: theme("colors.gray.300"),
       },
       muted: {
@@ -59,7 +59,7 @@ export default {
     colors: {
       gray: {
         0: "#FEFEFE",
-        100: "#F0F0F0",
+        100: "#F6F6F6",
         200: "#E8E8E8",
         300: "#B5B5B5",
         400: "#9C9C9C",
