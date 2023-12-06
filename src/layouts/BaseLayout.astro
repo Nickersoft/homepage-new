@@ -5,6 +5,7 @@ export interface Props {
   title?: string;
   description?: string;
   image?: string;
+  showFooter?: boolean;
   type?: "website" | "article";
 }
 
@@ -17,6 +18,7 @@ const {
   title = SITE_TITLE,
   description = SITE_DESCRIPTION,
   type,
+  showFooter = true,
   image,
 } = Astro.props;
 ---
@@ -49,8 +51,12 @@ const {
   </head>
   <body>
     <slot />
-    <footer class="text-xs opacity-50 text-center py-8">
-      Copyright {new Date().getFullYear()} Tyler Nickerson
-    </footer>
+    {
+      showFooter && (
+        <footer class="text-xs opacity-50 text-center py-8">
+          Copyright {new Date().getFullYear()} Tyler Nickerson
+        </footer>
+      )
+    }
   </body>
 </html>

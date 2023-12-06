@@ -1,10 +1,12 @@
 ---
 export const prerender = false;
 
+import { getCollection } from "astro:content";
+
 import PasswordBox from "@components/PasswordBox.astro";
+
 import BaseLayout from "@layouts/BaseLayout.astro";
 import CaseStudy from "@layouts/CaseStudy.astro";
-import { getCollection } from "astro:content";
 
 const { slug } = Astro.params;
 
@@ -41,10 +43,8 @@ const { Content, headings } = await page.render();
 
 {
   !authenticated && protect ? (
-    <BaseLayout>
-      <div class="h-screen flex justify-center items-center w-screen">
-        <PasswordBox />
-      </div>
+    <BaseLayout showFooter={false}>
+      <PasswordBox />
     </BaseLayout>
   ) : (
     <CaseStudy headings={headings} {...page.data}>
