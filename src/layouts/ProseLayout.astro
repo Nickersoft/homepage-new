@@ -6,7 +6,6 @@ import Tweet from "~icons/mdi/twitter";
 
 import Button from "@components/Button.astro";
 import Prose from "@components/Prose.astro";
-import FormattedDate from "@components/FormattedDate.astro";
 import OriginallyPosted from "@components/OriginallyPosted.astro";
 
 import BaseLayout from "./BaseLayout.astro";
@@ -16,11 +15,10 @@ export type Props = {
   subtitle: string;
   image?: ImageMetadata;
   original?: string;
-  pubDate?: Date;
   showHero?: boolean;
 };
 
-const { title, subtitle, pubDate, image, original, showHero } = Astro.props;
+const { title, subtitle, image, original, showHero } = Astro.props;
 
 function getShareURL() {
   const url = Astro.url.toString();
@@ -50,7 +48,7 @@ function getShareURL() {
 
   <article class:list={[{ "mt-16": !image || !showHero }]}>
     <header>
-      {pubDate && <FormattedDate date={pubDate} />}
+      <slot name="label" />
       <h1>{title}</h1>
       <p>{subtitle}</p>
       <div class="flex flex-row justify-center gap-4 items-center">
@@ -82,43 +80,43 @@ function getShareURL() {
   }
 
   .cover {
-    @apply mb-16 container mx-auto px-8;
+    @apply lg:mb-16 container mx-auto px-8 animate-fade-up;
 
     :global(img) {
-      @apply h-[28rem] mt-[4.5rem] object-cover rounded-lg shadow-md;
+      @apply lg:h-[28rem] mt-[4.5rem] object-cover rounded-lg shadow-md;
     }
   }
 
   article {
-    @apply items-center p-8 mx-auto w-full grid container gap-8;
-    @apply grid-cols-[1fr,48rem,1fr];
+    @apply items-center p-8 mx-auto w-full grid container gap-x-16;
+    @apply lg:grid-cols-[1fr,48rem,1fr] grid-cols-1;
     @apply animate-fade-up;
   }
 
   header {
-    @apply py-2 flex flex-col items-center col-start-2;
+    @apply py-2 flex flex-col items-center lg:col-start-2;
 
     h1 {
-      @apply text-4xl font-sans font-bold text-center leading-normal;
+      @apply text-4xl font-sans font-semibold text-center leading-normal;
       @apply w-full py-2;  
     }
 
     p {
-      @apply text-lg font-sans text-subtle dark:text-subtle-dark mt-2;  
+      @apply text-lg font-sans text-subtle dark:text-subtle-dark mt-2 mb-8;   
     }
   }
 
   hr {
-    @apply w-full dark:border-gray-700 my-8 !important;
-    @apply col-start-2;
+    @apply w-full dark:border-subtle-dark border-subtle-light border my-8 !important;
+    @apply lg:col-start-2;
   }
 
   .prose-wrapper {
-    @apply col-start-2;
+    @apply lg:col-start-2;
   }
 
   aside {
     @apply sticky text-right justify-self-end self-start top-32;
-    @apply col-start-1;
+    @apply col-start-1 lg:block hidden;
   }
 </style>

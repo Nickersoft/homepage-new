@@ -15,8 +15,9 @@
     "@astrojs/sitemap": "^3.0.3",
     "@astrojs/tailwind": "^5.0.3",
     "@astrojs/vercel": "^6.0.0",
+    "@fontsource-variable/dm-sans": "^5.0.3",
     "@fontsource-variable/fira-code": "^5.0.15",
-    "@fontsource-variable/inter": "^5.0.15",
+    "@iconify-json/carbon": "^1.1.24",
     "@iconify-json/el": "^1.1.7",
     "@iconify-json/game-icons": "^1.1.6",
     "@iconify-json/mdi": "^1.1.58",
@@ -26,7 +27,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "@types/markdown-it": "^13.0.7",
     "@types/sanitize-html": "^2.9.5",
-    "astro": "^4.0.1",
+    "astro": "^4.0.2",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.32",
     "prettier": "^3.1.0",
@@ -42,6 +43,6 @@
   "dependencies": {
     "markdown-it": "^13.0.2",
     "sanitize-html": "^2.11.0",
-    "sharp": "^0.33.0"
+    "sharp": "0.32.6"
   }
 }

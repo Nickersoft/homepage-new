@@ -16,7 +16,7 @@ if (!page) {
 }
 
 const {
-  data: { title, roles, protected: protect },
+  data: { protected: protect },
 } = page;
 
 let authenticated = false;
@@ -39,13 +39,19 @@ if (Astro.request.method === "POST") {
 const { Content, headings } = await page.render();
 ---
 
-<CaseStudy headings={headings} {...page.data}>
-  <!-- <div class="h-screen flex justify-center items-center w-screen">
-    {!authenticated && <PasswordBox />}
-  </div> -->
-
-  <Content />
-</CaseStudy>
+{
+  !authenticated && protect ? (
+    <BaseLayout>
+      <div class="h-screen flex justify-center items-center w-screen">
+        <PasswordBox />
+      </div>
+    </BaseLayout>
+  ) : (
+    <CaseStudy headings={headings} {...page.data}>
+      <Content />
+    </CaseStudy>
+  )
+}
 
 <style lang="postcss">
 

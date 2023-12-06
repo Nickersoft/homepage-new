@@ -37,6 +37,8 @@ const { title, headings, year, roles, image } = Astro.props;
 </script>
 
 <ProseLayout title={title} subtitle={year.toString()} showHero image={image}>
+  <p slot="label" class="label">Case Study</p>
+
   <Fragment slot="tags">
     {roles.map((role) => <Pill>{role}</Pill>)}
   </Fragment>
@@ -62,7 +64,7 @@ const { title, headings, year, roles, image } = Astro.props;
   }
 
   :global(h2 span) {
-    @apply !text-sm tracking-widest uppercase font-semibold opacity-50 block mb-2;
+    @apply !text-sm tracking-widest uppercase font-semibold opacity-50 !mb-2 block;
   }
 
   ul.toc {

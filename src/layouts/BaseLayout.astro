@@ -10,7 +10,7 @@ export interface Props {
 
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
-import "@fontsource-variable/inter";
+import "@fontsource-variable/dm-sans";
 import "@fontsource-variable/fira-code";
 
 const {
@@ -40,6 +40,10 @@ const {
           @media (prefers-color-scheme: light) {
             background: url('/static-lm.png'), theme('colors.gray.0');
           }
+        }
+
+        .label {
+          @apply text-xs uppercase tracking-widest font-medium text-muted dark:text-muted-dark;
         }
     </style>
   </head>

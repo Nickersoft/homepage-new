@@ -1,9 +1,11 @@
-import Twitter from "~icons/mdi/twitter";
+import Twitter from "~icons/carbon/logo-x";
 import Email from "~icons/mdi/email";
 import LinkedIn from "~icons/mdi/linkedin";
 import Layers from "~icons/mdi/layers";
 import GitHub from "~icons/mdi/github";
+import Hire from '~icons/mdi/heart';
 import OpenInNew from "~icons/mdi/open-in-new";
+import Document from '~icons/solar/document-bold';
 
 import Avatar from "./Avatar.astro";
 import Button from "./Button.astro";
@@ -14,23 +16,22 @@ import Button from "./Button.astro";
   <Avatar />
 </div>
 
-# Tyler Nickerson
+# I'm Tyler 👋🏻 <span>I'm a product designer, coder, and entrepreneur in Seattle.</span>
 
 <div class="social">
-  [<Twitter />
-  ](https://twitter.com/tylernickerson) [<LinkedIn />
-  ](https://linkedin.com/in/tylernickerson) [<Layers />
-  ](https://layers.to/tylernickerson) [<GitHub />
-  ](https://github.com/nickersoft)
+  [<Email />](mailto:tyler@kojo.design)
+  [<Twitter />](https://twitter.com/tylernickerson) 
+  [<LinkedIn />](https://linkedin.com/in/tylernickerson) 
+  [<Layers />](https://layers.to/tylernickerson) 
+  [<GitHub />](https://github.com/nickersoft)
 </div>
 
-Hi there! 👋🏻 I'm Tyler, a design engineer living in Seattle, WA. I'm the founder of [Kojo Design](https://kojo.design) and [The Open Dictionary Project](https://odict.org), as well as the co-founder of [Linguistic](https://linguistic.io).
+I'm so glad you're here. A little bit about me: I'm the founder of [Kojo Design](https://kojo.design) and [The Open Dictionary Project](https://odict.org), as well as the co-founder of [Linguistic](https://linguistic.io). In my spare time I like to write music, hack on side projects, and brush up on my Chinese.
 
-Here you'll mostly find my writing, as well as where to find me elsewhere on
-the web.
+Here you'll find my design work, writing, projects, and links to the other places I hang out around the web.
 
   <div class="flex mt-8 flex-col lg:flex-row items-start lg:items-center gap-2"> 
-    <Button href="mailto:tyler@kojo.design" title="Message me" icon={Email} />
-    <Button href="https://read.cv/tnick" variant="secondary" iconPlacement="after" title="Read my resume" icon={OpenInNew} />
+    <Button href="https://kojo.design/#pricing" title="Work with me" icon={Hire} />
+    <Button href="https://read.cv/tnick" variant="secondary" iconPlacement="after" title="Read my resume" icon={Document} />
   </div>
 </div>
