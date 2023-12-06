@@ -38,6 +38,7 @@ const projects = defineCollection({
     title: z.string(),
     tagline: z.string(),
     url: z.string().url(),
+    order: z.number(),
     icon: z.enum(Object.keys(ICONS) as [string, ...string[]]),
   }),
 });

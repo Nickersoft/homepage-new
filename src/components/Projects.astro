@@ -16,14 +16,16 @@ const projects = await getCollection("projects");
     style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));"
   >
     {
-      projects.map(({ data: project }) => (
-        <Project
-          href={project.url}
-          title={project.title}
-          icon={ICONS[project.icon]}
-          tagline={project.tagline}
-        />
-      ))
+      projects
+        .sort((a, b) => a.data.order - b.data.order)
+        .map(({ data: project }) => (
+          <Project
+            href={project.url}
+            title={project.title}
+            icon={ICONS[project.icon]}
+            tagline={project.tagline}
+          />
+        ))
     }
   </ul>
 </div>
