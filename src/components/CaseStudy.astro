@@ -1,0 +1,70 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import Pill from "./Pill.astro";
+
+export type Props = {
+  item: CollectionEntry<"caseStudy">;
+};
+
+const {
+  item: {
+    data: { roles, image, title, year },
+    slug,
+  },
+} = Astro.props;
+---
+
+<a data-astro-prefetch="hover" href={`/portfolio/${slug}/`}>
+  <Image
+    height={200}
+    densities={[1, 2, 3]}
+    quality="high"
+    alt={title}
+    src={image}
+  />
+  <div class="title">
+    <span class="yr">{year}</span>
+    <h3>{title}</h3>
+    <div class="roles">
+      {
+        roles.map((role) => (
+          <Pill size="sm" variant="outlined">
+            {role}
+          </Pill>
+        ))
+      }
+    </div>
+  </div>
+</a>
+
+<style lang="postcss"> 
+  a {
+    @apply dark:bg-gray-800/50 bg-gray-100 rounded-lg;
+    @apply p-4 block;
+    @apply border-subtle-light dark:border-subtle-dark border;
+    @apply dark:hover:bg-gray-800 hover:bg-gray-200;
+    @apply transition-colors duration-300;
+
+    :global(img) {
+      @apply rounded-md;
+    }
+
+    .roles {
+      @apply flex flex-row justify-start items-center gap-2 mt-4;
+    }
+
+    .title {
+      @apply flex flex-col gap-1 mt-4;
+
+      h3 {
+        @apply font-medium ml-1;
+      }
+
+      .yr {
+        @apply text-subtle dark:text-subtle-dark text-xs m-0 font-medium;
+        @apply tracking-widest ml-1;
+      }
+    }
+  }     
+</style>

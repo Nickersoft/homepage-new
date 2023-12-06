@@ -30,14 +30,14 @@ const Tag = href ? "a" : "button";
   href={href}
 >
   {Icon && <Icon />}
-  {title}
+  <span class="mt-[2px]">{title}</span>
 </Tag>
 
 <style lang="postcss"> 
   .btn {
     @apply inline-flex gap-2 flex-row items-center text-sm px-4 py-2 rounded-lg;
     @apply active:scale-[0.99] transition-all duration-150 active:opacity-50 cursor-pointer;
-    
+
     &-secondary {
       @apply dark:text-dark dark:text-opacity-75 text-opacity-75;
 
@@ -51,7 +51,7 @@ const Tag = href ? "a" : "button";
     }
 
     &-primary {
-      @apply dark:bg-gray-800 dark:text-dark bg-gray-100 cursor-pointer font-semibold;
+      @apply dark:bg-gray-0/10 dark:text-dark bg-gray-900/10 cursor-pointer font-medium;
     }
   }
 </style>

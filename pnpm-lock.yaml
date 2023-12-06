@@ -31,12 +31,15 @@ devDependencies:
   '@astrojs/vercel':
     specifier: ^6.0.0
     version: 6.0.0(astro@4.0.1)
+  '@fontsource-variable/dm-sans':
+    specifier: ^5.0.3
+    version: 5.0.3
   '@fontsource-variable/fira-code':
     specifier: ^5.0.15
     version: 5.0.15
-  '@fontsource-variable/inter':
-    specifier: ^5.0.15
-    version: 5.0.15
+  '@iconify-json/carbon':
+    specifier: ^1.1.24
+    version: 1.1.24
   '@iconify-json/el':
     specifier: ^1.1.7
     version: 1.1.7
@@ -693,12 +696,18 @@ packages:
     dev: true
     optional: true
 
+  /@fontsource-variable/dm-sans@5.0.3:
+    resolution: {integrity: sha512-MrdN9qZ95gVqcSuOXMnbCuYS2TtL1mOiUqTaslP05rkZUi9LzrvbXsEGBCODVjJi9MH27HuKKJjOdWK0OeuIlw==}
+    dev: true
+
   /@fontsource-variable/fira-code@5.0.15:
     resolution: {integrity: sha512-tp56A54PjfH1RBJQ3Jdqh5cvrEHd4n302z3v6sGAnTKW9+oQgU0dK4WAMIXgDhFY35BrhpoIElowfkAT7NYJfA==}
     dev: true
 
-  /@fontsource-variable/inter@5.0.15:
-    resolution: {integrity: sha512-CdQPQQgOVxg6ifmbrqYZeUqtQf7p2wPn6EvJ4M+vdNnsmYZgYwPPPQDNlIOU7LCUlSGaN26v6H0uA030WKn61g==}
+  /@iconify-json/carbon@1.1.24:
+    resolution: {integrity: sha512-Sx4vj3HfQj3yP6a4QzWc1BymDO5uTOGTHeb5it/xaMa196C6+RegNUv1F+Y1h8AJ2Sv93GMI+PyMH0HyqTHEmg==}
+    dependencies:
+      '@iconify/types': 2.0.0
     dev: true
 
   /@iconify-json/el@1.1.7:

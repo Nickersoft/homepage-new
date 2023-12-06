@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 import me from "../assets/me.png";
 
@@ -8,14 +8,22 @@ export interface Props {
   height?: number;
 }
 
-const { width = 96, height = 96} = Astro.props;
+const { width = 96, height = 96 } = Astro.props;
 
 const upscaledHeight = height * 3.125;
 const upscaledWidth = width * 3.125;
 ---
 
 <div class="img" style={`width: ${width}px; height: ${height}px;`}>
-  <Image src={me} width={upscaledHeight} height={upscaledWidth} loading="lazy" decoding="async" alt="Selfie" class="grayscale w-full h-full object-cover" />
+  <Image
+    src={me}
+    width={upscaledHeight}
+    height={upscaledWidth}
+    loading="lazy"
+    decoding="async"
+    alt="Selfie"
+    class="grayscale w-full h-full object-cover"
+  />
 </div>
 
 <style lang="postcss"> 
@@ -23,9 +31,9 @@ const upscaledWidth = width * 3.125;
     @apply rounded-full overflow-hidden relative;
 
     &:after {
-      @apply absolute inset-0 opacity-50;
-
-      background-image: linear-gradient(to bottom right, transparent, theme('colors.green'));
+      @apply absolute inset-0 mix-blend-soft-light;
+      
+      background-image: linear-gradient(to bottom right, theme('colors.blue'), theme('colors.purple'));
       content:'';
     }
   }

@@ -21,24 +21,28 @@ import Portfolio from "@components/Portfolio.astro";
 <style lang="postcss" is:global> 
   main {
     h1 {
-      @apply text-4xl -ml-1 font-sans font-bold;
+      @apply text-4xl -ml-1 font-sans font-semibold leading-tight;
+
+      span {
+        @apply opacity-60;
+      }
     }
 
     h2 {
-      @apply font-semibold text-2xl border-b dark:border-dark py-4 mb-4;
+      @apply font-semibold text-2xl border-b border-subtle-light dark:border-subtle-dark py-4 mb-4;
     }
 
     p {
       @apply mb-4 block dark:text-subtle-dark text-subtle leading-relaxed;
 
       & > a {
-        @apply dark:text-dark border-dashed border-b dark:border-gray-0 border-gray-900 transition-all duration-150;
-        @apply pb-0.5 active:text-opacity-80;
+        @apply dark:text-dark border-dashed border-b dark:border-dark border-light transition-all duration-150;
+        @apply active:text-opacity-80;
       }
     }
 
     .social p {
-      @apply flex flex-row gap-4 pt-8 pb-4 text-lg;
+      @apply flex flex-row gap-3 pt-8 pb-4 text-lg;
 
       a {
         @apply block border-none p-0 opacity-50 hover:opacity-90;

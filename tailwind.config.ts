@@ -6,7 +6,7 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     fontFamily: {
-      sans: ["Inter Variable", "sans-serif"],
+      sans: ["DM Sans Variable", "sans-serif"],
       mono: ["Fira Code Variable", "monospace"],
     },
     keyframes: {
@@ -23,9 +23,16 @@ export default {
     },
     borderColor: ({ theme }) => {
       return {
-        ...theme("colors"),
-        DEFAULT: theme("colors.gray.200"),
-        dark: theme("colors.gray.700"),
+        light: theme("colors.gray.900"),
+        dark: theme("colors.gray.0"),
+        subtle: {
+          light: theme("colors.gray.900/0.1"),
+          dark: theme("colors.gray.0/0.1"),
+        },
+        emphasis: {
+          light: theme("colors.gray.900/0.3"),
+          dark: theme("colors.gray.0/0.3"),
+        },
       };
     },
     textColor: ({ theme }) => ({
@@ -51,18 +58,19 @@ export default {
     },
     colors: {
       gray: {
-        0: "#FFFFFF",
+        0: "#FEFEFE",
         100: "#F0F0F0",
         200: "#E8E8E8",
         300: "#B5B5B5",
         400: "#9C9C9C",
         500: "#848484",
         600: "#6B6B6B",
-        700: "#484848",
-        800: "#353535",
+        700: "#424242",
+        800: "#323232",
         900: "#222222",
       },
       red: "#F47373",
+      blue: "rgb(0, 110, 255)",
       yellow: "#F4E773",
       green: "#73F478",
       clear: "transparent",
