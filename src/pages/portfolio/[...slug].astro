@@ -3,59 +3,29 @@ export const prerender = false;
 
 import { getCollection } from "astro:content";
 
-import PasswordBox from "@components/PasswordBox.astro";
-
-import BaseLayout from "@layouts/BaseLayout.astro";
 import CaseStudy from "@layouts/CaseStudy.astro";
+import ProtectedPage from "@layouts/ProtectedPage.astro";
 
-const { slug } = Astro.params;
-
-const caseStudies = await getCollection("caseStudy");
-const page = caseStudies.find((page) => page.slug === slug?.split("/").pop());
+const posts = await getCollection("caseStudy");
+const page = posts.find((post) => post.slug === Astro.params.slug);
 
 if (!page) {
   return Astro.redirect("/404");
 }
 
 const {
+  render,
+  data,
   data: { protected: protect },
 } = page;
 
-let authenticated = false;
+const { Content, headings } = await render();
 
-if (Astro.request.method === "POST") {
-  try {
-    const data = await Astro.request.formData();
-    const password = data.get("password");
-
-    if (password === process.env.PORTFOLIO_PASSWORD) {
-      authenticated = true;
-    }
-  } catch (error) {
-    if (error instanceof Error) {
-      console.error(error.message);
-    }
-  }
-}
-
-const { Content, headings } = await page.render();
+const Wrapper = protect ? ProtectedPage : Fragment;
 ---
 
-{
-  !authenticated && protect ? (
-    <BaseLayout showFooter={false}>
-      <PasswordBox />
-    </BaseLayout>
-  ) : (
-    <CaseStudy headings={headings} {...page.data}>
-      <Content />
-    </CaseStudy>
-  )
-}
-
-<style lang="postcss">
-
-  .case-study {
-    
-  }
-</style>
+<Wrapper>
+  <CaseStudy headings={headings} {...data}>
+    <Content />
+  </CaseStudy>
+</Wrapper>

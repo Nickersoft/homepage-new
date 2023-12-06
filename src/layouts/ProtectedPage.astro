@@ -1,0 +1,32 @@
+---
+import PasswordBox from "@components/PasswordBox.astro";
+
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+let authenticated = false;
+
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData();
+    const password = data.get("password");
+
+    if (password === process.env.PORTFOLIO_PASSWORD) {
+      authenticated = true;
+    }
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
+---
+
+{
+  !authenticated ? (
+    <BaseLayout showFooter={false}>
+      <PasswordBox />
+    </BaseLayout>
+  ) : (
+    <slot />
+  )
+}

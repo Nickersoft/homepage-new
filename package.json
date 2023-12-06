@@ -6,7 +6,7 @@
     "dev": "PORTFOLIO_PASSWORD=\"password\" astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "PORTFOLIO_PASSWORD=\"password\" astro preview",
     "astro": "astro"
   },
   "devDependencies": {
