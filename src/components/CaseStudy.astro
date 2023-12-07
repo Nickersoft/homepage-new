@@ -16,7 +16,13 @@ const {
 ---
 
 <a data-astro-prefetch="hover" href={`/portfolio/${slug}/`}>
-  <Image densities={[1, 2, 3]} quality="high" alt={title} src={image} />
+  <Image
+    loading="eager"
+    densities={[1, 2, 3]}
+    quality="high"
+    alt={title}
+    src={image}
+  />
   <div class="title">
     <span class="yr">{year}</span>
     <h3>{title}</h3>
