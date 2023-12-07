@@ -26,6 +26,7 @@ const caseStudy = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
+      description: z.string(),
       image: image(),
       protected: z.boolean().optional(),
       year: z.number().min(1900).max(2100),

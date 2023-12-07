@@ -9,7 +9,7 @@ type Props = CollectionEntry<"caseStudy">["data"] & {
   headings: MarkdownHeading[];
 };
 
-const { title, headings, year, roles, image } = Astro.props;
+const { title, headings, year, description, roles, image } = Astro.props;
 ---
 
 <script>
@@ -36,8 +36,8 @@ const { title, headings, year, roles, image } = Astro.props;
   });
 </script>
 
-<ProseLayout title={title} subtitle={year.toString()} showHero image={image}>
-  <p slot="label" class="label">Case Study</p>
+<ProseLayout title={title} subtitle={description} showHero image={image}>
+  <p slot="label" class="label">{year}</p>
 
   <Fragment slot="tags">
     {roles.map((role) => <Pill>{role}</Pill>)}

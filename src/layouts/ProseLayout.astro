@@ -27,7 +27,12 @@ function getShareURL() {
 }
 ---
 
-<BaseLayout type="article" title={title} image={image?.src}>
+<BaseLayout
+  type="article"
+  title={title}
+  description={subtitle}
+  image={image?.src}
+>
   <nav>
     <Button variant="secondary" title="Back" href="/" icon={Back} />
     <Button
@@ -83,7 +88,7 @@ function getShareURL() {
     @apply lg:mb-16 container mx-auto px-8 animate-fade-up;
 
     :global(img) {
-      @apply lg:h-[28rem] mt-[4.5rem] object-cover rounded-lg shadow-md;
+      @apply lg:h-[28rem] mt-[4.5rem] object-cover object-top rounded-lg dark:shadow-none shadow-md;
     }
   }
 

@@ -37,14 +37,14 @@ export default {
     },
     textColor: ({ theme }) => ({
       DEFAULT: theme("colors.gray.900"),
-      dark: theme("colors.gray.0"),
+      dark: theme("colors.white"),
       subtle: {
-        DEFAULT: theme("colors.gray.600"),
-        dark: theme("colors.gray.300"),
+        DEFAULT: theme("colors.gray.900/0.8"),
+        dark: theme("colors.gray.0/0.8"),
       },
       muted: {
-        DEFAULT: theme("colors.gray.500"),
-        dark: theme("colors.gray.500"),
+        DEFAULT: theme("colors.gray.900/0.5"),
+        dark: theme("colors.gray.0/0.5"),
       },
     }),
     animation: {
@@ -57,11 +57,12 @@ export default {
       lg: "0px 0px 0px 0px rgba(60, 59, 57, 0.14), 7px 8px 23px 0px rgba(60, 59, 57, 0.14), 28px 30px 41px 0px rgba(60, 59, 57, 0.12), 63px 68px 56px 0px rgba(60, 59, 57, 0.07), 113px 120px 66px 0px rgba(60, 59, 57, 0.02), 176px 188px 72px 0px rgba(60, 59, 57, 0.00)",
     },
     colors: {
+      white: "#FFFFFF",
       gray: {
         0: "#FEFEFE",
         100: "#F6F6F6",
         200: "#E8E8E8",
-        300: "#B5B5B5",
+        300: "#D5D5D5",
         400: "#9C9C9C",
         500: "#848484",
         600: "#6B6B6B",

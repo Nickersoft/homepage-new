@@ -3,9 +3,10 @@ title: Reinventing Scubah's Diving App
 roles:
   - Product Design
   - Branding
-protected: true
 year: 2022
+protected: false
 image: ../../assets/portfolio/scubah.png
+description: Designing a great diving experience for everybody
 ---
 
 **Scubah** is a cross-platform mobile application that automates dive tracking for scuba divers while allowing you to connect with fellow divers and subscribe to their activities.

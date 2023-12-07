@@ -53,8 +53,20 @@ const {
     <slot />
     {
       showFooter && (
-        <footer class="text-xs opacity-50 text-center py-8">
-          Copyright {new Date().getFullYear()} Tyler Nickerson
+        <footer class="text-xs text-muted dark:text-muted-dark text-center py-8">
+          <span class="mb-2 block">
+            This site was designed and built from scratch using
+            <a
+              href="https://astro.build"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-subtle dark:text-subtle-dark hover:underline"
+            >
+              {" "}
+              Astro
+            </a>
+          </span>
+          &copy; {new Date().getFullYear()} Tyler Nickerson
         </footer>
       )
     }

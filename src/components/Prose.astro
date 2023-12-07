@@ -1,12 +1,31 @@
 <div
-  class="prose relative pt-2 prose-code:font-normal dark:prose-invert prose-h2:font-semibold prose-blockquote:font-normal prose-figcaption:mt-6 prose-lg prose-p:leading-loose w-full !max-w-full prose-headings:font-sans prose-figure:text-center prose-img:mx-auto"
+  class="prose relative prose-figcaption:text-muted dark:prose-figcaption:text-muted-dark pt-2 prose-code:font-normal prose-p:text-subtle dark:prose-p:text-subtle-dark prose-li:text-subtle dark:prose-li:text-subtle-dark dark:prose-invert prose-h2:font-semibold prose-blockquote:font-normal prose-figcaption:mt-6 prose-lg prose-p:leading-loose w-full !max-w-full prose-headings:font-sans prose-figure:text-center prose-img:mx-auto"
 >
   <slot />
 </div>
 
 <style lang="postcss" is:global>
+  .prose {
+    --tw-prose-bullets: rgba(0 0 0 / 0.2);
+    
+    @media (prefers-color-scheme: dark) {
+      --tw-prose-bullets: rgba(255 255 255 / 0.2);
+    }
+  }
+
+  .prose .grid img {
+    @apply m-0;
+  }
+
   .prose img:not(.unstyled) {
-    @apply rounded-lg shadow-md border border-subtle-light dark:border-subtle-dark;
+    @apply rounded-lg shadow-md border border-subtle-light dark:border-none dark:shadow-none; 
+  }
+
+  .prose sup {
+    a {
+      @apply no-underline text-subtle dark:text-subtle-dark ml-1;
+      @apply bg-gray-900/10 dark:bg-gray-0/10 rounded-full w-4 h-4 inline-flex justify-center items-center text-xs;
+    }
   }
 
   .prose .unstyled img {

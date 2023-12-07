@@ -7,7 +7,10 @@ import CaseStudy from "@layouts/CaseStudy.astro";
 import ProtectedPage from "@layouts/ProtectedPage.astro";
 
 const posts = await getCollection("caseStudy");
-const page = posts.find((post) => post.slug === Astro.params.slug);
+
+const page = posts.find(
+  (post) => post.data.protected && post.slug === Astro.params.privateSlug
+);
 
 if (!page) {
   return Astro.redirect("/404");
@@ -15,21 +18,19 @@ if (!page) {
 
 const {
   render,
+  data: { image, title },
   data,
-  data: { protected: protect },
 } = page;
 
 const { Content, headings } = await render();
-
-const Wrapper = protect ? ProtectedPage : Fragment;
 ---
 
-<Wrapper
-  image={data.image.src}
-  title={data.title}
+<ProtectedPage
+  image={image.src}
+  title={title}
   description="A case study by Tyler Nickerson"
 >
   <CaseStudy headings={headings} {...data}>
     <Content />
   </CaseStudy>
-</Wrapper>
+</ProtectedPage>

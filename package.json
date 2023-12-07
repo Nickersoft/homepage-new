@@ -23,7 +23,7 @@
     "@iconify-json/mdi": "^1.1.58",
     "@iconify-json/mingcute": "^1.1.13",
     "@iconify-json/solar": "^1.1.8",
-    "@microflash/remark-figure-caption": "^2.0.2",
+    "@microflash/rehype-figure": "^2.0.0",
     "@tailwindcss/typography": "^0.5.10",
     "@types/markdown-it": "^13.0.7",
     "@types/sanitize-html": "^2.9.5",
@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "markdown-it": "^13.0.2",
+    "remark-gfm": "^4.0.0",
     "sanitize-html": "^2.11.0",
     "sharp": "0.32.6"
   }

@@ -9,20 +9,14 @@ export type Props = {
 
 const {
   item: {
-    data: { roles, image, title, year },
+    data: { roles, image, title, year, description },
     slug,
   },
 } = Astro.props;
 ---
 
 <a data-astro-prefetch="hover" href={`/portfolio/${slug}/`}>
-  <Image
-    height={200}
-    densities={[1, 2, 3]}
-    quality="high"
-    alt={title}
-    src={image}
-  />
+  <Image densities={[1, 2, 3]} quality="high" alt={title} src={image} />
   <div class="title">
     <span class="yr">{year}</span>
     <h3>{title}</h3>
@@ -40,14 +34,14 @@ const {
 
 <style lang="postcss"> 
   a {
-    @apply dark:bg-gray-800/50 rounded-lg;
-    @apply p-4 block;
+    @apply dark:bg-gray-800/50 rounded-lg h-full;
+    @apply p-4 flex flex-col;
     @apply border-subtle-light dark:border-subtle-dark border;
     @apply dark:hover:bg-gray-800 hover:bg-gray-100;
     @apply transition-colors duration-300;
 
     :global(img) {
-      @apply rounded-md w-full h-[150px] object-cover pointer-events-none;
+      @apply rounded-md w-full h-[150px] object-cover object-top pointer-events-none;
     }
 
     .roles {
@@ -55,7 +49,7 @@ const {
     }
 
     .title {
-      @apply flex flex-col gap-1 mt-4;
+      @apply flex flex-col gap-1 mt-4 flex-grow;
 
       h3 {
         @apply font-medium ml-1;

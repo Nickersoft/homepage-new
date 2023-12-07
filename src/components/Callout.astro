@@ -1,0 +1,57 @@
+---
+export type Props = {
+  title: string;
+  emoji: string;
+  color?: "red" | "blue" | "yellow" | "green" | "default";
+};
+
+const { title, color = "default", emoji } = Astro.props;
+---
+
+<div
+  class:list={{
+    red: color === "red",
+    yellow: color === "yellow",
+    green: color === "green",
+    blue: color === "blue",
+  }}
+  class="callout"
+>
+  <h4><span class="emoji">{emoji}</span>{title}</h4>
+  <slot />
+</div>
+
+<style lang="postcss">
+  .callout {
+    @apply p-4 rounded-lg mb-[1.33333333em];
+    @apply dark:bg-gray-800 bg-gray-100;
+
+    h4 {
+      @apply font-semibold mt-0;
+
+      .emoji {
+        @apply mr-2;
+      }
+    }
+
+    :global(ul) {
+      @apply mb-0 mt-2;
+    }
+
+    &.blue {
+      @apply bg-blue/10;
+    }
+
+    &.red {
+      @apply bg-red/10;
+    }
+
+    &.yellow {
+      @apply bg-yellow/10;
+    }
+
+    &.green {
+      @apply bg-green/10;
+    }
+  }
+</style>
