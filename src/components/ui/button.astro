@@ -1,0 +1,41 @@
+---
+import { cva } from "cva";
+
+export type Props = {
+  title: string;
+  icon?: astroHTML.JSX.Element;
+  href?: string;
+  variant?: "primary" | "secondary";
+  iconPlacement?: "before" | "after";
+};
+
+const {
+  title,
+  icon: Icon,
+  href,
+  variant = "primary",
+  iconPlacement = "before",
+} = Astro.props;
+
+const Tag = href ? "a" : "button";
+
+const buttonVariants = cva({
+  base: [
+    "inline-flex gap-2 flex-row items-center text-sm px-4 py-2 rounded-lg",
+    "active:scale-99 transition-all duration-150 active:opacity-50 cursor-pointer",
+    "no-underline cursor-pointer",
+  ],
+  variants: {
+    variant: {
+      primary: "bg-primary text-primary-foreground hover:bg-primary/90",
+      secondary:
+        "text-secondary-foreground bg-secondary hover:text-secondary-foreground/90",
+    },
+  },
+});
+---
+
+<Tag class:list={["btn", buttonVariants({ variant })]} href={href}>
+  {Icon && <Icon />}
+  <span class="mt-0.5">{title}</span>
+</Tag>

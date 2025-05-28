@@ -4,9 +4,9 @@ import { Image } from "astro:assets";
 import Back from "~icons/mdi/arrow-left";
 import Tweet from "~icons/mdi/twitter";
 
-import Button from "@components/Button.astro";
-import Prose from "@components/Prose.astro";
-import OriginallyPosted from "@components/OriginallyPosted.astro";
+import Button from "@/components/Button.astro";
+import Prose from "@/components/Prose.astro";
+import OriginallyPosted from "@/components/OriginallyPosted.astro";
 
 import BaseLayout from "./BaseLayout.astro";
 
@@ -88,13 +88,13 @@ function getShareURL() {
     @apply lg:mb-16 container mx-auto px-8 animate-fade-up;
 
     :global(img) {
-      @apply lg:h-[28rem] mt-[4.5rem] object-cover object-top rounded-lg dark:shadow-none shadow-md;
+      @apply lg:h-112 mt-18 object-cover object-top rounded-lg dark:shadow-none shadow-md;
     }
   }
 
   article {
     @apply items-center p-8 mx-auto w-full grid container gap-x-16;
-    @apply lg:grid-cols-[1fr,48rem,1fr] grid-cols-1;
+    @apply lg:grid-cols-[1fr_48rem_1fr] grid-cols-1;
     @apply animate-fade-up;
   }
 

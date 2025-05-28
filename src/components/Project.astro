@@ -22,7 +22,7 @@ const endColor = uniqolor(Buffer.from(tagline).toString("base64")).color;
   style={`--startColor: ${startColor}; --endColor: ${endColor}`}
 >
   <div class="inner">
-    <Icon class="flex-shrink-0 text-base mx-2 text-[var(--startColor)]" />
+    <Icon class="shrink-0 text-base mx-2 text-(--startColor)" />
     <div>
       <h3 class="text-lg mb-[0.5]">
         {title}
@@ -52,7 +52,7 @@ const endColor = uniqolor(Buffer.from(tagline).toString("base64")).color;
       @apply dark:bg-gray-900 p-4 h-full flex flex-row gap-4 items-center text-left bg-gray-0;
       @apply relative overflow-hidden;
 
-      border-radius: calc(theme('borderRadius.lg') - var(--border-width));
+      border-radius: calc(var(--radius-lg) - var(--border-width));
 
       &:after {
         @apply absolute inset-0 opacity-0 transition-all duration-150;

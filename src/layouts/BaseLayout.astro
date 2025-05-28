@@ -31,23 +31,6 @@ const {
       description={description}
       type={type}
     />
-    <style lang="postcss" is:global> 
-        body {
-          @apply w-full h-full flex flex-col dark:text-dark font-sans;
-        
-          @media (prefers-color-scheme: dark) {
-            background: url('/static.png'), theme('colors.gray.900');
-          }
-
-          @media (prefers-color-scheme: light) {
-            background: url('/static-lm.png'), theme('colors.gray.0');
-          }
-        }
-
-        .label {
-          @apply text-xs uppercase tracking-widest font-medium text-muted dark:text-muted-dark;
-        }
-    </style>
   </head>
   <body>
     <slot />

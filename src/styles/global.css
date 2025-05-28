@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+
+@import "./theme.css";
+
+body {
+  @apply size-full flex flex-col font-sans;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: url("/static.png"), var(--color-background);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: url("/static-lm.png"), var(--color-background);
+  }
+}

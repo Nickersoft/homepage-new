@@ -2,7 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import type { MarkdownHeading } from "astro";
 
-import Pill from "@components/Pill.astro";
+import Pill from "@/components/Pill.astro";
 import ProseLayout from "./ProseLayout.astro";
 
 type Props = CollectionEntry<"caseStudy">["data"] & {
@@ -60,7 +60,7 @@ const { title, headings, year, description, roles, image } = Astro.props;
 
 <style lang="postcss">
   :global(h2 span) {
-    @apply !text-sm tracking-widest uppercase font-semibold opacity-50 !mb-2 block;
+    @apply text-sm! tracking-widest uppercase font-semibold opacity-50 mb-2! block;
   }
 
   ul.toc {
