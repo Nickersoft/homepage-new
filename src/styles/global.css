@@ -1,11 +1,33 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "@fontsource-variable/inter/opsz.css";
 
 @plugin "@tailwindcss/typography";
 
 @import "./theme.css";
 
-body {
-  @apply size-full flex flex-col font-sans;
+:root {
+  h1 {
+    @apply -ml-1 font-sans text-4xl leading-none font-medium;
+  }
+
+  h2 {
+    @apply mb-4 border border-b py-4 text-2xl font-semibold;
+  }
+
+  body {
+    @apply flex size-full flex-col font-sans;
+    font-optical-sizing: auto;
+  }
+
+  p {
+    @apply text-secondary-foreground mb-4 block leading-relaxed;
+
+    & > a {
+      @apply border-b border-dashed transition-all duration-150;
+      @apply active:text-foreground/80;
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {

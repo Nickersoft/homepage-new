@@ -1,9 +1,9 @@
 ---
 import { cn } from "@/lib/utils";
 import type { HTMLTag, Polymorphic } from "astro/types";
-import { type VariantProps, cva } from "cva";
+import { type VariantProps, tv } from "tailwind-variants";
 
-const typographyVariants = cva({
+const typographyVariants = tv({
   variants: {
     variant: {
       display: "font-display tracking-[-0.03em] font-medium",

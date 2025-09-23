@@ -1,5 +1,5 @@
 ---
-import { cva } from "cva";
+import { tv } from "tailwind-variants";
 
 export type Props = {
   title: string;
@@ -19,7 +19,7 @@ const {
 
 const Tag = href ? "a" : "button";
 
-const buttonVariants = cva({
+const buttonVariants = tv({
   base: [
     "inline-flex gap-2 flex-row items-center text-sm px-4 py-2 rounded-lg",
     "active:scale-99 transition-all duration-150 active:opacity-50 cursor-pointer",
@@ -32,10 +32,13 @@ const buttonVariants = cva({
         "text-secondary-foreground bg-secondary hover:text-secondary-foreground/90",
     },
   },
+  defaultVariants: {
+    variant: "primary",
+  },
 });
 ---
 
-<Tag class:list={["btn", buttonVariants({ variant })]} href={href}>
+<Tag class={buttonVariants({ variant })} href={href}>
   {Icon && <Icon />}
   <span class="mt-0.5">{title}</span>
 </Tag>
