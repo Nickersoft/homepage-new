@@ -4,13 +4,13 @@ import { getCollection } from "astro:content";
 import CaseStudy from "./CaseStudy.astro";
 
 const posts = (await getCollection("caseStudy")).sort(
-  (a, b) => b.data.year.valueOf() - a.data.year.valueOf()
+  (a, b) => b.data.year.valueOf() - a.data.year.valueOf(),
 );
 ---
 
 <div>
   <h2>Case Studies</h2>
-  <ul>
+  <ul class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 w-full">
     {
       posts.map((item) => (
         <li>
@@ -20,9 +20,3 @@ const posts = (await getCollection("caseStudy")).sort(
     }
   </ul>
 </div>
-
-<style lang="postcss"> 
-  ul {
-    @apply grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 w-full;
-  }
-</style>

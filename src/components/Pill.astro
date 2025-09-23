@@ -1,34 +1,32 @@
 ---
-export type Props = {
-  variant?: "filled" | "outlined";
-  size?: "sm" | "md";
-};
+import type { HTMLAttributes } from "astro/types";
+import { tv, type VariantProps } from "tailwind-variants";
 
-const { variant = "filled", size = "md" } = Astro.props;
+const pillVariants = tv({
+  base: [
+    "inline-flex text-secondary-foreground flex-row items-center gap-2 rounded-full ",
+  ],
+  variants: {
+    variant: {
+      filled: "bg-foreground/7",
+      outlined: "border",
+    },
+    size: {
+      sm: "text-xs px-3 py-1.5",
+      md: "text-sm px-4 py-2",
+    },
+  },
+  defaultVariants: {
+    variant: "filled",
+    size: "md",
+  },
+});
+
+export type Props = HTMLAttributes<"span"> & VariantProps<typeof pillVariants>;
+
+const { variant, size, class: className, ...props } = Astro.props;
 ---
 
-<span
-  class:list={[
-    {
-      filled: variant === "filled",
-      sm: size === "sm",
-    },
-  ]}
-  class="pill"><slot /></span
->
-
-<style lang="postcss"> 
-  .pill {
-    @apply inline-flex flex-row items-center gap-2 text-sm px-4 py-2 rounded-full;
-    @apply text-opacity-75 dark:text-dark dark:text-opacity-75;
-    @apply border border-subtle-light dark:border-subtle-dark;
-    
-    &.filled {
-      @apply dark:bg-gray-800;
-    }
-
-    &.sm {
-      @apply text-xs px-3 py-1.5;
-    }
-  }
-</style>
+<span {...props} class={pillVariants({ className, variant, size })}>
+  <slot />
+</span>

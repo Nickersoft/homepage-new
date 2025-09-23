@@ -7,12 +7,16 @@
 @import "./theme.css";
 
 :root {
+  * {
+    @apply border-border;
+  }
+
   h1 {
     @apply -ml-1 font-sans text-4xl leading-none font-medium;
   }
 
   h2 {
-    @apply mb-4 border border-b py-4 text-2xl font-semibold;
+    @apply mb-4 border-b py-4 text-2xl font-semibold;
   }
 
   body {

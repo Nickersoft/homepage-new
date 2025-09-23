@@ -18,14 +18,37 @@ import Button from "./ui/button.astro";
 
 # Hey there, I'm Tyler. <span class="text-secondary-foreground">I'm a founder, designer, and coder based in NYC.</span>
 
-<div class="prose prose-p:flex! prose-p:flex-row prose-p:items-center prose-p:justify-start">
-  [<Email />
-  ](mailto:tyler@kojo.design) [<Twitter />
-  ](https://twitter.com/tylernickerson) [<LinkedIn />
-  ](https://linkedin.com/in/tylernickerson) [<Layers />
-  ](https://layers.to/tylernickerson) [<GitHub />
-  ](https://github.com/nickersoft)
-</div>
+<ul class="[&_a]:text-muted-foreground [&_a]:hover:text-primary [&_a]:hover:border-border flex flex-row items-center gap-2 pt-6 pb-4 [&_a]:inline-flex [&_a]:size-8 [&_a]:items-center [&_a]:justify-center [&_a]:rounded-md [&_a]:border [&_a]:border-transparent [&_a]:transition-all [&_a]:duration-300 [&_a]:hover:-translate-y-0.5 [&_a]:hover:shadow-md [&_svg]:size-5">
+  <li>
+    <a href="mailto:tyler@kojo.design">
+      <Email />
+    </a>
+  </li>
+  <li>
+    <a href="https://twitter.com/tylernickerson" target="_blank" rel="noopener">
+      <Twitter />
+    </a>
+  </li>
+  <li>
+    <a
+      href="https://linkedin.com/in/tylernickerson"
+      target="_blank"
+      rel="noopener"
+    >
+      <LinkedIn />
+    </a>
+  </li>
+  <li>
+    <a href="https://layers.to/tylernickerson" target="_blank" rel="noopener">
+      <Layers />
+    </a>
+  </li>
+  <li>
+    <a href="https://github.com/nickersoft" target="_blank" rel="noopener">
+      <GitHub />
+    </a>
+  </li>
+</ul>
 
 I'm so glad you're here. A little bit about me: I'm the founder of [Kojo Design](https://kojo.design) and [The Open Dictionary Project](https://odict.org), as well as the co-founder of [Linguistic](https://linguistic.io).
 
