@@ -5,7 +5,6 @@ import "@/styles/global.css";
 
 import firaCode from "@fontsource-variable/fira-code/files/fira-code-latin-wght-normal.woff2";
 import inter from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2";
-import { Font } from "astro:assets";
 
 export interface Props {
   title: string;
@@ -25,8 +24,6 @@ const socialImage = new URL(image ?? me.src, Astro.url);
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
-
-<Font cssVariable="--font-inter" preload />
 
 <link
   href="/favicon-light.png"

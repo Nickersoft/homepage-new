@@ -17,16 +17,6 @@ const rehypePlugins = [rehypeExternalLinks, rehypeFigure];
 export default defineConfig({
   site: "https://www.tylernickerson.com",
   output: "static",
-  experimental: {
-    fonts: [
-      {
-        provider: fontProviders.fontsource(),
-        name: "Inter",
-        weights: ["100 900"],
-        cssVariable: "--font-inter",
-      },
-    ],
-  },
   integrations: [mdx({ optimize: true }), svelte(), sitemap()],
   adapter: vercel(),
   prefetch: true,

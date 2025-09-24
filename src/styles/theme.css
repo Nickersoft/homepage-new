@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "@fontsource-variable/fira-code";
+@import "@fontsource-variable/inter/opsz.css";
 
 :root {
   --background: var(--color-stone-100);
@@ -22,11 +24,15 @@
   --destructive-foreground: 0 0% 100%;
 }
 
-@theme inline {
+@theme {
   /* -------------------------------------------------------------------------- */
   /*                                    Fonts                                   */
   /* -------------------------------------------------------------------------- */
-  --font-sans: var(--font-inter);
+  --font-sans:
+    "Inter Variable", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
 
   --font-mono: "Fira Code Variable", monospace;
 }
