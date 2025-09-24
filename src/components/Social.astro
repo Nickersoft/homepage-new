@@ -1,0 +1,52 @@
+---
+import {
+  GitHub,
+  LayersBoldDuotone,
+  LetterBold,
+  LinkedIn,
+  X,
+} from "@/lib/icons";
+
+const links = [
+  {
+    href: "mailto:tyler@kojo.design",
+    icon: LetterBold,
+  },
+  {
+    href: "https://twitter.com/tylernickerson",
+    icon: X,
+    height: 16,
+  },
+  {
+    href: "https://linkedin.com/in/tylernickerson",
+    icon: LinkedIn,
+    height: 18,
+  },
+  {
+    href: "https://layers.to/tylernickerson",
+    icon: LayersBoldDuotone,
+  },
+  {
+    href: "https://github.com/nickersoft",
+    icon: GitHub,
+  },
+];
+---
+
+<ul class="flex flex-row items-center gap-2 pt-6 pb-4">
+  {
+    links.map((link) => (
+      <li>
+        <a
+          class="text-muted-foreground hover:text-primary [&_svg]:size-[var(--h,--spacing(5))] inline-flex size-8 items-center justify-center rounded-md border border-transparent transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-border"
+          href={link.href}
+          style={{ "--h": link.height ? `${link.height}px` : undefined }}
+          target="_blank"
+          rel="noopener"
+        >
+          <link.icon />
+        </a>
+      </li>
+    ))
+  }
+</ul>

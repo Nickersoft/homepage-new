@@ -1,13 +1,13 @@
 ---
-import { cn } from "@/lib/utils";
 import type { HTMLTag, Polymorphic } from "astro/types";
-import { type VariantProps, tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+import { cn } from "@/lib/utils";
 
 const typographyVariants = tv({
   variants: {
     variant: {
-      display: "font-display tracking-[-0.03em] font-medium",
-      headline: "font-display",
+      display: "font-sans tracking-[-0.03em] font-medium",
+      headline: "font-sans",
       title: "font-sans font-bold",
       body: "font-sans font-normal",
       label: "font-sans font-normal",

@@ -1,63 +1,27 @@
-import Twitter from "~icons/carbon/logo-x";
-import Email from "~icons/mdi/email";
-import LinkedIn from "~icons/mdi/linkedin";
-import Layers from "~icons/mdi/layers";
-import GitHub from "~icons/mdi/github";
-import Hire from "~icons/mdi/heart";
-import OpenInNew from "~icons/mdi/open-in-new";
-import Document from "~icons/solar/document-bold";
+import { AltArrowRightLinear } from "@/lib/icons";
+
+import Button from "./ui/Button.astro";
 
 import Avatar from "./Avatar.astro";
-import Button from "./ui/button.astro";
+import Social from "./Social.astro";
+import HeaderButtons from "./HeaderButtons.astro";
 
-<div>
+<section>
 
-<div class="mb-8">
-  <Avatar />
-</div>
+<Avatar class="mb-8" />
 
-# Hey there, I'm Tyler. <span class="text-secondary-foreground">I'm a founder, designer, and coder based in NYC.</span>
+# Hey there, I'm Tyler. <br/><span class="text-secondary-foreground">I'm a founder, designer, and coder in NYC.</span>
 
-<ul class="[&_a]:text-muted-foreground [&_a]:hover:text-primary [&_a]:hover:border-border flex flex-row items-center gap-2 pt-6 pb-4 [&_a]:inline-flex [&_a]:size-8 [&_a]:items-center [&_a]:justify-center [&_a]:rounded-md [&_a]:border [&_a]:border-transparent [&_a]:transition-all [&_a]:duration-300 [&_a]:hover:-translate-y-0.5 [&_a]:hover:shadow-md [&_svg]:size-5">
-  <li>
-    <a href="mailto:tyler@kojo.design">
-      <Email />
-    </a>
-  </li>
-  <li>
-    <a href="https://twitter.com/tylernickerson" target="_blank" rel="noopener">
-      <Twitter />
-    </a>
-  </li>
-  <li>
-    <a
-      href="https://linkedin.com/in/tylernickerson"
-      target="_blank"
-      rel="noopener"
-    >
-      <LinkedIn />
-    </a>
-  </li>
-  <li>
-    <a href="https://layers.to/tylernickerson" target="_blank" rel="noopener">
-      <Layers />
-    </a>
-  </li>
-  <li>
-    <a href="https://github.com/nickersoft" target="_blank" rel="noopener">
-      <GitHub />
-    </a>
-  </li>
-</ul>
+<Social />
 
-I'm so glad you're here. A little bit about me: I'm the founder of [Kojo Design](https://kojo.design) and [The Open Dictionary Project](https://odict.org), as well as the co-founder of [Linguistic](https://linguistic.io).
+I'm so glad you're here. A little bit about me: I'm the founder of [Kojo
+Design](https://kojo.design), a design agency for startups, and [The Open Dictionary
+Project](https://odict.org), an open-source lexical toolchain.
 
 In my spare time I like to write music, hack on side projects, and brush up on my Chinese.
 
 Here you'll find my design work, writing, projects, and links to the other places I hang out around the web.
 
-  <div class="flex mt-8 flex-row items-center gap-2"> 
-    <Button href="https://kojo.design/#pricing" title="Work with me" icon={Hire} />
-    <Button href="https://read.cv/tnick" variant="secondary" iconPlacement="after" title="Read my resume" icon={Document} />
-  </div>
-</div>
+<HeaderButtons class="mt-8" />
+
+</section>

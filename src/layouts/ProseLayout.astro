@@ -4,11 +4,12 @@ import { Image } from "astro:assets";
 import Back from "~icons/mdi/arrow-left";
 import Tweet from "~icons/mdi/twitter";
 
-import Button from "@/components/Button.astro";
+import Button from "@/components/ui/Button.astro";
 import Prose from "@/components/Prose.astro";
 import OriginallyPosted from "@/components/OriginallyPosted.astro";
 
 import BaseLayout from "./BaseLayout.astro";
+import { cnBase } from "tailwind-variants";
 
 export type Props = {
   title: string;
@@ -33,7 +34,11 @@ function getShareURL() {
   description={subtitle}
   image={image?.src}
 >
-  <nav>
+  <nav
+    class="flex top-0 z-50 fixed p-4 w-full justify-between items-center flex-row
+    bg-gray-0 dark:bg-gray-900 bg-opacity-75 dark:bg-opacity-75 backdrop-blur-lg
+    lg:bg-clear lg:backdrop-blur-none"
+  >
     <Button variant="secondary" title="Back" href="/" icon={Back} />
     <Button
       variant="secondary"
@@ -45,14 +50,25 @@ function getShareURL() {
 
   {
     image && showHero && (
-      <div class="cover">
-        <Image densities={[1, 2, 3]} quality="high" alt="" src={image} />{" "}
+      <div class="lg:mb-16 container mx-auto px-8 animate-fade-up">
+        <Image
+          class="lg:h-112 mt-18 object-cover object-top rounded-lg dark:shadow-none shadow-md"
+          densities={[1, 2, 3]}
+          quality="high"
+          alt=""
+          src={image}
+        />{" "}
       </div>
     )
   }
 
-  <article class:list={[{ "mt-16": !image || !showHero }]}>
-    <header>
+  <article
+    class:list={cnBase([
+      "items-center p-8 mx-auto w-full grid container gap-x-1 lg:grid-cols-[1fr_48rem_1fr] grid-cols-1 animate-fade-up",
+      { "mt-16": !image || !showHero },
+    ])}
+  >
+    <header class="py-2 flex flex-col items-center text-center lg:col-start-2">
       <slot name="label" />
       <h1>{title}</h1>
       <p>{subtitle}</p>
@@ -61,7 +77,7 @@ function getShareURL() {
       </div>
     </header>
 
-    <hr />
+    <hr class="lg:col-start-2" />
 
     <aside class="not-prose">
       <slot name="toc" />

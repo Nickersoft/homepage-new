@@ -1,0 +1,9 @@
+export { default as X } from "~icons/simple-icons/x";
+export { default as LinkedIn } from "~icons/simple-icons/linkedin";
+export { default as GitHub } from "~icons/simple-icons/github";
+
+export { default as LetterBold } from "~icons/solar/letter-bold";
+export { default as LayersBoldDuotone } from "~icons/solar/layers-bold-duotone";
+export { default as RoundAltArrrowRightBold } from "~icons/solar/round-alt-arrow-right-bold";
+export { default as RoundArrowRightUpBold } from "~icons/solar/round-arrow-right-up-bold";
+export { default as DocumentBoldDuotone } from "~icons/solar/document-bold-duotone";

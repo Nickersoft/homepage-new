@@ -1,33 +1,17 @@
 ---
-import { tv } from "tailwind-variants";
-
-export type Props = {
-  title: string;
-  icon?: astroHTML.JSX.Element;
-  href?: string;
-  variant?: "primary" | "secondary";
-  iconPlacement?: "before" | "after";
-};
-
-const {
-  title,
-  icon: Icon,
-  href,
-  variant = "primary",
-  iconPlacement = "before",
-} = Astro.props;
-
-const Tag = href ? "a" : "button";
+import type { HTMLAttributes } from "astro/types";
+import { tv, type VariantProps } from "tailwind-variants";
 
 const buttonVariants = tv({
   base: [
     "inline-flex gap-2 flex-row items-center text-sm px-4 py-2 rounded-full",
-    "active:scale-99 transition-all duration-150 active:opacity-50 cursor-pointer",
+    "active:scale-99 transition-all duration-300 ease-out active:opacity-50 cursor-pointer",
     "no-underline cursor-pointer",
   ],
   variants: {
     variant: {
-      primary: "bg-primary text-primary-foreground hover:bg-primary/90",
+      primary:
+        "hover:shadow-md hover:scale-103 bg-primary text-primary-foreground hover:bg-primary/90",
       secondary:
         "text-secondary-foreground bg-secondary hover:text-secondary-foreground/90",
     },
@@ -36,9 +20,15 @@ const buttonVariants = tv({
     variant: "primary",
   },
 });
+
+export type Props = (HTMLAttributes<"a"> | HTMLAttributes<"button">) &
+  VariantProps<typeof buttonVariants>;
+
+const { class: className, variant, ...props } = Astro.props;
+
+const Tag = "href" in Astro.props ? "a" : "button";
 ---
 
-<Tag class={buttonVariants({ variant })} href={href}>
-  {Icon && <Icon />}
-  <span class="mt-0.5">{title}</span>
+<Tag {...props as any} class={buttonVariants({ className, variant })}>
+  <slot />
 </Tag>

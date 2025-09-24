@@ -5,6 +5,7 @@ import vercel from "@astrojs/vercel";
 import rehypeFigure from "@microflash/rehype-figure";
 import tailwind from "@tailwindcss/vite";
 import { defineConfig, fontProviders } from "astro/config";
+import svelte from "@astrojs/svelte";
 
 import rehypeExternalLinks from "rehype-external-links";
 import remarkGFM from "remark-gfm";
@@ -26,7 +27,7 @@ export default defineConfig({
       },
     ],
   },
-  integrations: [mdx({ optimize: true }), sitemap()],
+  integrations: [mdx({ optimize: true }), svelte(), sitemap()],
   adapter: vercel(),
   prefetch: true,
   markdown: {

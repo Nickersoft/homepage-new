@@ -6,30 +6,31 @@
 
 @import "./theme.css";
 
-:root {
-  * {
-    @apply border-border;
-  }
+@layer base {
+  :root {
+    * {
+      @apply border-border;
+    }
 
-  h1 {
-    @apply -ml-1 font-sans text-4xl leading-none font-medium;
-  }
+    h1 {
+      @apply font-sans text-5xl font-medium tracking-tight;
+    }
 
-  h2 {
-    @apply mb-4 border-b py-4 text-2xl font-semibold;
-  }
+    h2 {
+      @apply mb-4 border-b py-2 font-sans text-3xl font-medium tracking-tight;
+    }
 
-  body {
-    @apply flex size-full flex-col font-sans;
-    font-optical-sizing: auto;
-  }
+    body {
+      @apply flex size-full flex-col font-sans;
+      font-optical-sizing: auto;
+    }
 
-  p {
-    @apply text-secondary-foreground mb-4 block leading-relaxed;
+    p {
+      @apply text-secondary-foreground mb-4 block leading-relaxed;
 
-    & > a {
-      @apply border-b border-dashed transition-all duration-150;
-      @apply active:text-foreground/80;
+      & > a {
+        @apply decoration-secondary text-foreground hover:decoration-primary hover:text-primary underline decoration-dashed underline-offset-4;
+      }
     }
   }
 }

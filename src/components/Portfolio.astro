@@ -10,7 +10,7 @@ const posts = (await getCollection("caseStudy")).sort(
 
 <div>
   <h2>Case Studies</h2>
-  <ul class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 w-full">
+  <ul class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4 w-full">
     {
       posts.map((item) => (
         <li>

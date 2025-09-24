@@ -1,0 +1,23 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { DocumentBoldDuotone, RoundAltArrrowRightBold } from "@/lib/icons";
+
+import Stack from "./ui/Stack.astro";
+import Button from "./ui/Button.astro";
+
+interface Props extends HTMLAttributes<"div"> {}
+---
+
+<Stack orientation="row" gap="sm" align="center" {...Astro.props}>
+  <Button href="https://read.cv/tnick" variant="secondary">
+    <DocumentBoldDuotone />
+    Read my resume
+  </Button>
+  <Button class="group" href="https://kojo.design/#pricing">
+    Work with me
+    <RoundAltArrrowRightBold
+      class="opacity-50 group-hover:opacity-100 transition-all duration-300 ease-out"
+    />
+  </Button>
+</Stack>
