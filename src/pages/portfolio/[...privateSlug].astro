@@ -9,7 +9,7 @@ import ProtectedPage from "@/layouts/ProtectedPage.astro";
 const posts = await getCollection("caseStudy");
 
 const page = posts.find(
-  (post) => post.data.protected && post.slug === Astro.params.privateSlug
+  (post) => post.data.protected && post.slug === Astro.params.privateSlug,
 );
 
 if (!page) {

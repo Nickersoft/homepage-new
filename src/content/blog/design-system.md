@@ -7,7 +7,7 @@ original: "https://blog.logrocket.com/why-you-should-probably-be-using-a-design-
 
 Perhaps you've heard the whispers amongst the marketing team. Or perhaps you've heard the words spill from the mouth of a product manager in sheer terror. Maybe you have even seen sites that crop up occasionally on ProductHunt regarding it. The most controversial, feared, yet most in-demand two words in the English language:
 
-*Design system.*
+_Design system._
 
 Chances are if you're reading this, you already know what one is, or at the very least have heard the term before. Yet in the off-chance you don't: put simply, a design system (sometimes referred to as a design language) is the building blocks that construct a product's visual appearance, which often translates to a crisp implementation of a product's brand.
 
@@ -33,9 +33,9 @@ Before diving in, it is important to first understand the anatomy of the typical
 
 1. **Atoms —** denote the most primitive building blocks of a UI (such as buttons and text fields)
 2. **Molecules —** denote compound elements on a page (such as forms)
-2. **Organisms —** denote sections or chunks of a page (such as a footer or navbar)
-3. **Templates —** denote reusable pages that contain dynamic data (such as a profile page)
-4. **Pages —** denote a specific implementation of a template (such as a specific user profile page)
+3. **Organisms —** denote sections or chunks of a page (such as a footer or navbar)
+4. **Templates —** denote reusable pages that contain dynamic data (such as a profile page)
+5. **Pages —** denote a specific implementation of a template (such as a specific user profile page)
 
 ![Atomic Design by Brad Frost (2013)](../../assets/atomic.png)
 
@@ -128,7 +128,7 @@ Notably:
 
 The breakdown of colors within a brand is typically as follows:
 
-1. **Primary:** _The_ brand color. The color most associated with your product, company, etc. Think "Facebook Blue" or "Spotify Green".
+1. **Primary:** *The* brand color. The color most associated with your product, company, etc. Think "Facebook Blue" or "Spotify Green".
 2. **Secondary:** An optional auxiliary color used to complement the primary color. For example, FedEx uses purple as a primary color and orange as a secondary.
 3. **Grays:** Several distinct shades of gray used in body text as well as shadows, borders, dividers, and other structural components. Grays, whites, and blacks should make up most of your interface. More info on that [here](https://blog.logrocket.com/designing-as-a-developer-in-2018-eca1ab5bff2).
 4. **Accents:** A variety of bright colors used to accent components such as cards and banners. Accents can also be used to convey specific meanings (e.g. red for danger/error, green for success, etc.). A good resource for finding soft primary colors to complement a brand [can be found here](http://www.flatuicolorpicker.com/).

@@ -1,9 +1,8 @@
 ---
 import { Image } from "astro:assets";
-
-import me from "../assets/me.png";
 import type { HTMLAttributes } from "astro/types";
 import { cnBase as cn } from "tailwind-variants";
+import me from "../assets/me.png";
 
 export interface Props extends HTMLAttributes<"div"> {
   size?: number;
@@ -30,6 +29,6 @@ const { size = 96, class: className, ...props } = Astro.props;
     height={size}
     layout="constrained"
     alt="Selfie"
-    class="grayscale size-full object-cover"
+    class="size-full object-cover"
   />
 </div>

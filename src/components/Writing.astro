@@ -4,7 +4,7 @@ import { getCollection } from "astro:content";
 import FormattedDate from "@/components/FormattedDate.astro";
 
 const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
 
@@ -14,7 +14,11 @@ const posts = (await getCollection("blog")).sort(
     {
       posts.map((post) => (
         <li>
-          <a data-astro-prefetch="hover" href={`/blog/${post.slug}/`}>
+          <a
+            class="text-lg font-sans font-normal mb-0 mt-1 py-4 rounded-lg px-4 flex flex-col gap-1 transition-all duration-300 -mx-4 hover:dark:bg-gray-800 hover:bg-gray-100 active:opacity-50"
+            data-astro-prefetch="hover"
+            href={`/blog/${post.slug}/`}
+          >
             <FormattedDate date={post.data.pubDate} />
             {post.data.title}
           </a>
@@ -23,20 +27,3 @@ const posts = (await getCollection("blog")).sort(
     }
   </ul>
 </div>
-
-<style lang="postcss"> 
-  a {
-    @apply block; 
-    @apply text-lg font-sans font-normal mb-0 mt-1 py-4 rounded-lg px-4 flex flex-col gap-1;
-    @apply transition-all duration-300;
-    @apply -mx-4;
-
-    &:hover {
-      @apply dark:bg-gray-800 bg-gray-100;
-    }
-
-    &:active {
-      @apply opacity-50;
-    }
-  }     
-</style>

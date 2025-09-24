@@ -28,7 +28,7 @@ const { title, headings, year, description, roles, image } = Astro.props;
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.1 },
   );
 
   document.querySelectorAll("h2[id]").forEach((el) => {

@@ -8,9 +8,9 @@ const typographyVariants = tv({
     variant: {
       display: "font-sans tracking-[-0.03em] font-medium",
       headline: "font-sans",
-      title: "font-sans font-bold",
+      title: "font-sans font-semibold tracking-tight",
       body: "font-sans font-normal",
-      label: "font-sans font-normal",
+      label: "font-sans font-medium",
     },
     size: {
       sm: "",
@@ -38,7 +38,7 @@ const typographyVariants = tv({
     {
       variant: "display",
       size: "lg",
-      class: "text-7xl leading-none",
+      class: "text-6xl leading-none",
     },
     {
       variant: "display",
@@ -118,7 +118,7 @@ const typographyVariants = tv({
   },
 });
 
-const tagVariants = cva("", {
+const tagVariants = tv({
   variants: {
     variant: {
       display: "",

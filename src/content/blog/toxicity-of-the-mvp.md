@@ -25,7 +25,7 @@ While Seibel's advice is well-founded (I actually encourage watching the whole v
 
 In an ideal world, all MVPs would be planned and executed in the smartest, fastest way possible that doesn't compromise vision, design, or usability. Unfortunately, this is rarely the case. Some of my first projects were written using Visual Basic, PHP, and vanilla JavaScript, and went through multiple rewrites until they were deemed remotely usable or maintainable.
 
-I found there always comes an "oh f***" moment, in which you realize your tech stack is not structured well enough to deliver features at the speed you need and you realize an impending rewrite is inevitable. For me, this moment has resulted in the death of far too many side projects over the years.
+I found there always comes an "oh f\*\*\*" moment, in which you realize your tech stack is not structured well enough to deliver features at the speed you need and you realize an impending rewrite is inevitable. For me, this moment has resulted in the death of far too many side projects over the years.
 
 ## Why does this matter?
 
@@ -51,7 +51,7 @@ What you could do: Rent a VPS. Set up a basic database, API layer, and director
 
 What you should do: [Dockerize](https://docker-curriculum.com/) it. Run your database and API in separate docker containers, and [place them in the same network](https://docs.docker.com/network/). Store your files using an external service, like [AWS S3](https://aws.amazon.com/s3/) (maybe even with [Cloudfront](https://aws.amazon.com/cloudfront/)).
 
-Why: Suddenly your website explodes. People are uploading hundreds of pics a day (why wouldn't they, animals are adorable). You max out your space on your VPS. Your experience the [Slashdot effect](https://en.wikipedia.org/wiki/Slashdot_effect). You want to make the system distributed, but you can't without Dockerizing everything and reconfiguring your server. You've hit your "oh f***" moment almost immediately after launch.
+Why: Suddenly your website explodes. People are uploading hundreds of pics a day (why wouldn't they, animals are adorable). You max out your space on your VPS. Your experience the [Slashdot effect](https://en.wikipedia.org/wiki/Slashdot_effect). You want to make the system distributed, but you can't without Dockerizing everything and reconfiguring your server. You've hit your "oh f\*\*\*" moment almost immediately after launch.
 
 ## Adopt an architecture
 
@@ -75,7 +75,7 @@ Why: If the logic from the first suggestion was used, where would it live? On e
 
 While building an initial product, it is crucial that your approach allows you to develop new features as quickly as possible. For example, the static site generator [Gatsby](https://www.gatsbyjs.org/) will automatically compile a directory of ".jsx" files to unique page routes out-of-the-box. Need a new page for user profiles? Bam. Just add a single React component and leave the routing up to [Gatsby](https://www.gatsbyjs.org/).
 
-*That's what I'm talking about.*
+_That's what I'm talking about._
 
 Other situations may require more work. The good news is, if you've already adopted an architecture, you're already halfway there. In the case of my recent mobile app, I used [VIPER](https://www.objc.io/issues/13-architecture/viper/) + [custom XCode templates](https://robots.thoughtbot.com/creating-custom-xcode-templates) to rapidly add new screens as I developed it.
 

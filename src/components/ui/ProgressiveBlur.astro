@@ -1,0 +1,54 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cnBase as cn } from "tailwind-variants";
+
+interface Props extends HTMLAttributes<"div"> {
+  amount: number;
+}
+
+const { class: className, amount }: Props = Astro.props;
+
+interface ProgressiveBlurComponent {
+  mask: string;
+  blur: string;
+  zIndex: number;
+}
+
+function generateProgressiveBlur(maxBlur: number): ProgressiveBlurComponent[] {
+  const layers = Math.max(1, Math.min(10, Math.ceil(Math.sqrt(3 * maxBlur))));
+  const gradientIncrement = Math.floor(100 / layers);
+
+  const results = [];
+
+  let lastStop = gradientIncrement;
+
+  for (let i = 1; i < layers; i++) {
+    const blur = Math.min(maxBlur, maxBlur * (i / layers) ** 2);
+    const currentStop = i * gradientIncrement;
+    const mask = `linear-gradient(to bottom, rgba(0, 0, 0, 0) ${lastStop + 1}%, rgba(0, 0, 0, 1) ${currentStop}%)`;
+
+    results.push({
+      mask,
+      blur: `${blur.toFixed(2)}px`,
+      zIndex: i,
+    });
+
+    lastStop = currentStop;
+  }
+
+  return results;
+}
+
+const divs = generateProgressiveBlur(amount);
+---
+
+<div class={cn("pointer-events-none size-full", className)}>
+  {
+    divs.map((div) => (
+      <div
+        class="absolute inset-0 z-(--z) mask-(--mask) backdrop-blur-(--blur)"
+        style={`--z: ${div.zIndex}; --blur: ${div.blur}; --mask: ${div.mask};`}
+      />
+    ))
+  }
+</div>

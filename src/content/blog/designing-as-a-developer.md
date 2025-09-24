@@ -7,8 +7,6 @@ original: "https://blog.logrocket.com/designing-as-a-developer-in-2018-eca1ab5bf
 
 Whether you’re building a product, a tool, a website, a service, or a startup: first impressions are everything. Users inherently gravitate towards products they can trust, products that feel legitimate and provide a sense of security. A website that looks like it was designed by a child always make users feel safe and sound. Even if your product is great, no one will use it if it looks like you don’t know what your doing.
 
-
-
 Yet, as a developer, design can often feel like an uphill battle. Your number one goal is to ensure the software you’re building works, and that it works well. Most developers give little or no thought to the visual design of their work, and for most developers that’s okay.
 
 But if you’re a frontend developer, design should be at the heart of everything you do. Not only do you need to implement the designs of others, but you really should be able to handle designing your own project.
@@ -160,7 +158,6 @@ You may have found yourself digging the font used in the above cards. This font 
 </div>
 
 The Circular font stems from a [sans-serif](https://en.wikipedia.org/wiki/Sans-serif) font family called geometric sans. Geo-sans features clean geometric shapes and offers modernist flair, making it one of the most popular font families among modern designers. You can never go wrong using a geo-sans font on your webpage. Among the most popular are:
-
 
 - [Open Sans](https://fonts.google.com/specimen/Open+Sans), [Lato](https://fonts.google.com/specimen/Lato), and [Montserrat](https://fonts.google.com/specimen/Montserrat) (free)
 - [Museo Sans](https://typekit.com/fonts/museo-sans), [Proxima Nova](https://typekit.com/fonts/proxima-nova), and [Myriad](https://typekit.com/fonts/myriad) (starting at $60 / year)

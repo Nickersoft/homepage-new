@@ -8,7 +8,10 @@
     "build": "astro build",
     "preview": "PORTFOLIO_PASSWORD=\"password\" astro preview",
     "astro": "astro",
-    "ui": "bunx shadcn-svelte@latest"
+    "format": "bun x prettier@latest --write .",
+    "lint": "bun x oxlint@latest --type-aware",
+    "fix": "bun x oxlint@latest --fix --type-aware",
+    "ui": "bun x shadcn-svelte@latest"
   },
   "devDependencies": {
     "@astrojs/mdx": "^4.3.6",
@@ -16,20 +19,24 @@
     "@astrojs/sitemap": "^3.6.0",
     "@astrojs/svelte": "^7.1.1",
     "@astrojs/vercel": "^8.2.8",
+    "@fontsource-variable/cormorant-garamond": "^5.2.6",
     "@fontsource-variable/fira-code": "^5.2.7",
     "@fontsource-variable/inter": "^5.2.8",
     "@iconify-json/simple-icons": "^1.2.53",
     "@iconify-json/solar": "^1.2.4",
+    "@internationalized/date": "^3.8.1",
     "@lucide/svelte": "^0.544.0",
     "@microflash/rehype-figure": "^2.1.4",
+    "@prettier/plugin-oxc": "^0.0.4",
     "@tailwindcss/typography": "^0.5.18",
     "@tailwindcss/vite": "^4.1.13",
     "@types/markdown-it": "^14.1.2",
     "@types/sanitize-html": "^2.16.0",
     "astro": "^5.13.10",
+    "bits-ui": "^2.11.0",
     "clsx": "^2.1.1",
     "markdown-it": "^14.1.0",
-    "prettier": "^3.6.2",
+    "oxlint-tsgolint": "^0.2.0",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.14",
     "react": "^19.1.1",
@@ -45,6 +52,6 @@
     "typescript": "^5.9.2",
     "uniqolor": "^1.1.1",
     "unplugin-icons": "^22.3.0",
-    "vite": "^7.1.7"
+    "vite": "^6"
   }
 }
