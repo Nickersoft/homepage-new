@@ -1,10 +1,18 @@
+---
+layout: "@/layouts/BaseLayout.astro"
+---
+
+import { getCollection } from "astro:content";
+
 import { AltArrowRightLinear } from "@/lib/icons";
 
-import Button from "./ui/Button.astro";
+import Button from "@/components/ui/Button.astro";
 
-import Avatar from "./Avatar.astro";
-import Social from "./Social.astro";
-import HeaderButtons from "./HeaderButtons.astro";
+import Avatar from "@/components/Avatar.astro";
+import Social from "@/components/Social.astro";
+import HeaderButtons from "@/components/HeaderButtons.astro";
+import CaseStudies from "@/components/CaseStudies.astro";
+import BlogPosts from "@/components/BlogPosts.astro";
 
 <Avatar class="mb-8" />
 
@@ -21,3 +29,11 @@ In my spare time I like to write music, hack on side projects, and brush up on m
 Here you'll find my design work, writing, projects, and links to the other places I hang out around the web.
 
 <HeaderButtons class="mt-8" />
+
+## Case Studies
+
+<CaseStudies />
+
+## Writings
+
+<BlogPosts />

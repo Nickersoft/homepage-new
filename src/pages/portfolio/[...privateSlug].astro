@@ -3,7 +3,7 @@ export const prerender = false;
 
 import { getCollection } from "astro:content";
 
-import CaseStudy from "@/layouts/CaseStudy.astro";
+import CaseStudy from "@/layouts/CaseStudyLayout.astro";
 import ProtectedPage from "@/layouts/ProtectedPage.astro";
 
 const posts = await getCollection("caseStudy");

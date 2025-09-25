@@ -1,6 +1,4 @@
 ---
-import Typography from "./ui/Typography.astro";
-
 export interface Props {
   date: Date;
 }
@@ -8,14 +6,15 @@ export interface Props {
 const { date } = Astro.props;
 ---
 
-<Typography variant="body" size="md" color="muted">
-  <time class="label" datetime={date.toISOString()}>
-    {
-      date.toLocaleDateString("en-us", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      })
-    }
-  </time>
-</Typography>
+<time
+  datetime={date.toISOString()}
+  class="text-xs font-medium leading-none text-muted-foreground"
+>
+  {
+    date.toLocaleDateString("en-us", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    })
+  }
+</time>

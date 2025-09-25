@@ -16,7 +16,7 @@
   --popover-foreground: var(--foreground);
   --primary: var(--color-amber-700);
   --primary-foreground: var(--color-amber-50);
-  --secondary: var(--color-stone-300);
+  --secondary: var(--color-stone-200);
   --secondary-foreground: var(--color-stone-700);
   --accent: var(--muted);
   --accent-foreground: var(--foreground);
@@ -100,3 +100,104 @@
     --color-accent-foreground: var(--color-foreground);
   }
 } */
+
+@layer base {
+  :root {
+    * {
+      @apply border-border;
+    }
+
+    body {
+      @apply text-foreground font-sans;
+      font-optical-sizing: auto;
+    }
+
+    strong {
+      @apply font-semibold;
+    }
+
+    h1 {
+      @apply mb-6 scroll-m-20 text-5xl font-[550] tracking-tight text-balance;
+    }
+
+    h2 {
+      @apply mt-12 mb-4 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0;
+    }
+
+    h3 {
+      @apply scroll-m-20 text-xl font-semibold tracking-tight;
+    }
+
+    h4 {
+      @apply scroll-m-20 text-lg font-semibold tracking-tight;
+    }
+
+    p {
+      @apply text-secondary-foreground leading-7 [&:not(:first-child)]:mt-6;
+    }
+
+    small {
+      @apply text-sm leading-none font-medium;
+    }
+
+    p > a {
+      @apply text-foreground decoration-secondary underline decoration-dashed underline-offset-4;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      main > *,
+      article > * {
+        @apply animate-in fill-mode-both fade-in slide-in-from-bottom-4 blur-in-sm block duration-1000 ease-out;
+        animation-delay: calc(0.08s * (var(--index) - 1));
+
+        &:nth-child(1) {
+          --index: 1;
+        }
+
+        &:nth-child(2) {
+          --index: 2;
+        }
+
+        &:nth-child(3) {
+          --index: 3;
+        }
+
+        &:nth-child(4) {
+          --index: 4;
+        }
+
+        &:nth-child(5) {
+          --index: 5;
+        }
+
+        &:nth-child(6) {
+          --index: 6;
+        }
+
+        &:nth-child(7) {
+          --index: 7;
+        }
+
+        &:nth-child(8) {
+          --index: 8;
+        }
+
+        &:nth-child(9) {
+          --index: 9;
+        }
+
+        &:nth-child(10) {
+          --index: 10;
+        }
+
+        &:nth-child(11) {
+          --index: 11;
+        }
+
+        &:nth-child(12) {
+          --index: 12;
+        }
+      }
+    }
+  }
+}

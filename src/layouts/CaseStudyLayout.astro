@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from "astro:content";
+import type { MarkdownHeading } from "astro";
+
+import Pill from "@/components/ui/Pill.astro";
+
+import ProseLayout from "./ProseLayout.astro";
+import Stack from "@/components/ui/Stack.astro";
+import TOC from "@/components/TOC.astro";
+
+type Props = CollectionEntry<"caseStudy">["data"] & {
+  headings: MarkdownHeading[];
+};
+
+const { title, headings, year, description, roles, image } = Astro.props;
+---
+
+<ProseLayout title={title} subtitle={description} image={image}>
+  <small slot="label">{year}</small>
+
+  <Stack orientation="row" align="center" gap="md" class="py-3" slot="byline">
+    {roles.map((role) => <Pill>{role}</Pill>)}
+  </Stack>
+
+  <TOC slot="toc" headings={headings} />
+
+  <slot />
+</ProseLayout>

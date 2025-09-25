@@ -3,11 +3,9 @@ import type { CollectionEntry } from "astro:content";
 
 import Avatar from "@/components/Avatar.astro";
 import FormattedDate from "@/components/FormattedDate.astro";
-import Pill from "@/components/Pill.astro";
 
 import ProseLayout from "./ProseLayout.astro";
 import Stack from "@/components/ui/Stack.astro";
-import Typography from "@/components/ui/Typography.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -20,20 +18,5 @@ const { title, original, description, pubDate, image } = Astro.props;
   subtitle={description}
   original={original}
 >
-  <Fragment slot="tags">
-    <Stack
-      orientation="row"
-      align="center"
-      gap="md"
-      class="pl-2 border-y w-full no-prose py-4 my-6 h-auto"
-    >
-      <Avatar size={48} />
-      <div>
-        <Typography variant="title" size="md">Tyler Nickerson </Typography>
-        <FormattedDate date={pubDate} />
-      </div>
-    </Stack>
-  </Fragment>
-
   <slot />
 </ProseLayout>

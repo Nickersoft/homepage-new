@@ -1,0 +1,70 @@
+---
+import type { MarkdownHeading } from "astro";
+
+interface Props {
+  headings: MarkdownHeading[];
+}
+
+const { headings } = Astro.props;
+---
+
+<table-of-contents>
+  <ul class="px-8">
+    {
+      headings
+        .filter(({ depth }) => depth === 2)
+        .map((heading) => (
+          <li class="py-2">
+            <a
+              class="aria-[current=location]:text-primary text-muted-foreground text-sm transition-opacity duration-50"
+              href={`#${heading.slug}`}
+            >
+              {heading.text.split(":")[0]}
+            </a>
+          </li>
+        ))
+    }
+  </ul>
+</table-of-contents>
+
+<script>
+  class TOC extends HTMLElement {
+    #observer: IntersectionObserver | null = null;
+
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      this.#observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const id = entry.target.id;
+
+            if (entry.isIntersecting) {
+              for (const el of this.querySelectorAll(`aside li a`)) {
+                el.removeAttribute("aria-current");
+              }
+
+              this.querySelector(`aside li a[href="#${id}"]`)?.setAttribute(
+                "aria-current",
+                "location",
+              );
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document.querySelectorAll("h2[id]").forEach((el) => {
+        this.#observer?.observe(el);
+      });
+    }
+
+    disconnectedCallback() {
+      this.#observer?.disconnect();
+    }
+  }
+
+  customElements.define("table-of-contents", TOC);
+</script>

@@ -5,28 +5,3 @@
 @plugin "@tailwindcss/typography";
 
 @import "./theme.css";
-
-@layer base {
-  :root {
-    * {
-      @apply border-border;
-    }
-
-    body {
-      @apply text-foreground font-sans;
-      font-optical-sizing: auto;
-    }
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background: url("/static.png"), var(--color-background);
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  body {
-    background: url("/static-lm.png"), var(--color-background);
-  }
-}

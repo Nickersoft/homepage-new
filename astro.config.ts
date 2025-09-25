@@ -17,7 +17,7 @@ const rehypePlugins = [rehypeExternalLinks, rehypeFigure];
 export default defineConfig({
   site: "https://www.tylernickerson.com",
   output: "static",
-  integrations: [mdx({ optimize: true }), svelte(), sitemap()],
+  integrations: [mdx(), svelte(), sitemap()],
   adapter: vercel(),
   prefetch: true,
   markdown: {
