@@ -1,0 +1,21 @@
+---
+import type { Props as BaseLayoutProps } from "@/layouts/base-layout.astro";
+
+// import Navigation from "@/components/navigation";
+import { getSingleton } from "@/lib/content";
+
+import BaseLayout from "./base-layout.astro";
+
+const seo = await getSingleton("seo");
+
+export interface Props extends BaseLayoutProps {}
+---
+
+<BaseLayout {...Astro.props} titleTemplate={`%s | ${seo.data.siteName}`}>
+  <main
+    class="*:*:stagger-250 *:*:fill-mode-both **:animate-in *:*:fade-in *:*:slide-in-from-bottom-10 *:*:ease-out-quad *:*:animation-duration-900 mx-auto max-w-2xl [&_a]:inline-block"
+  >
+    <!-- <Navigation url={Astro.url} client:load /> -->
+    <slot />
+  </main>
+</BaseLayout>

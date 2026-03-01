@@ -5,6 +5,8 @@
 </div>
 
 <style lang="postcss" is:global>
+  @reference "../styles/global.css";
+
   .prose {
     --tw-prose-bullets: rgba(0 0 0 / 0.2);
     
@@ -29,6 +31,6 @@
   }
 
   .prose .unstyled img {
-    @apply rounded-none shadow-none border-none !important;
+    @apply !rounded-none !shadow-none !border-none;
   }
 </style>

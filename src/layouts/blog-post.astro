@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+// import Avatar from "@components/Avatar.astro";
+// import Pill from "@components/Pill.astro";
+import FormattedDate from "@/components/formatted-date.astro";
+
+import ProseLayout from "./prose-layout.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, original, description, pubDate, image } = Astro.props;
+---
+
+<!-- 
+<ProseLayout
+  title={title}
+  image={image}
+  subtitle={description}
+  original={original}
+>
+  <FormattedDate date={pubDate} slot="label" />
+  <Fragment slot="tags">
+    <Pill>
+      <Avatar width={16} height={16} />
+      Tyler Nickerson
+    </Pill>
+  </Fragment>
+  <slot />
+</ProseLayout> -->

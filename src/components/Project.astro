@@ -18,7 +18,7 @@ const endColor = uniqolor(Buffer.from(tagline).toString("base64")).color;
   target="_blank"
   rel="nopenner noreferrer"
   href={href}
-  class="project"
+  class="project block m-0 active:opacity-50 transition-all duration-150 rounded-lg shadow-sm active:scale-[0.99]"
   style={`--startColor: ${startColor}; --endColor: ${endColor}`}
 >
   <div class="inner">
@@ -34,12 +34,12 @@ const endColor = uniqolor(Buffer.from(tagline).toString("base64")).color;
   </div>
 </a>
 
-<style lang="postcss"> 
+<style lang="postcss">
+  @reference "../styles/global.css";
+
   .project {
     --border-width: 1px;
 
-    @apply block m-0 active:opacity-50 transition-all duration-150 rounded-lg shadow-sm;
-    @apply active:scale-[0.99];
     
     padding: var(--border-width);
     background-image: linear-gradient(to bottom right, var(--startColor), var(--endColor));
@@ -52,11 +52,11 @@ const endColor = uniqolor(Buffer.from(tagline).toString("base64")).color;
       @apply dark:bg-gray-900 p-4 h-full flex flex-row gap-4 items-center text-left bg-gray-0;
       @apply relative overflow-hidden;
 
-      border-radius: calc(theme('borderRadius.lg') - var(--border-width));
+      border-radius: calc(var(--radius-lg) - var(--border-width));
 
       &:after {
         @apply absolute inset-0 opacity-0 transition-all duration-150;
-        @apply dark:bg-gray-0 dark:bg-opacity-[0.03];
+        @apply dark:bg-gray-0/[0.03];
         content: '';
       }
     }

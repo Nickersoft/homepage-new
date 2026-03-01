@@ -14,14 +14,13 @@ const { variant = "filled", size = "md" } = Astro.props;
       sm: size === "sm",
     },
   ]}
-  class="pill"><slot /></span
+  class="pill inline-flex flex-row items-center gap-2 text-sm px-4 py-2 rounded-full text-gray-900/75 dark:text-white/75 border border-subtle-light dark:border-subtle-dark"><slot /></span
 >
 
-<style lang="postcss"> 
+<style lang="postcss">
+  @reference "../styles/global.css";
+
   .pill {
-    @apply inline-flex flex-row items-center gap-2 text-sm px-4 py-2 rounded-full;
-    @apply text-opacity-75 dark:text-dark dark:text-opacity-75;
-    @apply border border-subtle-light dark:border-subtle-dark;
     
     &.filled {
       @apply dark:bg-gray-800;

@@ -1,0 +1,26 @@
+---
+import Dithering from "@/components/dithering.svelte";
+import Head, { type Props as HeadProps } from "@/components/head";
+
+export interface Props extends HeadProps {}
+---
+
+<!doctype html>
+<html lang="en" class="relative size-full">
+  <head>
+    <Head {...Astro.props} />
+  </head>
+  <body class="size-full">
+    <slot />
+    <Dithering
+      class="fixed inset-0 -z-10"
+      client:load
+      shape="warp"
+      scale={3}
+      speed={0.6}
+      type="4x4"
+      colorFront="#f0f0f0"
+      colorBack="#fcf9fa"
+    />
+  </body>
+</html>

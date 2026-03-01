@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 import CaseStudy from "@layouts/CaseStudy.astro";
 
@@ -9,15 +9,15 @@ export async function getStaticPaths() {
   return posts
     .filter(({ data: { protected: secret } }) => !secret)
     .map((post) => ({
-      params: { publicSlug: post.slug },
+      params: { publicSlug: post.id },
       props: post,
     }));
 }
 
-const { render, data } = Astro.props;
-const { Content, headings } = await render();
+const post = Astro.props;
+const { Content, headings } = await render(post);
 ---
 
-<CaseStudy headings={headings} {...data}>
+<CaseStudy headings={headings} {...post.data}>
   <Content />
 </CaseStudy>

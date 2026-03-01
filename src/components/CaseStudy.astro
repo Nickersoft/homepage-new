@@ -10,23 +10,24 @@ export type Props = {
 const {
   item: {
     data: { roles, image, title, year, description },
-    slug,
+    id,
   },
 } = Astro.props;
 ---
 
-<a data-astro-prefetch="hover" href={`/portfolio/${slug}/`}>
+<a data-astro-prefetch="hover" href={`/portfolio/${id}/`} class="dark:bg-gray-800/50 rounded-lg h-full p-4 flex flex-col border-subtle-light dark:border-subtle-dark border dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors duration-300">
   <Image
     loading="eager"
     densities={[1, 2, 3]}
     quality="high"
     alt={title}
     src={image}
+    class="rounded-md w-full h-[150px] object-cover object-top pointer-events-none"
   />
-  <div class="title">
-    <span class="yr">{year}</span>
-    <h3>{title}</h3>
-    <div class="roles">
+  <div class="title flex flex-col gap-1 mt-4 flex-grow">
+    <span class="yr text-subtle dark:text-subtle-dark text-xs m-0 font-medium tracking-widest ml-1">{year}</span>
+    <h3 class="font-medium ml-1">{title}</h3>
+    <div class="roles flex flex-row justify-start items-center gap-2 mt-4">
       {
         roles.map((role) => (
           <Pill size="sm" variant="outlined">
@@ -38,33 +39,9 @@ const {
   </div>
 </a>
 
-<style lang="postcss"> 
+<style lang="postcss">
+  @reference "../styles/global.css";
+
   a {
-    @apply dark:bg-gray-800/50 rounded-lg h-full;
-    @apply p-4 flex flex-col;
-    @apply border-subtle-light dark:border-subtle-dark border;
-    @apply dark:hover:bg-gray-800 hover:bg-gray-100;
-    @apply transition-colors duration-300;
-
-    :global(img) {
-      @apply rounded-md w-full h-[150px] object-cover object-top pointer-events-none;
-    }
-
-    .roles {
-      @apply flex flex-row justify-start items-center gap-2 mt-4;
-    }
-
-    .title {
-      @apply flex flex-col gap-1 mt-4 flex-grow;
-
-      h3 {
-        @apply font-medium ml-1;
-      }
-
-      .yr {
-        @apply text-subtle dark:text-subtle-dark text-xs m-0 font-medium;
-        @apply tracking-widest ml-1;
-      }
-    }
   }     
 </style>

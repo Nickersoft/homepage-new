@@ -8,7 +8,7 @@ export type Props = {
 const { original } = Astro.props;
 ---
 
-<div class="notice">
+<div class="notice dark:text-muted-dark text-center text-sm text-muted">
   This article was originally published on{" "}
   <a
     class="inline-flex gap-0.5 flex-row justify-center items-center"
@@ -23,7 +23,8 @@ const { original } = Astro.props;
 </div>
 
 <style lang="postcss">
+  @reference "../styles/global.css";
+
   .notice {
-    @apply dark:text-muted-dark text-center text-sm text-muted;
   }
 </style>

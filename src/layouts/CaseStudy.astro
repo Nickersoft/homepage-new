@@ -28,7 +28,7 @@ const { title, headings, year, description, roles, image } = Astro.props;
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.1 },
   );
 
   document.querySelectorAll("h2[id]").forEach((el) => {
@@ -37,7 +37,12 @@ const { title, headings, year, description, roles, image } = Astro.props;
 </script>
 
 <ProseLayout title={title} subtitle={description} showHero image={image}>
-  <p slot="label" class="label">{year}</p>
+  <p
+    slot="label"
+    class="label text-muted dark:text-muted-dark text-xs font-medium tracking-widest uppercase"
+  >
+    {year}
+  </p>
 
   <Fragment slot="tags">
     {roles.map((role) => <Pill>{role}</Pill>)}
@@ -58,7 +63,9 @@ const { title, headings, year, description, roles, image } = Astro.props;
   <slot />
 </ProseLayout>
 
-<style lang="postcss">
+<!-- <style lang="postcss">
+  @reference "../styles/global.css";
+
   :global(h2 span) {
     @apply !text-sm tracking-widest uppercase font-semibold opacity-50 !mb-2 block;
   }
@@ -76,4 +83,4 @@ const { title, headings, year, description, roles, image } = Astro.props;
       }
     }
   }
-</style>
+</style> -->

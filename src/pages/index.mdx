@@ -1,0 +1,52 @@
+---
+layout: ../layouts/page-layout.astro
+---
+
+import Twitter from "~icons/carbon/logo-x";
+import Email from "~icons/mdi/email";
+import LinkedIn from "~icons/mdi/linkedin";
+import Layers from "~icons/mdi/layers";
+import GitHub from "~icons/mdi/github";
+import Hire from "~icons/mdi/heart";
+import OpenInNew from "~icons/mdi/open-in-new";
+import Document from "~icons/solar/document-bold";
+
+import { Avatar } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+
+import Writing from "@/components/writing.astro";
+
+<div>
+
+<div class="mb-8">
+  <Avatar />
+</div>
+
+# Tyler Nickerson <span class="text-secondary-foreground">is a designer, coder, and builder in New York City.</span>
+
+<div class="flex flex-row items-center gap-2">
+
+[<Email />
+](mailto:tyler@kojo.design) [<Twitter />
+](https://twitter.com/tylernickerson) [<LinkedIn />
+](https://linkedin.com/in/tylernickerson) [<Layers />
+](https://layers.to/tylernickerson) [<GitHub />
+](https://github.com/nickersoft)
+
+</div>
+
+Currently, I run a small design studio called [Kojo Design](https://kojo.design) that has worked with a collection of venture-backed startups worldwide.
+
+A lover of languages, my weekend project right now is [Ell Chat](https://ell.chat), an integrated language learning platform that implements Stephen Krashen's [input hypothesis](https://en.wikipedia.org/wiki/Input_hypothesis). It is built on [ODict](https://odict.org), an open-source dictionary standard I launched in 2017 and [presented at eLex in 2023](https://www.youtube.com/watch?v=HNpT4TBRqcM).
+
+Here you'll find my design work, writing, projects, and ways to find me around the web.
+
+  <div class="flex mt-8 flex-row items-center gap-2"> 
+    <Button href="https://kojo.design/#pricing"  icon={Hire}>Work with me</Button>
+    <Button href="https://read.cv/tnick" variant="secondary" iconPlacement="after" title="Read my resume" icon={Document} />
+  </div>
+</div>
+
+## Writing
+
+<Writing />

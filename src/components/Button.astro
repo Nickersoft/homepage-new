@@ -19,7 +19,7 @@ const Tag = href ? "a" : "button";
 ---
 
 <Tag
-  class="btn"
+  class="btn inline-flex cursor-pointer flex-row items-center gap-2 rounded-lg px-4 py-2 text-sm no-underline transition-all duration-150 active:scale-[0.99] active:opacity-50"
   class:list={[
     {
       "btn-primary": variant === "primary",
@@ -32,27 +32,25 @@ const Tag = href ? "a" : "button";
   {Icon && <Icon />}
   <span class="mt-[2px]">{title}</span>
 </Tag>
+<!-- 
+<style lang="postcss">
+  @reference "../styles/global.css";
 
-<style lang="postcss"> 
-  .btn {
-    @apply inline-flex gap-2 flex-row items-center text-sm px-4 py-2 rounded-lg;
-    @apply active:scale-[0.99] transition-all duration-150 active:opacity-50 cursor-pointer;
-    @apply no-underline;
-    
-    &-secondary {
-      @apply dark:text-dark dark:text-opacity-75 text-opacity-75;
+  .btn {    
+    &.btn-secondary {
+      @apply text-gray-900/75 dark:text-white/75;
 
       &:active {
         @apply scale-[0.99] opacity-50;
       }
 
       &:hover {
-        @apply dark:bg-gray-800 dark:text-opacity-90 text-opacity-90 bg-gray-100;
+        @apply dark:bg-gray-800 text-gray-900/90 dark:text-white/90 bg-gray-100;
       }
     }
 
-    &-primary {
+    &.btn-primary {
       @apply dark:bg-gray-0/10 dark:text-dark bg-gray-900/5 cursor-pointer font-medium;
     }
   }
-</style>
+</style> -->

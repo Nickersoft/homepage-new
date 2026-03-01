@@ -1,7 +1,7 @@
 ---
 export const prerender = false;
 
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 import CaseStudy from "@layouts/CaseStudy.astro";
 import ProtectedPage from "@layouts/ProtectedPage.astro";
@@ -9,7 +9,7 @@ import ProtectedPage from "@layouts/ProtectedPage.astro";
 const posts = await getCollection("caseStudy");
 
 const page = posts.find(
-  (post) => post.data.protected && post.slug === Astro.params.privateSlug
+  (post) => post.data.protected && post.id === Astro.params.privateSlug
 );
 
 if (!page) {
@@ -17,12 +17,11 @@ if (!page) {
 }
 
 const {
-  render,
   data: { image, title },
   data,
 } = page;
 
-const { Content, headings } = await render();
+const { Content, headings } = await render(page);
 ---
 
 <ProtectedPage

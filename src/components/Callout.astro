@@ -15,17 +15,16 @@ const { title, color = "default", emoji } = Astro.props;
     green: color === "green",
     blue: color === "blue",
   }}
-  class="callout"
+  class="callout p-4 rounded-lg mb-[1.33333333em] dark:bg-gray-800 bg-gray-100"
 >
   <h4><span class="emoji">{emoji}</span>{title}</h4>
   <slot />
 </div>
 
 <style lang="postcss">
-  .callout {
-    @apply p-4 rounded-lg mb-[1.33333333em];
-    @apply dark:bg-gray-800 bg-gray-100;
+  @reference "../styles/global.css";
 
+  .callout {
     h4 {
       @apply font-semibold mt-0;
 
