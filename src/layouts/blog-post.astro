@@ -6,13 +6,13 @@ import type { CollectionEntry } from "astro:content";
 import FormattedDate from "@/components/formatted-date.astro";
 
 import ProseLayout from "./prose-layout.astro";
+import Pill from "@/components/Pill.astro";
 
-type Props = CollectionEntry<"blog">["data"];
+type Props = CollectionEntry<"writing">["data"];
 
 const { title, original, description, pubDate, image } = Astro.props;
 ---
 
-<!-- 
 <ProseLayout
   title={title}
   image={image}
@@ -20,11 +20,5 @@ const { title, original, description, pubDate, image } = Astro.props;
   original={original}
 >
   <FormattedDate date={pubDate} slot="label" />
-  <Fragment slot="tags">
-    <Pill>
-      <Avatar width={16} height={16} />
-      Tyler Nickerson
-    </Pill>
-  </Fragment>
   <slot />
-</ProseLayout> -->
+</ProseLayout>

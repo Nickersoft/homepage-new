@@ -1,14 +1,14 @@
 ---
 import { Image } from "astro:assets";
 
-import Back from "~icons/mdi/arrow-left";
-import Tweet from "~icons/mdi/twitter";
+// import Back from "~icons/mdi/arrow-left";
+// import Tweet from "~icons/mdi/twitter";
 
 import Button from "@/components/Button.astro";
 import Prose from "@/components/Prose.astro";
 import OriginallyPosted from "@/components/OriginallyPosted.astro";
 
-import BaseLayout from "./base-layout.astro";
+import PageLayout from "./page-layout.astro";
 
 export type Props = {
   title: string;
@@ -27,13 +27,13 @@ function getShareURL() {
 }
 ---
 
-<BaseLayout
+<PageLayout
   type="article"
   title={title}
   description={subtitle}
-  image={image?.src}
+  image={{ src: image, alt: title }}
 >
-  <nav
+  <!-- <nav
     class="bg-gray-0/75 lg:bg-clear fixed top-0 z-50 flex w-full flex-row items-center justify-between p-4 backdrop-blur-lg lg:backdrop-blur-none dark:bg-gray-900/75"
   >
     <Button variant="secondary" title="Back" href="/" icon={Back} />
@@ -43,7 +43,7 @@ function getShareURL() {
       title="Share"
       icon={Tweet}
     />
-  </nav>
+  </nav> -->
 
   {
     image && showHero && (
@@ -54,25 +54,27 @@ function getShareURL() {
   }
 
   <article
-    class="animate-fade-up container mx-auto grid w-full grid-cols-1 items-center gap-x-16 p-8 lg:grid-cols-[1fr,48rem,1fr]"
+    class="animate-fade-up container mx-auto grid w-full grid-cols-1 items-center p-8 lg:grid-cols-[1fr_var(--breakpoint-sm)_1fr]"
     class:list={[{ "mt-16": !image || !showHero }]}
   >
-    <header class="flex flex-col items-center py-2 text-center lg:col-start-2">
+    <header class="flex flex-col items-start py-2 lg:col-start-2">
       <slot name="label" />
-      <h1
-        class="w-full py-2 text-center font-sans text-4xl leading-normal font-semibold"
-      >
+      <h1 class="mt-3">
         {title}
       </h1>
-      <p class="text-subtle dark:text-subtle-dark mt-2 mb-8 font-sans text-lg">
+      <p class="text-secondary-foreground m-0 font-sans text-base">
         {subtitle}
       </p>
-      <div class="flex flex-row items-center justify-center gap-4">
-        <slot name="tags" />
-      </div>
+      {
+        Astro.slots.has("tags") && (
+          <div class="flex flex-row items-center justify-center gap-4">
+            <slot name="tags" />
+          </div>
+        )
+      }
     </header>
 
-    <hr />
+    <hr class="col-start-2 mb-6" />
 
     <aside
       class="not-prose sticky top-32 col-start-1 hidden self-start justify-self-end text-right lg:block"
@@ -83,33 +85,9 @@ function getShareURL() {
     <div class="prose-wrapper lg:col-start-2">
       <Prose>
         <slot />
-        <hr
-          class="dark:border-subtle-dark border-subtle-light my-8 w-full border lg:col-start-2"
-        />
+        <hr class="my-8 w-full border lg:col-start-2" />
         {original && <OriginallyPosted original={original} />}
       </Prose>
     </div>
   </article>
-</BaseLayout>
-
-<!-- <style lang="postcss">
-  @reference "../styles/global.css";
-
-  .cover {
-    :global(img) {
-      @apply lg:h-[28rem] mt-[4.5rem] object-cover object-top rounded-lg dark:shadow-none shadow-md;
-    }
-  }
-
-  header {
-
-    h1 {
-      @apply text-4xl font-sans font-semibold text-center leading-normal;
-      @apply w-full py-2;  
-    }
-
-    p {
-      @apply text-lg font-sans text-subtle dark:text-subtle-dark mt-2 mb-8;   
-    }
-  }
-</style> -->
+</PageLayout>

@@ -14,14 +14,15 @@ const { variant = "filled", size = "md" } = Astro.props;
       sm: size === "sm",
     },
   ]}
-  class="pill inline-flex flex-row items-center gap-2 text-sm px-4 py-2 rounded-full text-gray-900/75 dark:text-white/75 border border-subtle-light dark:border-subtle-dark"><slot /></span
+  class="pill border-subtle-light dark:border-subtle-dark inline-flex flex-row items-center gap-2 rounded-full border px-4 py-2 text-sm text-gray-900/75 dark:text-white/75"
+  ><slot /></span
 >
 
-<style lang="postcss">
+<!-- <style lang="postcss">
   @reference "../styles/global.css";
 
   .pill {
-    
+
     &.filled {
       @apply dark:bg-gray-800;
     }
@@ -30,4 +31,4 @@ const { variant = "filled", size = "md" } = Astro.props;
       @apply text-xs px-3 py-1.5;
     }
   }
-</style>
+</style> -->

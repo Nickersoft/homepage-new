@@ -3,9 +3,17 @@
   padding-inline: 2rem;
 }
 
+@utility index-* {
+  --index: --value(integer, [integer]);
+}
+
 @utility stagger-* {
-  --stagger: calc(--value(integer) * 1ms * sibling-index());
+  --stagger: calc(--value(integer) * 1ms * var(--index));
   --delay: calc(var(--tw-animation-delay, 0) + var(--stagger));
   animation-fill-mode: both;
   animation-delay: var(--delay) !important;
+}
+
+@utility animated {
+  @apply animate-in stagger-120 fade-in slide-in-from-bottom-[10px] fill-mode-both animation-duration-1000;
 }

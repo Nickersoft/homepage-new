@@ -2,6 +2,7 @@
 title: "Your Duolingo lessons probably aren't sticking. Here's why."
 description: "Getting yourself back on track might be simpler than you think."
 pubDate: "2023-01-03"
+draft: true
 original: "https://www.linguistic.io/blog/duolingo"
 image: ../../assets/duolingo.jpg
 ---

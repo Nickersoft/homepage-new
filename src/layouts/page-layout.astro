@@ -5,6 +5,7 @@ import type { Props as BaseLayoutProps } from "@/layouts/base-layout.astro";
 import { getSingleton } from "@/lib/content";
 
 import BaseLayout from "./base-layout.astro";
+import NavPill from "@/components/nav-pill.svelte";
 
 const seo = await getSingleton("seo");
 
@@ -13,9 +14,14 @@ export interface Props extends BaseLayoutProps {}
 
 <BaseLayout {...Astro.props} titleTemplate={`%s | ${seo.data.siteName}`}>
   <main
-    class="*:*:stagger-250 *:*:fill-mode-both **:animate-in *:*:fade-in *:*:slide-in-from-bottom-10 *:*:ease-out-quad *:*:animation-duration-900 mx-auto max-w-2xl [&_a]:inline-block"
+    class="mx-auto flex size-full max-w-2xl items-center-safe justify-center-safe px-6 pb-24"
   >
     <!-- <Navigation url={Astro.url} client:load /> -->
-    <slot />
+    <div>
+      <slot />
+    </div>
+    <div transition:persist>
+      <NavPill client:load />
+    </div>
   </main>
 </BaseLayout>

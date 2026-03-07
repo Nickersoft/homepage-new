@@ -1,14 +1,14 @@
 import { defineCollection, z, type ImageFunction } from "astro:content";
 import { glob } from "astro/loaders";
-import { ICONS } from "./consts";
 
-const blog = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
+const writing = defineCollection({
+  loader: glob({ pattern: "writing/*.md", base: "./src/content" }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
       original: z.string().url().optional(),
       description: z.string(),
+      draft: z.boolean().default(false),
       pubDate: z
         .string()
         .or(z.date())
@@ -41,7 +41,7 @@ const projects = defineCollection({
     tagline: z.string(),
     url: z.string().url(),
     order: z.number(),
-    icon: z.enum(Object.keys(ICONS) as [string, ...string[]]),
+    icon: z.string().optional(),
   }),
 });
 
@@ -104,4 +104,4 @@ const seo = defineCollection({
     }),
 });
 
-export const collections = { caseStudy, blog, projects, seo };
+export const collections = { caseStudy, writing, projects, seo };

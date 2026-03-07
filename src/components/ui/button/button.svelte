@@ -11,7 +11,7 @@
     variants: {
       variant: {
         default:
-          "bg-linear-to-b transition-all hover:text-primary-foreground text-primary-foreground/85 ease-out duration-250 active:scale-99 from-primary/80 to-primary inset-shadow-[0_0.8px_0] text-shadow-2xs hover:inset-shadow-[0_1.2px_0px] inset-shadow-white/20 ring ring-primary hover:opacity-90 no-underline shadow-lg",
+          "bg-linear-to-b transition-all hover:text-primary-foreground text-primary-foreground/85 ease-out duration-250 active:scale-99 from-primary-light to-primary inset-shadow-[0_0.8px_0] text-shadow-2xs hover:inset-shadow-[0_1.2px_0px] inset-shadow-white/20 ring ring-primary hover:opacity-90 no-underline shadow-lg",
         destructive:
           "bg-destructive hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60 text-white shadow-xs",
         outline:

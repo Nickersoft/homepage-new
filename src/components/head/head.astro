@@ -1,6 +1,8 @@
 ---
 import "@/styles/global.css";
 
+import { ClientRouter } from "astro:transitions";
+
 import Meta, { type Props as MetaProps } from "./meta.astro";
 import Fonts from "./fonts.astro";
 
@@ -9,3 +11,4 @@ export interface Props extends MetaProps {}
 
 <Meta {...Astro.props} />
 <Fonts />
+<ClientRouter />

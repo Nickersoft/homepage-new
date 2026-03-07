@@ -7,15 +7,15 @@ year: 2023
 image: ../../assets/portfolio/odict-cover.png
 description: How might Wiktionary look different if it was structured data?
 ---
-import Callout from '@components/Callout.astro';
+import Callout from '@/components/Callout.astro';
 
 **[ODict](https://odict.org)**, short for **The Open Dictionary** is a personal project of mine that began as a file format for storing structured lexical data (etymologies, word senses, definitions, etc.). My work on the file format was presented at the [eLex](https://elex.link) lexicography conference in Brno, Czechia in 2023 (you can watch the talk [here](https://www.youtube.com/watch?v=HNpT4TBRqcM)!).
 
-I recently began an exploration of what a potential web platform based on the format might look like, as an alternative to existing sites like [Wiktionary](https://wiktionary.org) and [Globse](https://glosbe.com/). 
+I recently began an exploration of what a potential web platform based on the format might look like, as an alternative to existing sites like [Wiktionary](https://wiktionary.org) and [Globse](https://glosbe.com/).
 
 ## <span>The Problem:</span> There is no open platform for structured lexical data
 
-Lexical (or language) data is extremely useful, as it can be used to train NLP systems and ML models, compile dictionaries, accelerate research, and teach foreign languages. 
+Lexical (or language) data is extremely useful, as it can be used to train NLP systems and ML models, compile dictionaries, accelerate research, and teach foreign languages.
 
 Unfortunately, most websites that provide such data fall into two camps:
 
@@ -48,7 +48,7 @@ I began by outlining the primary user goals of the project:
 </Callout>
 
 <Callout color="green" title="Developing" emoji="🧑‍💻">
-	- Download dictionary dumps as compiled .odict as well as XML  
+	- Download dictionary dumps as compiled .odict as well as XML
 	- Access data via an API
 </Callout>
 
@@ -56,9 +56,9 @@ I was especially interested in how I would approach authoring, as finding a way 
 
 ## Competitive Analysis
 
-As with most projects, I began by collecting screenshots of the most popular online dictionaries to understand their general IA and user experience. 
+As with most projects, I began by collecting screenshots of the most popular online dictionaries to understand their general IA and user experience.
 
-The sites I looked at were: 
+The sites I looked at were:
 
 - [Wiktionary](https://wiktionary.org)
 - [Naver](https://en.dict.naver.com/#/main?sLn=en)
@@ -66,13 +66,13 @@ The sites I looked at were:
 - [Dictionary.com](https://dictionary.com)
 - [Oxford Learner Dictionary](https://www.oxfordlearnersdictionaries.com/us/)
 - [Lexico](https://en.wikipedia.org/wiki/Lexico) (now defunct)
-- [Merriam-Webster](https://www.merriam-webster.com/) 
+- [Merriam-Webster](https://www.merriam-webster.com/)
 - [Jisho](https://jisho.org/)
 - [Glosbe](https://globse.com/)
 
 ![](../../assets/portfolio/odict-inspo.png)
 
-Across the board, I found most sites to be cluttered and filled with either auxillary information or ads. While the manner in which definitions were presented was pretty standard, surrounding UI detracted from the main user experience. 
+Across the board, I found most sites to be cluttered and filled with either auxillary information or ads. While the manner in which definitions were presented was pretty standard, surrounding UI detracted from the main user experience.
 
 The most simplistic experiences were Oxford and Jisho, as their sites prioritize only showing you directly useful information when looking up definitions.
 
@@ -86,7 +86,7 @@ You should come to the site, specify a language, and search for a word.
 
 ![The original homepage exploration](../../assets/portfolio/odict-wf.png)
 
-My original exploration operated under the assumption the site would function similar to how Wiktionary works – something like `en.odict.org` or `fr.odict.org`, with all definitions being in English or French, respectively. You would only specify the language of the word you are looking up. 
+My original exploration operated under the assumption the site would function similar to how Wiktionary works – something like `en.odict.org` or `fr.odict.org`, with all definitions being in English or French, respectively. You would only specify the language of the word you are looking up.
 
 I eventually abandoned this approach, as I felt it would be more intuitive for users to specify a base and target language right from the main domain:
 
@@ -98,7 +98,7 @@ I eventually abandoned this approach, as I felt it would be more intuitive for u
 
 ### Definitions
 
-As anticipated – I struggled with definition pages. 
+As anticipated – I struggled with definition pages.
 
 In my pursuit of extreme simplicity, I ended up with a page that felt super barren:
 
@@ -120,7 +120,7 @@ I decided to explore a card-based layout for the web UI, as this would provide a
 
 1. Clearer separation of etymologies and definitions of different origins.
 2. By constraining the space in which definitions appear, white space is removed and the empty feeling created by my original design is reduced.
-3. Each card can have its own authoring controls, avoiding the overwhelming experience of editing the entire page at once (like you would in a wiki). 
+3. Each card can have its own authoring controls, avoiding the overwhelming experience of editing the entire page at once (like you would in a wiki).
 
 <figure>
   ![Final card design](../../assets/portfolio/odict-card.png)
@@ -129,9 +129,9 @@ I decided to explore a card-based layout for the web UI, as this would provide a
 
 ### Authoring
 
-ODict, as a format, supports [Markdown](https://daringfireball.net/projects/markdown/) for definitions and descriptive text. 
+ODict, as a format, supports [Markdown](https://daringfireball.net/projects/markdown/) for definitions and descriptive text.
 
-My initial thought was that the authoring experience should be a simple Markdown editor with support for some wiki-styled syntax (i.e. having `[[double brackets]]` alias to other words found in the same dictionary). 
+My initial thought was that the authoring experience should be a simple Markdown editor with support for some wiki-styled syntax (i.e. having `[[double brackets]]` alias to other words found in the same dictionary).
 
 ![](../../assets/portfolio/odict-edit1.png)
 
@@ -141,11 +141,11 @@ I decided to opt for a block-based editing experience, similar to that found in 
 
 ![](../../assets/portfolio/odict-edit2.png)
 
-### Examples 
+### Examples
 
-While ODict supports inline examples as part of its file structure, I wanted to provide a way for users to view more extensive examples via a data source like [Tatoeba](https://tatoeba.org). 
+While ODict supports inline examples as part of its file structure, I wanted to provide a way for users to view more extensive examples via a data source like [Tatoeba](https://tatoeba.org).
 
-As a long-time using of Pleco's mobile Chinese dictionary, I've always loved the simplicity of having separate tabs for definitions, strokes, examples, etc. 
+As a long-time using of Pleco's mobile Chinese dictionary, I've always loved the simplicity of having separate tabs for definitions, strokes, examples, etc.
 
 I decided to adopt this approach in my design:
 
@@ -167,21 +167,21 @@ The best way to experience the final design by using its prototype.[^2]
 
 Click below to view it and poke around ⬇️
 
-import Button from '@components/Button.astro';
+import Button from '@/components/Button.astro';
 
-import Arrow from '~icons/mdi/arrow-right';
+// import Arrow from '~icons/mdi/arrow-right';
 
-<Button title="Launch prototype" href="https://www.figma.com/proto/PgUHHdmZhn4EjEJ8zsCmAT/The-Open-Dictionary?page-id=4%3A358&type=design&node-id=1272-4560&viewport=532%2C14%2C0.28&t=tErjoihkdNJUxXCU-1&scaling=min-zoom&starting-point-node-id=1272%3A4560&mode=design" iconPlacement="after" icon={Arrow} />
+<Button title="Launch prototype" href="https://www.figma.com/proto/PgUHHdmZhn4EjEJ8zsCmAT/The-Open-Dictionary?page-id=4%3A358&type=design&node-id=1272-4560&viewport=532%2C14%2C0.28&t=tErjoihkdNJUxXCU-1&scaling=min-zoom&starting-point-node-id=1272%3A4560&mode=design" />
 
 ## Next Steps
 
-Given that ODict is an ongoing project, there is still quite a bit of the platform left to design. 
+Given that ODict is an ongoing project, there is still quite a bit of the platform left to design.
 
 Notably:
 
 - User profiles
-- File download pages 
+- File download pages
 - User recordings
-- Moderation features 
+- Moderation features
 
 Fortunately, the most important (and previously ambigious) aspect of the platform – searching and viewing definitions – has already been tackled.

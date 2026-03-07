@@ -3,23 +3,37 @@ import { getCollection } from "astro:content";
 
 import FormattedDate from "@/components/formatted-date.astro";
 
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+import ChevronRight from "@lucide/svelte/icons/chevron-right";
+
+const posts = (
+  await getCollection("writing", ({ data: { draft } }) => !draft)
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<ul class="grid w-full grid-cols-2 py-4">
+<ul class="group/parent relative grid w-full grid-cols-2 py-4">
+  <div
+    class="from-primary to-primary-light pointer-events-none absolute inset-bs-[anchor(start)] inset-be-[anchor(end)] -left-4 w-1 origin-right -translate-x-full scale-x-0 transform-gpu bg-linear-to-b transition-all duration-250 ease-out [position-anchor:--indicator] group-hover/parent:scale-x-100 group-active/parent:opacity-50"
+  >
+  </div>
   {
-    posts.map((post) => (
-      <li class="group col-span-2 w-full py-3">
+    posts.map((post, idx) => (
+      <li
+        style={{ "--index": idx + 2 }}
+        class="group col-span-2 flex w-full flex-row items-center justify-between py-3 transition-all duration-250 ease-out hover:[anchor-name:--indicator] active:opacity-50"
+      >
         <a
           data-astro-prefetch="hover"
-          href={`/blog/${post.id}/`}
-          class="group-hover:text-primary flex! w-full flex-col gap-1 font-sans text-lg font-normal no-underline transition-all duration-250 ease-out group-hover:font-[450]"
+          href={`/${post.id}/`}
+          class="group-hover:text-accent-foreground flex! w-full flex-col gap-1 font-sans text-lg font-normal no-underline transition-colors duration-250 ease-out"
         >
-          <FormattedDate date={post.data.pubDate} />
+          <FormattedDate
+            date={post.data.pubDate}
+            class="group-hover:text-inherit"
+          />
           <span>{post.data.title}</span>
         </a>
+
+        <ChevronRight class="group-hover:text-primary text-muted-foreground size-5 mask-b-to-black/50 opacity-50 transition-colors duration-250 ease-out group-hover:mask-none group-hover:opacity-100" />
       </li>
     ))
   }

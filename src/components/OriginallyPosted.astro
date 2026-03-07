@@ -1,5 +1,5 @@
 ---
-import OpenInNew from "~icons/mdi/open-in-new";
+// import OpenInNew from "~icons/mdi/open-in-new";
 
 export type Props = {
   original: string;
@@ -8,18 +8,18 @@ export type Props = {
 const { original } = Astro.props;
 ---
 
-<div class="notice dark:text-muted-dark text-center text-sm text-muted">
+<div class="notice text-muted-foreground text-center text-sm">
   This article was originally published on{" "}
   <a
-    class="inline-flex gap-0.5 flex-row justify-center items-center"
+    class="inline-flex flex-row items-center justify-center gap-0.5"
     href={original}
     target="_blank"
     rel="noreferrer noopener"
   >
     {new URL(original).hostname}
-    <OpenInNew class="w-3 h-3" />
+    {/* <OpenInNew class="w-3 h-3" /> */}
   </a>{" "}
-   and has been posted above for convenience.
+  and has been posted above for convenience.
 </div>
 
 <style lang="postcss">

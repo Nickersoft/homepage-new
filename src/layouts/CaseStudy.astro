@@ -2,8 +2,8 @@
 import type { CollectionEntry } from "astro:content";
 import type { MarkdownHeading } from "astro";
 
-import Pill from "@components/Pill.astro";
-import ProseLayout from "./ProseLayout.astro";
+import Pill from "@/components/Pill.astro";
+import ProseLayout from "./prose-layout.astro";
 
 type Props = CollectionEntry<"caseStudy">["data"] & {
   headings: MarkdownHeading[];
